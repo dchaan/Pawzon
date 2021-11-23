@@ -63,7 +63,7 @@ class Login extends React.Component {
           <button className="login-demo" onClick={this.loginDemo}>Demo User</button>
         </form>
         <br/>
-        <Link clasName="login-signup-btn" to="/signup">Create your Petzon account!</Link>
+        <Link className="login-signup-btn" to="/signup">Create your Petzon account!</Link>
       </div>
     )
   };
