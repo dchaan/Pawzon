@@ -11,7 +11,7 @@ class User < ApplicationRecord
   has_many :orders
   has_one :cart
 
-  after_initialization :ensure_session_token
+  after_initialize :ensure_session_token
   attr_reader :password
 
   def self.find_by_credentials(email, password)
