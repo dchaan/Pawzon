@@ -8,9 +8,7 @@ class User < ApplicationRecord
   validates :password, presence: true, length: { minimum: 6, allow_nil: true }
 
   has_many :reviews
-
   has_many :orders
-
   has_one :cart
 
   after_initialization :ensure_session_token

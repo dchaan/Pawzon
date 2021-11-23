@@ -46,7 +46,7 @@ class Login extends React.Component {
   }
 
   render() {
-    <div className = 'login'>
+    <div className='login'>
       <h1>Log In!</h1>
       <form onSubmit={this.handleSubmit}>
         <label>Username
@@ -56,7 +56,7 @@ class Login extends React.Component {
           <input type='password' value={this.state.password} onChange={this.update('password')}/>
         </label>
         {this.renderErrors()}
-        <button className='login-btn' onClick={this.handleSubmit}Log In></button>
+        <button className='login-btn' onClick={this.handleSubmit}>Log In</button>
       </form>
       <button className='login-demo' onClick={this.loginDemo}>Demo User</button>
       <Link clasName='login-signup-btn' to='/signup'>Create your AtoZ account</Link>

@@ -1,5 +1,6 @@
 import { connect } from "react-redux";
 import { login, receiveSessionErrors } from "../../actions/session_actions";
+import Login from "./login";
 
 const mSTP = ({ errors }) => ({
   errors: errors.session
@@ -10,9 +11,5 @@ const mDTP = dispatch => ({
   receiveSessionErrors: () => dispatch(receiveSessionErrors)
 })
 
-const LoginContainer = connect(
-  mSTP,
-  mDTP
-)(Login)
-
+const LoginContainer = connect(mSTP, mDTP)(Login)
 export default LoginContainer
