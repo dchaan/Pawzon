@@ -7,7 +7,7 @@ const mSTP = ({ errors }) => ({
 })
 
 const mDTP = dispatch => ({
-  login: user => dispatch(login(user)),
+  login: API => dispatch(login(user)),
   receiveSessionErrors: () => dispatch(receiveSessionErrors)
 })
 
