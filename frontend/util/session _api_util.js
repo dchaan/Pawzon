@@ -4,19 +4,20 @@ export const login = user => (
     url: '/api/session',
     data: { user }
   })
-)
+);
 
 export const logout = () => (
   $.ajax({
     method: 'DELETE',
     url: '/api/session'
   })
-)
+);
 
+// issue with url
 export const signup = user => (
   $.ajax({
     method: 'POST',
-    url: '/api/users',
+    url: '/api/user',
     data: { user }
   })
-)
+);

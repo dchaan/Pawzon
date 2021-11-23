@@ -7,6 +7,6 @@ const rootReducer = combineReducers({
   entities: entitiesReducer,
   session: sessionsReducer,
   errors: errorsReducer
-})
+});
 
-export default rootReducer
+export default rootReducer;

@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 
 class Signup extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       email: "",
@@ -15,11 +15,11 @@ class Signup extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state).then(() => this.props.history.push('/'));
-  }
+  };
 
   update(field) {
     return e => this.setState({ [field]: e.target.value });
-  }
+  };
 
   renderErrors() {
     return (
@@ -31,12 +31,12 @@ class Signup extends React.Component {
         </ul>
       </div>
     )
-  }
+  };
 
   render() {
     return (
       <div className="signup">
-        <h1>Sign Up!</h1>
+        <h3>Sign Up!</h3>
         <form>
           <label>Username
             <input type="text" value={this.state.email} onChange={this.update("email")} />
@@ -54,7 +54,7 @@ class Signup extends React.Component {
         <Link className="signup-login-btn" to="/login">Log in</Link>
       </div>
     )
-  }
+  };
 }
 
 export default Signup

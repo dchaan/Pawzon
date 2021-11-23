@@ -3,25 +3,25 @@ import { Link } from "react-router-dom";
 
 class Login extends React.Component {
   constructor(props) {
-    super(props)
+    super(props);
 
     this.state = {
       email: "",
       password: ""
-    }
+    };
 
-    this.handleSubmit = this.handleSubmit.bind(this)
-    this.loginDemo = this.loginDemo.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this);
+    this.loginDemo = this.loginDemo.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
     this.props.login(this.state).then(() => this.props.history.push("/"))
-  }
+  };
 
   update(field) {
     return e => this.setState ({ [field]: e.target.value })
-  }
+  };
 
   renderErrors() {
     return (
@@ -43,12 +43,12 @@ class Login extends React.Component {
     };
     this.setState(demoUser);
     this.props.login(demoUser);
-  }
+  };
 
   render() {
     return (
       <div className="session-form">
-        <h1>Log In!</h1>
+        <h3>Log In!</h3>
         <form>
           <label>Username
             <input type="text" value={this.state.email} onChange={this.update("email")}/>
@@ -60,12 +60,13 @@ class Login extends React.Component {
           <br/>
           {this.renderErrors()}
           <button className="login-btn" onClick={this.handleSubmit}>Log In</button>
+          <button className="login-demo" onClick={this.loginDemo}>Demo User</button>
         </form>
-        <button className="login-demo" onClick={this.loginDemo}>Demo User</button>
+        <br/>
         <Link clasName="login-signup-btn" to="/signup">Create your Petzon account!</Link>
       </div>
     )
-  }
+  };
 }
 
-export default Login
+export default Login;

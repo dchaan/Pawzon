@@ -10,5 +10,5 @@ const mDTP = dispatch => ({
   signup: user => dispatch(signup(user))
 })
 
-const SignupContainer = connect(mSTP, mDTP)(Signup)
-export default SignupContainer
+const SignupContainer = connect(mSTP, mDTP)(Signup);
+export default SignupContainer;

@@ -7,9 +7,9 @@ const mSTP = ({ errors }) => ({
 })
 
 const mDTP = dispatch => ({
-  login: API => dispatch(login(user)),
-  receiveSessionErrors: () => dispatch(receiveSessionErrors)
+  login: user => dispatch(login(user)),
+  receiveSessionErrors: () => dispatch(receiveSessionErrors())
 })
 
-const LoginContainer = connect(mSTP, mDTP)(Login)
-export default LoginContainer
+const LoginContainer = connect(mSTP, mDTP)(Login);
+export default LoginContainer;
