@@ -7,14 +7,16 @@ class Signup extends React.Component {
 
     this.state = {
       email: "",
-      password: ""
-    }
+      password: "",
+      first_name: "",
+      last_name: ""
+    };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state).then(() => this.props.history.push('/'));
+    this.props.signup(this.state).then(() => this.props.history.push('/'));
   };
 
   update(field) {
@@ -37,8 +39,14 @@ class Signup extends React.Component {
     return (
       <div className="signup">
         <h3>Sign Up!</h3>
-        <form>
-          <label>Username
+        <form onSubmit={this.handleSubmit}>
+          <label>First Name
+            <input type="text" value={this.state.first_name} onChange={this.update("first_name")} />
+          </label>
+          <label>Last Name
+            <input type="text" value={this.state.last_name} onChange={this.update("last_name")} />
+          </label>
+          <label>Email
             <input type="text" value={this.state.email} onChange={this.update("email")} />
           </label>
           <br/>
@@ -47,7 +55,7 @@ class Signup extends React.Component {
           </label>
           <br/>
           {this.renderErrors()}
-          <button className="signup-btn" onClick={this.handleSubmit}>Sign Up</button>
+          <button className="signup-btn">Sign Up</button>
         </form>
         
         <p>Already have an account?</p>

@@ -38,7 +38,7 @@ class Login extends React.Component {
   loginDemo(e) {
     e.preventDefault();
     const demoUser = {
-      email: "demoemail@gmail.com",
+      email: "demo@gmail.com",
       password: "password"
     };
     this.setState(demoUser);
@@ -49,7 +49,7 @@ class Login extends React.Component {
     return (
       <div className="session-form">
         <h3>Log In!</h3>
-        <form>
+        <form onSubmit={this.handleSubmit}>
           <label>Username
             <input type="text" value={this.state.email} onChange={this.update("email")}/>
           </label>
@@ -59,7 +59,7 @@ class Login extends React.Component {
           </label>
           <br/>
           {this.renderErrors()}
-          <button className="login-btn" onClick={this.handleSubmit}>Log In</button>
+          <button>Sign In</button>
           <button className="login-demo" onClick={this.loginDemo}>Demo User</button>
         </form>
         <br/>
