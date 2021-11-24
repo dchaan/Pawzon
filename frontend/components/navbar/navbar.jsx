@@ -18,7 +18,11 @@ class Navbar extends React.Component {
             {currentUser ? currentUser.email : "Guest"}
             <br/>
             <Link to="/login">Login!</Link>
-            {currentUser ? <button onClick={logout}>Logout</button> : <Link to="/signup">Sign Up!</Link>}
+            <br/>
+            <Link to="/signup">Sign Up!</Link>
+            <br/>
+            <button onClick={logout}>Logout</button>
+            {/* {currentUser ? <button onClick={logout}>Logout</button> : <Link to="/signup">Sign Up!</Link>} */}
           </h4>
         </div>
         <div className="navbar-left">
