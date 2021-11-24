@@ -20,13 +20,15 @@ class Navbar extends React.Component {
         <button><Link to="/login">Log In!</Link></button>
         <br/>
         <button><Link to="/signup">Sign Up!</Link></button>
+        <br/>
+        <button onClick={logout}>Logout</button>
       </div>
     )
     
 
     return (
       <div className="navbar">
-        <img src="../public/images/petzon.png"/>
+        <img src="../../../app/assets/images/petzon.png"/>
         {profile}
         {/* <div className="navbar-right">
           <h4>
