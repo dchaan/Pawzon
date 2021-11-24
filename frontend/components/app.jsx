@@ -7,7 +7,6 @@ import SignupContainer from "./session_form/signup_container";
 
 const App = () => (
   <div>
-    <Link to="/" className="header"><h1>Petzon</h1></Link>
     <Switch>
       <AuthRoute path="/login" component={LoginContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />

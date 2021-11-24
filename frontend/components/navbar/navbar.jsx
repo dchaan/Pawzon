@@ -9,11 +9,11 @@ class Navbar extends React.Component {
 
   render() {
     const { currentUser, login, logout, signup } = this.props;
-
+    console.log(this.props.currentUser);
     let profile = currentUser ? (
       <div>
         <h4>Hello, {currentUser.first_name}</h4>
-        <button onclick={logout}>Logout</button>
+        <button onClick={logout}>Logout</button>
       </div>
     ) : (
       <div>
@@ -21,14 +21,12 @@ class Navbar extends React.Component {
         <br/>
         <button><Link to="/signup">Sign Up!</Link></button>
         <br/>
-        <button onClick={logout}>Logout</button>
       </div>
     )
     
-
     return (
       <div className="navbar">
-        <img src="../../../app/assets/images/petzon.png"/>
+        <Link to="/" className="header-img"><img src="images/petzon.png"/></Link>
         {profile}
         {/* <div className="navbar-right">
           <h4>
