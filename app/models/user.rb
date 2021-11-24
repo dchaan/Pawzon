@@ -28,9 +28,17 @@ class User < ApplicationRecord
   validates :first_name, :last_name, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }
 
-  has_many :reviews
-  has_many :orders
-  has_one :cart
+  has_many :reviews,
+    foreign_key: :user_id,
+    class_name: :Review
+
+  has_many :orders,
+    through: :orders,
+    source: :orders
+
+  has_one :cart,
+    foreign_key: :user_id,
+    class_name: :Cart
 
   after_initialize :ensure_session_token
   
