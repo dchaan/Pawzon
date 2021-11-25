@@ -25,7 +25,7 @@ class Navbar extends React.Component {
     
     return (
       <div className="navbar">
-        <Link to="/" className="header-img"><img src="images/petzon.png"/></Link>
+        <Link to="/" className="header-img"><img src="images/pawzon.png"/></Link>
         {profile}
         {/* <div className="navbar-right">
           <h4>

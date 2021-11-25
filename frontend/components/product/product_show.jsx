@@ -11,6 +11,7 @@ class ProductShow extends React.Component {
 
     return (
       <div>
+        <img src={product.image_url} />
         <h4>{product.product_name}</h4>
         <br/>
         Description: {product.description}

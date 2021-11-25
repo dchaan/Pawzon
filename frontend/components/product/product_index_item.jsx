@@ -15,7 +15,9 @@ class ProductIndexItem extends React.Component {
 
     render() {
       return(
-        <Link to={`/products/${this.props.product.id}`}>{this.props.product.product_name}</Link>
+        <ul>
+          <li><Link to={`/products/${this.props.product.id}`}>{this.props.product.product_name}</Link></li>
+        </ul>
       )
     }
   }

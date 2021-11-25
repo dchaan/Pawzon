@@ -1,5 +1,5 @@
 {
-  "name": "AtoZ",
+  "name": "pawzon",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.16.0",
