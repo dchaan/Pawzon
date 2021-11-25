@@ -15,9 +15,11 @@ class ProductIndexItem extends React.Component {
 
     render() {
       return(
-        <ul>
-          <li><Link to={`/products/${this.props.product.id}`}>{this.props.product.product_name}</Link></li>
-        </ul>
+        <div className="list-items">
+          <ul>
+            <li><Link to={`/products/${this.props.product.id}`}>{this.props.product.product_name}</Link></li>
+          </ul>
+        </div>
       )
     }
   }

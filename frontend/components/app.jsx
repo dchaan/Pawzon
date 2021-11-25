@@ -7,6 +7,7 @@ import LoginContainer from "./session_form/login_container";
 import SignupContainer from "./session_form/signup_container";
 import Homepage from "./homepage";
 import ProductIndexContainer from "./product/product_index_container";
+import Footer from "./footer/footer";
 
 const App = () => (
   <div>
@@ -18,6 +19,7 @@ const App = () => (
       <Route exact path="/products/:productId" component={ProductShowContainer} />
       <Route path="/" component={Homepage} />
     </Switch>
+    <Footer />
   </div>
 );
 

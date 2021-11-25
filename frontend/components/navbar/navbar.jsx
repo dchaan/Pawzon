@@ -27,20 +27,6 @@ class Navbar extends React.Component {
       <div className="navbar">
         <Link to="/" className="header-img"><img src="images/pawzon.png"/></Link>
         {profile}
-        {/* <div className="navbar-right">
-          <h4>
-            {currentUser ? `Hello, ${currentUser.first_name}` : "Welcome, Guest"}
-            <br/>
-            <Link to="/login">Login!</Link>
-            <br/>
-            <Link to="/signup">Sign Up!</Link>
-            <br/>
-            <button onClick={logout}>Logout</button>
-            {currentUser ? <button onClick={logout}>Logout</button> : <Link to="/signup">Sign Up!</Link>}
-          </h4>
-        </div>
-        <div className="navbar-left">
-        </div> */}
       </div>
     )
   }

@@ -1,0 +1,43 @@
+.navbar {
+  background-color: #232F3E;
+}
+
+.list-items {
+  background-color: #f2f2f2;
+}
+
+.list-items ul {
+background-color: #f2f2f2;
+}
+
+.footer {
+  justify-content: center;
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  background-color: #232F3E;
+  color: white;
+  }
+
+  .footer-links {
+    align-items: center;
+    display: flex;
+    height: 100px;
+    width: 100px;
+    color: white;
+  }
+
+  .footer-links a {
+    height: 100px;
+    width: 100px;
+  }
+
+  .footer-description {
+    text-align: center;
+    align-items: center;
+    
+  }
+
