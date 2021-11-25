@@ -7,7 +7,6 @@ class Homepage extends React.Component {
   render() {
     return (
       <div>
-        <NavbarContainer />
         <ProductIndexContainer />
       </div>
     )
