@@ -12,7 +12,7 @@ product1 = Product.create!(
                 The lavish cloud surface gives dogs plenty of space,
                 Sofa-like bolsters on three sides",
   price: 49.99,
-  category: "Dogs",
+  category: "Dog Beds",
   category_id: 1,
   rating: 4.5,
   image_url: "https://m.media-amazon.com/images/I/71eNn7rDAPL._AC_SL1500_.jpg"
@@ -25,7 +25,7 @@ product2 = Product.create!(
                 No more messy floors,
                 Leak protection",
   price: 79.99,
-  category: "Cats"
+  category: "Cat Beds"
   category_id: 2,
   rating: 4.5,
   image_url: "https://m.media-amazon.com/images/I/61j9Fk-Q48L._AC_SL1024_.jpg"

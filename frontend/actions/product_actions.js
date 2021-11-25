@@ -13,8 +13,8 @@ export const receiveProduct = product => ({
   product
 });
 
-export const fetchProducts = query => dispatch => (
-  APIUtil.fetchProducts(query)
+export const fetchProducts = () => dispatch => (
+  APIUtil.fetchProducts()
     .then(products => dispatch(receiveProducts(products)))
 );
 

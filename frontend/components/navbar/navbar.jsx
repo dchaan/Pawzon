@@ -9,7 +9,6 @@ class Navbar extends React.Component {
 
   render() {
     const { currentUser, login, logout, signup } = this.props;
-    console.log(this.props.currentUser);
     let profile = currentUser ? (
       <div>
         <h4>Hello, {currentUser.first_name}</h4>
