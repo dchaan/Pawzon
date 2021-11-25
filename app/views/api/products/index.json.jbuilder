@@ -1,12 +1,7 @@
 @products.each do |product|
   json.set! product.id do
-    json.partial! product, 
-      :id, 
-      :product_name, 
-      :description, 
-      :price, 
-      :category, 
-      :category_id, 
-      :rating
+    json.partial! "api/products/product", product: product
   end
 end
+
+# json.array! @products

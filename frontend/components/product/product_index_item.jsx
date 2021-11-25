@@ -1,5 +1,5 @@
 import React from "react";
-import { withRouter } from "react-router-dom";
+import { Link } from "react-router-dom";
 import ProductIndex from "./product_index";
 
 class ProductIndexItem extends React.Component {
@@ -14,7 +14,9 @@ class ProductIndexItem extends React.Component {
     }
 
     render() {
-      <Link to={`/products/${this.props.product.id}`}>${this.props.product.product_name}</Link>
+      return(
+        <Link to={`/products/${this.props.product.id}`}>{this.props.product.product_name}</Link>
+      )
     }
   }
 

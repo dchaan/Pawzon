@@ -5,16 +5,16 @@ import ProductShowContainer from "./product/product_show_container";
 import LoginContainer from "./session_form/login_container";
 import SignupContainer from "./session_form/signup_container";
 import Homepage from "./homepage";
+import ProductIndexContainer from "./product/product_index_container";
 
 const App = () => (
-  <div>
-    {/* <Link to="/products/:productId" component={ProductShowContainer}>Dog Beds</Link> */}
-    
+  <div>    
     <Switch>
       <AuthRoute path="/login" component={LoginContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />
+      <Route exact path="/products" component={ProductIndexContainer} />
+      <Route exact path="/products/:productId" component={ProductShowContainer} />
       <Route path="/" component={Homepage} />
-      <Route path="/products/:productId" component={ProductShowContainer} />
     </Switch>
   </div>
 );

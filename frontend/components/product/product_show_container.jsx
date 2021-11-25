@@ -1,10 +1,11 @@
 import { connect } from "react-redux";
-import { fetchProduct } from "../../util/product_api_util";
+import { fetchProduct } from "../../actions/product_actions"
 import ProductShow from "./product_show";
 
-const mSTP = ({ state, ownProps }) => ({
+const mSTP = ( state, ownProps ) => ({
   product: state.entities.products[ownProps.match.params.productId]
 });
+// const mSTP = null;
 
 const mDTP = dispatch => ({
   fetchProduct: productId => dispatch(fetchProduct(productId))
