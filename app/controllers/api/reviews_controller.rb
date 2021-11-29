@@ -12,6 +12,8 @@ class Api::ReviewsController < ApplicationController
   end
 
   def create
+    @review.reviewer_id = current_user.id
+    @review.product_id = params[:review][:product_id]
     @review = current_user.reviews.new(review_params)
     if @review.save
       render :show
@@ -40,7 +42,7 @@ class Api::ReviewsController < ApplicationController
   private
   
   def review_params
-    params.require(:review).permit(:title, :body, :rating, :reviewer_id, :product_id)
+    params.require(:review).permit(:title, :body, :rating, :product_id)
   end
 
 end
