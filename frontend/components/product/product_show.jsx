@@ -8,11 +8,7 @@ class ProductShow extends React.Component {
   
   render() {
     const { product } = this.props;
-
-    if (product === undefined) return null;
-
-    c
-
+    
     return (
       <div>
         <img src={product.image_url} />

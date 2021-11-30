@@ -50,7 +50,7 @@ class Login extends React.Component {
       <div className="session-form">
         <h3>Log In!</h3>
         <form onSubmit={this.handleSubmit}>
-          <label>Username
+          <label>Email
             <input type="text" value={this.state.email} onChange={this.update("email")}/>
           </label>
           <br/>
