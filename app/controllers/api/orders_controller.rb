@@ -2,8 +2,10 @@ class Api::OrdersController < ApplicationController
   before_action :require_logged_in
 
   def index
-    @orders = Order.all
-    render :index
+    if logged_in?
+      @orders = Order.all
+      render :index
+    end
   end
 
   def show
@@ -41,6 +43,6 @@ class Api::OrdersController < ApplicationController
   private
   
   def orders_params
-    params.require(:orders).permit(:quantity, :cart_id, :product_id)
+    params.require(:orders).permit(:cart_id, :product_id, :quantity)
   end
 end
