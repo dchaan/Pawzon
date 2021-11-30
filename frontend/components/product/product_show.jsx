@@ -1,5 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ReviewForm from "../reviews/review_form";
+import ReviewFormContainer from "../reviews/review_form_container";
 
 class ProductShow extends React.Component {
   constructor(props) {
@@ -11,7 +13,7 @@ class ProductShow extends React.Component {
     
     return (
       <div>
-        <img src={product.image_url} />
+        {/* <img src={product.image_url} /> */}
         <h4>{product.product_name}</h4>
         <br/>
         Description: {product.description}
@@ -21,7 +23,9 @@ class ProductShow extends React.Component {
         Rating: {product.rating}
         <br/>
         <button><Link to="/products">All Products</Link></button>
-      </div>
+        {/* <ReviewForm /> */}
+        <ReviewFormContainer product={product}/>
+      </div>  
     )
   };
 }

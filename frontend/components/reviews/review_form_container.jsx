@@ -11,7 +11,7 @@ const mSTP = (state, ownProps) => ({
     reviewer_id: state.entities.users.id,
     product_id: ownProps.match.params.productId
   }
-})
+});
 
 const mDTP = dispatch => ({
   createReview: (review, productId) => dispatch(createReview(review, productId))

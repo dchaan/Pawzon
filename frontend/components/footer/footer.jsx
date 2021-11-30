@@ -5,8 +5,8 @@ const Footer = () => (
   <div className="footer">
     <div className="footer-links">
       <Link to="/"><img src="images/pawzon.png"/></Link>
-      <a href="https://github.com/dchaan"><i class="fab fa-github-square"></i></a>
-      <a href="https://www.linkedin.com/in/david-chan-4b1929185/"><i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/dchaan"><i className="fab fa-github-square"></i></a>
+      <a href="https://www.linkedin.com/in/david-chan-4b1929185/"><i className="fab fa-linkedin"></i></a>
     </div>
     <div className="footer-description">
       Pawzon is a clone of Amazon.

@@ -19,4 +19,8 @@ class Search extends React.Component {
     this.props.fetchProducts(this.state.query)
       .then(() => this.props.history.push("/products"))
   }
+
+  render() {
+    
+  }
 }

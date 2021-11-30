@@ -5,7 +5,14 @@ class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
 
-    this.state = this.props.reviews;
+    // this.state = {
+    //   title: "",
+    //   body: "",
+    //   rating: 1,
+    //   reviewer_id: this.props.reviewer_id,
+    //   product_id: this.props.product_id
+    // };
+    this.state = this.props.review;
     this.handleSubmit = this.handleSubmit.bind(this);
   };
   
@@ -20,13 +27,16 @@ class ReviewForm extends React.Component {
   };
 
   render() {
+    
+    console.log(this.props);
     return (
+      
       <div className="reviewForm">
         <form onSubmit={this.handleSubmit}>
           <h2>Create Review</h2>
           <br />
 
-          <h3>{this.props.product.name}</h3>
+          <h3>{this.props.product.product_name}</h3>
           <br />
 
           <h4>Overall Rating</h4>
@@ -35,7 +45,7 @@ class ReviewForm extends React.Component {
           <h4>Add a headline</h4>
           <input className="review-form-headline-input" type="text" value={this.state.title} onChange={this.update("title")} placeholder="What's most important to know?" />
           <h4>Add a written review</h4>
-          <textarea className="review-form-body-input" value={this.update("body")} placeholder="What did you like or dislike? What did you use this product for?" />
+          <textarea className="review-form-body-input" value={this.state.body} onChange={this.update("body")} placeholder="What did you like or dislike? What did you use this product for?" />
 
           <button className="review-form-submit-btn">Submit</button>
 
