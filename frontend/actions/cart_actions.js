@@ -13,17 +13,17 @@ export const removeCart = cart => ({
   cart
 });
 
-export const fetchCart = cartId => dispatch (
-  APIUtil.fetchCart(cartId)
+export const fetchCart = cart => dispatch (
+  APIUtil.fetchCart(cart)
     .then(cart => dispatch(receiveCart(cart)))
 );
 
-export const createCart = cart = dispatch => (
+export const createCart = cart => dispatch => (
   APIUtil.createCart(cart)
     .then(cart => dispatch(receiveCart(cart)))
 );
 
-export const deleteCart = cart = dispatch => (
-  APIUtil.destroyCart(cart)
-    .then(cart => dispatch(deleteCart(cart)))
+export const deleteCart = cart => dispatch => (
+  APIUtil.deleteCart(cart)
+    .then(cart => dispatch(removeCart(cart)))
 );

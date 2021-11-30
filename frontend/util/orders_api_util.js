@@ -5,10 +5,10 @@ export const fetchOrders = () => (
   })
 );
 
-export const fetchOrder = orderId => (
+export const fetchOrder = order => (
   $.ajax({
     method: "GET",
-    url: `api/orders/${orderId}`
+    url: `api/orders/${order.id}`
   })
 );
 
@@ -28,9 +28,9 @@ export const updateOrder = order => (
   })
 );
 
-export const deleteOrder = orderId => (
+export const deleteOrder = order => (
   $.ajax({
     method: "DELETE",
-    url: `api/orders/${orderId}`
+    url: `api/orders/${order.id}`
   })
 )
