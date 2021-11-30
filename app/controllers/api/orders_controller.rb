@@ -17,6 +17,7 @@ class Api::OrdersController < ApplicationController
       render :show
     else
       render json: ["Cannot add product to cart"], status: 422
+    end
   end
 
   def update
