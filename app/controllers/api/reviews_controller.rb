@@ -19,6 +19,7 @@ class Api::ReviewsController < ApplicationController
       render :show
     else
       render json: @review.errors.full_messages
+    end
   end
 
   def update
