@@ -11,7 +11,7 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
   fetchReviews: productId => dispatch(fetchReviews(productId)),
-  destroyReview: reviewId => dispatch(destroyReview(reviewId))
+  deleteReview: review => dispatch(deleteReview(review))
 });
 
 const ReviewIndexContainer = withRouter(connect(mSTP, mDTP)(ReviewIndex));

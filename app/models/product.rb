@@ -29,7 +29,6 @@ class Product < ApplicationRecord
 
   has_many :cart_items
 
-
   belongs_to :cart,
     foreign_key: :product_id,
     class_name: :Cart,

@@ -1,37 +1,36 @@
-export const fetchReviews = (productId) => (
+export const fetchReviews = () => (
   $.ajax({
     method: 'GET',
-    url: `api/products/${productId}/reviews`
+    url: "api/reviews"
   })
-)
+);
 
-export const fetchReview = (reviewId, productId) => (
+export const fetchReview = () => (
   $.ajax({
     method: 'GET',
-    url: `api/products/${productId}/reviews/${reviewId}`
+    url: "api/reviews"
   })
-)
+);
 
-export const createReview = (review, productId) => (
+export const createReview = review => (
   $.ajax({
     method: 'POST',
-    url: `api/products/${productId}/reviews`,
+    url: "api/reviews",
     data: { review }
   })
-)
+);
 
-export const updateReview = (review, productId) => (
+export const updateReview = review => (
   $.ajax({
     method: 'PATCH',
-    url: `api/products/${productId}/reviews/${reviewId}`,
+    url: `api/reviews/${review.id}`,
     data: { review }
   })
-)
+);
 
-export const destroyReview = (reviewId, productId) => (
+export const deleteReview = reviewId => (
   $.ajax({
     method: 'DELETE',
-    url: `api/products/${productId}/reviews/${reviewId}`,
-    data: { review }
+    url: `api/reviews/${reviewId}`
   })
-)
+);

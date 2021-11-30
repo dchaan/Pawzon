@@ -5,13 +5,6 @@ class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
 
-    // this.state = {
-    //   title: "",
-    //   body: "",
-    //   rating: 1,
-    //   reviewer_id: this.props.reviewer_id,
-    //   product_id: this.props.product_id
-    // };
     this.state = this.props.review;
     this.handleSubmit = this.handleSubmit.bind(this);
   };
@@ -22,22 +15,35 @@ class ReviewForm extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReview(this.state, this.productId)
-      .then(() => this.props.history.push(`/products/${this.props.productId}`))
+    this.props.createReview(this.state)
   };
 
   render() {
+    
     return (
       <div className="reviewForm">
         <form onSubmit={this.handleSubmit}>
-          <h3>Create Review</h3>
-          <h4>{this.props.product.product_name}</h4>
-          <h4>Overall Rating</h4>
-          {/* rating */}
-          <h4>Add a headline</h4>
-          <input className="review-form-headline-input" type="text" value={this.state.title} onChange={this.update("title")} placeholder="What's most important to know?" />
-          <h4>Add a written review</h4>
-          <textarea className="review-form-body-input" value={this.state.body} onChange={this.update("body")} placeholder="What did you like or dislike? What did you use this product for?" />
+
+          <div className="review-form-create-review">
+            <h3>Create Review</h3>
+            <h4>{this.props.product.product_name}</h4>
+          </div>
+
+          <div className="review-form-overall-rating">
+            <h4>Overall Rating</h4>
+            {/* rating */}
+          </div>
+
+          <div className="review-form-headline">
+            <h4>Add a headline</h4>
+            <input className="review-form-headline-input" type="text" value={this.state.title} onChange={this.update("title")} placeholder="What's most important to know?" />
+          </div>
+
+          <div className="review-form-body">
+            <h4>Add a written review</h4>
+            <textarea className="review-form-body-input" value={this.state.body} onChange={this.update("body")} placeholder="What did you like or dislike? What did you use this product for?" />
+          </div>
+
           <br/>
           <button className="review-form-submit-btn">Submit</button>
 

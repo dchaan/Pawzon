@@ -14,12 +14,12 @@ export const receiveReview = review => ({
   review
 });
 
-export const removeReview = reviewId => ({
+export const removeReview = review => ({
   type: REMOVE_REVIEW,
-  reviewId
+  review
 });
 
-export const fetchReviews = productId => dispatch => (
+export const fetchReviews = (productId) => dispatch => (
   APIUtil.fetchReviews(productId)
     .then(reviews => dispatch(receiveReviews(reviews)))
 );
@@ -29,17 +29,17 @@ export const fetchReview = (reviewId, productId) => dispatch => (
     .then(review => dispatch(receiveReview(review)))
 );
 
-export const createReview = (review, productId) => dispatch => (
-  APIUtil.createReview(review, productId)
+export const createReview = review => dispatch => (
+  APIUtil.createReview(review)
     .then(review => dispatch(receiveReview(review)))
 );
 
-export const updateReview = (review, productId) => dispatch => (
-  APIUtil.updateReview(review, productId)
+export const updateReview = review => dispatch => (
+  APIUtil.updateReview(review)
     .then(review => dispatch(receiveReview(review)))
 );
 
-export const destroyReview = (reviewId) => dispatch => (
-  APIUtil.destroyReview(reviewId)
-    .then(reviewId => dispatch(removeReview(reviewId)))
+export const deleteReview = (review) => dispatch => (
+  APIUtil.deleteReview(review)
+    .then(review => dispatch(removeReview(review)))
 );

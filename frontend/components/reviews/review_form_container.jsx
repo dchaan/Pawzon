@@ -8,13 +8,13 @@ const mSTP = (state, ownProps) => ({
     title: "",
     body: "",
     rating: 1,
-    reviewer_id: state.entities.users.id,
+    user_id: state.session.id,
     product_id: ownProps.match.params.productId
   }
 });
 
 const mDTP = dispatch => ({
-  createReview: (review, productId) => dispatch(createReview(review, productId))
+  createReview: (review) => dispatch(createReview(review))
 })
 
 const ReviewFormContainer = withRouter(connect(mSTP, mDTP)(ReviewForm));

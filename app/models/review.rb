@@ -2,30 +2,29 @@
 #
 # Table name: reviews
 #
-#  id          :bigint           not null, primary key
-#  body        :text
-#  rating      :integer          not null
-#  title       :string
-#  created_at  :datetime         not null
-#  updated_at  :datetime         not null
-#  product_id  :integer
-#  reviewer_id :integer          not null
+#  id         :bigint           not null, primary key
+#  body       :text             not null
+#  rating     :integer          not null
+#  title      :string           not null
+#  created_at :datetime         not null
+#  updated_at :datetime         not null
+#  product_id :integer          not null
+#  user_id    :integer          not null
 #
 # Indexes
 #
-#  index_reviews_on_product_id   (product_id) UNIQUE
-#  index_reviews_on_reviewer_id  (reviewer_id) UNIQUE
+#  index_reviews_on_product_id  (product_id)
+#  index_reviews_on_user_id     (user_id)
 #
 class Review < ApplicationRecord
-
-  validates :product_id, :reviewer_id, :rating, presence: true
+  
+  validates :title, :body, :rating, :user_id, :product_id, presence: true
 
   belongs_to :user,
-    foreign_key: :reviewer_id,
+    foreign_key: :user_id,
     class_name: :User
 
   belongs_to :product,
     foreign_key: :product_id,
     class_name: :Product
-  
 end

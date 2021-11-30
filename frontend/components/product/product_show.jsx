@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ReviewForm from "../reviews/review_form";
 import ReviewFormContainer from "../reviews/review_form_container";
 
 class ProductShow extends React.Component {
@@ -9,6 +8,7 @@ class ProductShow extends React.Component {
   }
   
   render() {
+    console.log(this.props);
     const { product } = this.props;
     
     return (
