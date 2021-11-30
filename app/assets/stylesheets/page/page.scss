@@ -25,14 +25,20 @@ background-color: #f2f2f2;
   .footer-links {
     align-items: center;
     display: flex;
-    height: 100px;
-    width: 100px;
-    color: white;
+    justify-content: space-evenly;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    
   }
 
-  .footer-links a {
-    height: 100px;
-    width: 100px;
+  .footer-logo {
+    height: 40px;
+    width: 80px
+  }
+
+  .footer-img {
+    height: 40px;
+    width: 40px;
   }
 
   .footer-description {

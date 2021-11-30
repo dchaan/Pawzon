@@ -27,26 +27,18 @@ class ReviewForm extends React.Component {
   };
 
   render() {
-    
-    console.log(this.props);
     return (
-      
       <div className="reviewForm">
         <form onSubmit={this.handleSubmit}>
-          <h2>Create Review</h2>
-          <br />
-
-          <h3>{this.props.product.product_name}</h3>
-          <br />
-
+          <h3>Create Review</h3>
+          <h4>{this.props.product.product_name}</h4>
           <h4>Overall Rating</h4>
           {/* rating */}
-
           <h4>Add a headline</h4>
           <input className="review-form-headline-input" type="text" value={this.state.title} onChange={this.update("title")} placeholder="What's most important to know?" />
           <h4>Add a written review</h4>
           <textarea className="review-form-body-input" value={this.state.body} onChange={this.update("body")} placeholder="What did you like or dislike? What did you use this product for?" />
-
+          <br/>
           <button className="review-form-submit-btn">Submit</button>
 
         </form>

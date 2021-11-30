@@ -14,7 +14,7 @@ class ProductShow extends React.Component {
     return (
       <div>
         {/* <img src={product.image_url} /> */}
-        <h4>{product.product_name}</h4>
+        <h2>{product.product_name}</h2>
         <br/>
         Description: {product.description}
         <br/>
@@ -22,9 +22,10 @@ class ProductShow extends React.Component {
         <br/>
         Rating: {product.rating}
         <br/>
-        <button><Link to="/products">All Products</Link></button>
-        {/* <ReviewForm /> */}
+        <br />
         <ReviewFormContainer product={product}/>
+        <br/>
+        <button><Link to="/products">All Products</Link></button>
       </div>  
     )
   };

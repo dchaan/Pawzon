@@ -18,7 +18,6 @@ const App = () => (
       <AuthRoute path="/signup" component={SignupContainer} />
       <Route exact path="/products" component={ProductIndexContainer} />
       <Route exact path="/products/:productId" component={ProductShowContainer} />
-      <Route path="/products/:productId/reviews/new" component={ReviewFormContainer} />
       <Route path="/" component={Homepage} />
     </Switch>
     <Footer />
