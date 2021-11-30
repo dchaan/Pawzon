@@ -16,10 +16,10 @@ class ReviewForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.createReview(this.state)
+      .then(() => this.props.history.push(`/products/${this.props.review.product_id}`))
   };
 
   render() {
-    
     return (
       <div className="reviewForm">
         <form onSubmit={this.handleSubmit}>
