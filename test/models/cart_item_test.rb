@@ -1,9 +1,9 @@
 # == Schema Information
 #
-# Table name: carts
+# Table name: cart_items
 #
 #  id         :bigint           not null, primary key
-#  quantity   :integer
+#  quantity   :integer          not null
 #  created_at :datetime         not null
 #  updated_at :datetime         not null
 #  product_id :integer          not null
@@ -11,12 +11,11 @@
 #
 # Indexes
 #
-#  index_carts_on_product_id  (product_id)
-#  index_carts_on_user_id     (user_id)
+#  index_cart_items_on_user_id  (user_id)
 #
 require 'test_helper'
 
-class CartTest < ActiveSupport::TestCase
+class CartItemTest < ActiveSupport::TestCase
   # test "the truth" do
   #   assert true
   # end

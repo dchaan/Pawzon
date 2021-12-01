@@ -5,6 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+User.destroy_all
+Product.destroy_all
+
+ActiveRecord::Base.connection.reset_pk_sequence!('users')
+ActiveRecord::Base.connection.reset_pk_sequence!('products')
+
+
+user1 = User.create!(
+  email: "demo@demo.com",
+  password: "password",
+  first_name: "Demo",
+  last_name: "User"
+)
 
 # 1. Dog Beds
 product1 = Product.create!(
@@ -202,14 +215,4 @@ product15 = Product.create!(
   category_id: 5,
   rating: 4,
   image_url: "https://m.media-amazon.com/images/I/71Ks+Gy4XvL._AC_SL1500_.jpg"
-)
-
-# REVIEWS
-
-review1 = Review.create!(
-  title: "My doggo loves it!",
-  body: "Bed is super soft and my dog sleeps like a baby in it",
-  rating: 4.5,
-  user_id: 5,
-  product_id: 1
 )

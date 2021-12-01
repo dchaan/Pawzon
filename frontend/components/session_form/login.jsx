@@ -38,10 +38,9 @@ class Login extends React.Component {
   loginDemo(e) {
     e.preventDefault();
     const demoUser = {
-      email: "demo@gmail.com",
+      email: "demo@demo.com",
       password: "password"
     };
-    this.setState(demoUser);
     this.props.login(demoUser);
   };
 
@@ -51,16 +50,16 @@ class Login extends React.Component {
         <h3>Log In!</h3>
         <form onSubmit={this.handleSubmit}>
           <label>Email
-            <input type="text" value={this.state.email} onChange={this.update("email")}/>
+            <input type="text" placeholder="Email" value={this.state.email} onChange={this.update("email")}/>
           </label>
           <br/>
           <label>Password
-            <input type="password" value={this.state.password} onChange={this.update("password")}/>
+            <input type="password" placeholder="Password" value={this.state.password} onChange={this.update("password")}/>
           </label>
           <br/>
           {this.renderErrors()}
           <button>Sign In</button>
-          <button className="login-demo" onClick={this.loginDemo}>Demo User</button>
+          <button className="login-demo" onClick={e => this.loginDemo(e)}>Demo User</button>
         </form>
         <br/>
         <Link className="login-signup-btn" to="/signup">Create your Petzon account!</Link>
