@@ -1,20 +1,20 @@
 export const fetchReviews = productId => (
   $.ajax({
-    method: 'GET',
+    method: "GET",
     url: `api/products/${productId}/reviews`
   })
 );
 
 export const fetchReview = (reviewId, productId) => (
   $.ajax({
-    method: 'GET',
+    method: "GET",
     url: `api/products/${productId}/reviews/${reviewId}`
   })
 );
 
 export const createReview = (review, productId) => (
   $.ajax({
-    method: 'POST',
+    method: "POST",
     url: `api/products/${productId}/reviews`,
     data: { review }
   })
@@ -22,7 +22,7 @@ export const createReview = (review, productId) => (
 
 export const updateReview = review => (
   $.ajax({
-    method: 'PATCH',
+    method: "PATCH",
     url: `api/reviews/${review.id}`,
     data: { review }
   })
@@ -30,7 +30,7 @@ export const updateReview = review => (
 
 export const deleteReview = reviewId => (
   $.ajax({
-    method: 'DELETE',
+    method: "DELETE",
     url: `api/reviews/${reviewId}`
   })
 );
