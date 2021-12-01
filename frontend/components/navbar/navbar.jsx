@@ -25,8 +25,32 @@ class Navbar extends React.Component {
     
     return (
       <div className="navbar">
-        <Link to="/" className="header-img"><img src="images/pawzon.png"/></Link>
+
+        <div className="nav-header-logo"><Link to="/"><img src="images/pawzon.png" className="nav-logo" /></Link></div>
+
+        <div className="nav-location">
+          <img src="images/location.png" className="nav-location-img"/>
+          <div className="nav-deliver-to">
+            <div className="nav-deliver-to-user">Deliver to {this.props.currentUser ? this.props.currentUser.first_name : ""}</div>
+            <div className="nav-deliver-to-city">Pacifica 94044</div>
+          </div>
+        </div>
+
+        <div className="nav-returns-orders">
+          <div clasName="nav-returns">Returns</div>
+          <div className="nav-orders">& Orders</div>
+        </div>
+
+        <div className="nav-flag">
+          <img src="images/flag.png" className="nav-flag-img" />
+        </div>
+
         {profile}
+
+        <div className="nav-cart">
+          <img src="images/cart.png" className="nav-cart-img" />
+          <div className="nav-cart-word">Cart</div>
+        </div>
       </div>
     )
   }

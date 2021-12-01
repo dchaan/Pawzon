@@ -1,10 +1,12 @@
-import { RECEIVE_CART, REMOVE_CART } from "../actions/cart_actions";
+import { RECEIVE_CART, RECEIVE_CARTS, REMOVE_CART } from "../actions/cart_actions";
 
 const cartReducer = (state = {}, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state);
 
   switch(action.type) {
+    case RECEIVE_CARTS:
+      return action.carts;
     case RECEIVE_CART:
       nextState[action.cart.id] = action.cart;
       return nextState;

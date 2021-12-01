@@ -1,1 +1,1 @@
-json.extract! @cart, :id, :user_id
+json.partial! 'api/carts/cart', cart: @cart
