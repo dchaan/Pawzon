@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReviewFormContainer from "../reviews/review_form_container";
+import ReviewIndexContainer from "../reviews/review_index_container";
 
 class ProductShow extends React.Component {
   constructor(props) {
@@ -23,7 +24,9 @@ class ProductShow extends React.Component {
         Rating: {product.rating}
         <br/>
         <br />
-        <ReviewFormContainer product={product}/>
+        <button className="product-new-review-btn"><Link to={`/products/${product.id}/reviews/new`}>Write a customer review</Link></button>
+        <ReviewIndexContainer product={this.props.product} />
+        {/* <ReviewFormContainer product={product}/> */}
         <br/>
         <button><Link to="/products">All Products</Link></button>
       </div>  

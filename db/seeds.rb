@@ -203,3 +203,13 @@ product15 = Product.create!(
   rating: 4,
   image_url: "https://m.media-amazon.com/images/I/71Ks+Gy4XvL._AC_SL1500_.jpg"
 )
+
+# REVIEWS
+
+review1 = Review.create!(
+  title: "My doggo loves it!",
+  body: "Bed is super soft and my dog sleeps like a baby in it",
+  rating: 4.5,
+  user_id: 5,
+  product_id: 1
+)

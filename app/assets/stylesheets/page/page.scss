@@ -1,4 +1,5 @@
 body {
+  background-color: #f2f2f2;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   margin: 0px;
@@ -17,7 +18,7 @@ body {
 
 .nav-logo {
   height: 70px;
-  width: 140px;
+  width: 150px;
   margin-left: 20px;
 }
 
@@ -28,7 +29,7 @@ body {
 }
 
 .nav-deliver-to-user {
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .nav-location-img {
@@ -39,7 +40,7 @@ body {
 }
 
 .nav-deliver-to-city {
-  font-size: 17px;
+  font-size: 16px;
   font-weight: bolder;
 }
 
@@ -57,12 +58,12 @@ body {
 
 .nav-returns-orders {
   width: 80px;
-  font-size: 16px;
+  font-size: 15px;
 }
 
 .nav-orders {
   font-weight: bolder;
-  font-size: 17px;
+  font-size: 16px;
 }
 
 .nav-cart {
@@ -73,18 +74,18 @@ body {
 }
 
 .nav-cart-img {
-  width: 40px;
+  width: 35px;
 }
 
 .nav-cart-word {
-  font-size: 18px;
+  font-size: 17px;
   font-weight: bolder;
 }
 
 .nav-categories {
   background-color: #232F3E;
   color: white;
-  font-size: 16px;
+  font-size: 15px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -96,18 +97,14 @@ body {
   background-color: #f2f2f2;
 }
 
-.list-items ul {
-background-color: #f2f2f2;
-}
-
 .footer {
   background-color: #131A22;
   color: white;
   display: flex;
-  position: fixed;
   width: 100%;
   flex-direction: column;
   bottom: 0px;
+  padding-top: 0px;
   }
 
   .footer-back-to-top {
@@ -115,6 +112,7 @@ background-color: #f2f2f2;
     display: flex;
     font-size: 15px;
     height: 50px;
+    top: 0px;
     justify-content: center;
     align-items: center;
   }
@@ -154,6 +152,82 @@ background-color: #f2f2f2;
     align-items: center;
     justify-content: center;
     text-align: center;
-    padding: 15px;
+    padding: 10px;
   }
 
+  .review-helpful-btn {
+    background-color: transparent;
+    border: 0;
+    border-radius: 10px;
+    box-shadow: 0px 2px 4px grey;
+    z-index: 20;
+  }
+
+.review-form {
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 50px;
+  padding-bottom: 50px;
+  align-items: center;
+  justify-content: center;
+}
+
+.review-form-title {
+  font-size: 25px;
+  padding-bottom: 50px;
+}
+
+.review-form-overall-rating {
+  font-size: 20px;
+  padding-bottom: 15px;
+}
+
+.review-form-headline {
+  padding-bottom: 30px;
+}
+
+.review-form-add-headline {
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+
+.review-form-headline-input {
+  width: 90%;
+  height: 30px;
+  font-size: 15px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 0px 1px 2px grey;
+  border-color: grey;
+}
+
+.review-form-body {
+  padding-bottom: 15px;
+}
+
+.review-form-add-body {
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+
+.review-form-body-input {
+  width: 90%;
+  height: 70px;
+  font-size: 15px;
+  padding: 5px;
+  border: 1px solid black;
+  border-radius: 5px;
+  font-family: inherit;
+  box-shadow: 0px 1px 2px grey;
+  border-color: grey;
+}
+
+.review-form-submit-btn {
+  background-color: #FFD814;
+  box-shadow: 0px 1px 2px grey;
+  border: 0px;
+  border-radius: 5px;
+  padding: 5px;
+}

@@ -2,7 +2,8 @@ class Api::ReviewsController < ApplicationController
   before_action :require_logged_in
 
   def index
-    @reviews = @Review.all
+    @product = Product.find(params[:product_id])
+    @reviews = @product.reviews
     render :index
   end
 
@@ -12,8 +13,9 @@ class Api::ReviewsController < ApplicationController
   end
 
   def create
+    # @product = Product.find(params[:product_id])
     @review = Review.new(review_params)
-    if @review.save
+    if logged_in? && @review.save
       render :show
     else
       render json: ['Cannot create review'], status: 422

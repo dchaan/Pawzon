@@ -11,7 +11,7 @@ const reviewsReducer = (state = {}, action) => {
       nextState[action.review.id] = action.review;
       return nextState;
     case REMOVE_REVIEW:
-      delete nextState[action.review.id];
+      delete nextState[action.reviewId];
       return nextState;
     default:
       return state;

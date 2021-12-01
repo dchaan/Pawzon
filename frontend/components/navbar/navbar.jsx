@@ -35,7 +35,7 @@ class Navbar extends React.Component {
             </div>
           </div>
           <div className="nav-returns-orders">
-            <div clasName="nav-returns">Returns</div>
+            <div className="nav-returns">Returns</div>
             <div className="nav-orders">& Orders</div>
           </div>
           <div className="nav-flag">
@@ -49,7 +49,7 @@ class Navbar extends React.Component {
         </div>
 
         <div className="nav-categories">
-          <div clasName="nav-all">All</div>
+          <div className="nav-all">All</div>
           <div className="nav-beds">Beds</div>
           <div className="nav-food">Food</div>
           <div className="nav-toys">Toys</div>

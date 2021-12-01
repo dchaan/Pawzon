@@ -12,10 +12,11 @@ Rails.application.routes.draw do
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   namespace :api, defaults: {format: :json} do
     resources :users, only: [:create]
-    resources :products, only: [:index, :show] 
-    resources :reviews, only: [:index, :show, :create, :update, :destroy]
+    resources :products, only: [:index, :show] do
+      resources :reviews, only: [:index, :show, :create]
+    end
+    resources :reviews, only: [:update, :destroy]
     resources :carts, only: [:index, :show, :create, :update, :destroy]
-    resources :orders, only: [:index, :show, :create, :update, :destroy]
     resource :session, only: [:create, :destroy]
   end
   
