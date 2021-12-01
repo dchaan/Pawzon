@@ -33,6 +33,10 @@ class Navbar extends React.Component {
               <div className="nav-deliver-to-user">Deliver to {this.props.currentUser ? this.props.currentUser.first_name : ""}</div>
               <div className="nav-deliver-to-city">Pacifica 94044</div>
             </div>
+
+            {/* <div className="nav-search">
+              <input className="nav-searchbar"/>
+            </div> */}
           </div>
           <div className="nav-returns-orders">
             <div className="nav-returns">Returns</div>
