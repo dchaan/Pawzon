@@ -24,32 +24,37 @@ class Navbar extends React.Component {
     )
     
     return (
-      <div className="navbar">
-
-        <div className="nav-header-logo"><Link to="/"><img src="images/pawzon.png" className="nav-logo" /></Link></div>
-
-        <div className="nav-location">
-          <img src="images/location.png" className="nav-location-img"/>
-          <div className="nav-deliver-to">
-            <div className="nav-deliver-to-user">Deliver to {this.props.currentUser ? this.props.currentUser.first_name : ""}</div>
-            <div className="nav-deliver-to-city">Pacifica 94044</div>
+      <div className="nav">
+        <div className="navbar">
+          <div className="nav-header-logo"><Link to="/"><img src="images/pawzon.png" className="nav-logo" /></Link></div>
+          <div className="nav-location">
+            <img src="images/location.png" className="nav-location-img"/>
+            <div className="nav-deliver-to">
+              <div className="nav-deliver-to-user">Deliver to {this.props.currentUser ? this.props.currentUser.first_name : ""}</div>
+              <div className="nav-deliver-to-city">Pacifica 94044</div>
+            </div>
+          </div>
+          <div className="nav-returns-orders">
+            <div clasName="nav-returns">Returns</div>
+            <div className="nav-orders">& Orders</div>
+          </div>
+          <div className="nav-flag">
+            <img src="images/flag.png" className="nav-flag-img" />
+          </div>
+          {profile}
+          <div className="nav-cart">
+            <img src="images/cart.png" className="nav-cart-img" />
+            <div className="nav-cart-word">Cart</div>
           </div>
         </div>
 
-        <div className="nav-returns-orders">
-          <div clasName="nav-returns">Returns</div>
-          <div className="nav-orders">& Orders</div>
-        </div>
-
-        <div className="nav-flag">
-          <img src="images/flag.png" className="nav-flag-img" />
-        </div>
-
-        {profile}
-
-        <div className="nav-cart">
-          <img src="images/cart.png" className="nav-cart-img" />
-          <div className="nav-cart-word">Cart</div>
+        <div className="nav-categories">
+          <div clasName="nav-all">All</div>
+          <div className="nav-beds">Beds</div>
+          <div className="nav-food">Food</div>
+          <div className="nav-toys">Toys</div>
+          <div className="nav-treats">Treats</div>
+          <div className="nav-walking">Walking</div>
         </div>
       </div>
     )

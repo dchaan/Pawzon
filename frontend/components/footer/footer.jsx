@@ -3,8 +3,13 @@ import { Link } from "react-router-dom";
 
 const Footer = () => (
   <div className="footer">
+
+    <div className="footer-back-to-top">
+      Back to top
+    </div>
+
     <div className="footer-links">
-      <Link to="/"><img src="images/pawzon.png" className="footer-logo"/></Link>
+      <Link to="/"><img src="images/pawzon-footer.png" className="footer-logo"/></Link>
       <a href="https://github.com/dchaan">
         <img src="/images/github.png" className="footer-img"/>
       </a>
@@ -12,6 +17,7 @@ const Footer = () => (
         <img src="/images/linkedin.png" className="footer-img"/>
       </a>
     </div>
+
     <div className="footer-description">
       Pawzon is a clone of Amazon.
       <br/>
