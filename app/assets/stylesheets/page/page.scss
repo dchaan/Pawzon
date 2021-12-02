@@ -77,6 +77,34 @@ body {
 .signup-link {
   text-decoration: none;
   color: white;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.nav-name {
+  padding: 5px;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.nav-login {
+  width: 200px;
+  display: flex;
+}
+
+.nav-logout-btn {
+  background-color: transparent;
+  border: 0px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+
+}
+
+.nav-or {
+  padding-left: 5px;
+  padding-right: 5px;
 }
 
 .nav-returns-orders {
@@ -320,6 +348,11 @@ body {
     box-shadow: 0px 2px 4px grey;
     padding: 5px;
     border: 0px;
+  }
+
+  .product-add-to-cart:hover,
+  .product-buy-now:hover {
+    cursor: pointer;
   }
 
   .atc, 

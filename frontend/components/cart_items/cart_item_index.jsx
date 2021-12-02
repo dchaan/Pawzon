@@ -61,16 +61,17 @@ class CartItemIndex extends React.Component {
         </div>
 
         <div className="cart-subtotal-container">
-          <div clasName="cart-subtotal-title">Subtotal ({totalItems} item(s)): </div>
+          <div className="cart-subtotal-title">Subtotal ({totalItems} item(s)): </div>
           <div className="cart-subtotal">${subtotal}</div>
         </div>
 
         <div className="cart-checkout-container">
           <div className="cart-checkout-subtotal-title">Subtotal ({totalItems} item(s)): </div>
           <div className="cart-checkout-subtotal">${subtotal}</div>
-          <label for="cart-checkout-gift">
-            <input type="checkbox" id="accept">This order contains a gift</input>
+          <label htmlFor="cart-checkout-gift">This order contains a gift
+            <input type="checkbox" className="accept"></input>
           </label>
+          
           <button className="cart-checkout-btn" onClick={this.handleCheckout}>Proceed to checkout</button>
         </div>
       </div>

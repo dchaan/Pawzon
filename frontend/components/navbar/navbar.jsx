@@ -11,15 +11,14 @@ class Navbar extends React.Component {
     const { currentUser, login, logout, signup } = this.props;
     let profile = currentUser ? (
       <div>
-        <h4>Hello, {currentUser.first_name}</h4>
-        <button onClick={logout}>Logout</button>
+        <div className="nav-name">{currentUser.first_name}</div>
+        <button className="nav-logout-btn" onClick={logout}>Logout</button>
       </div>
     ) : (
-      <div>
-          <Link to="/login"><div className="login-link">Log In!</div></Link>
-        <br/>
-          <Link to="/signup"><div className="signup-link">Sign Up!</div></Link>
-        <br/>
+      <div className="nav-login">
+        <Link to="/login"><div className="login-link">Log In </div></Link> 
+        <div className="nav-or"> or </div>
+        <Link to="/signup"><div className="signup-link"> Sign Up</div></Link>
       </div>
     )
     
@@ -38,16 +37,17 @@ class Navbar extends React.Component {
               <input className="nav-searchbar"/>
             </div> */}
           </div>
-          <div className="nav-returns-orders">
-            <div className="nav-returns">Returns</div>
-            <div className="nav-orders">& Orders</div>
-          </div>
+          
           <div className="nav-flag">
             <img src="images/flag.png" className="nav-flag-img" />
           </div>
           <div>
-            Hello
+            Hello,
             {profile}
+          </div>
+          <div className="nav-returns-orders">
+            <div className="nav-returns">Returns</div>
+            <div className="nav-orders">& Orders</div>
           </div>
           <div className="nav-cart">
             <Link className="nav-cart-link" to="/cart"><img src="images/cart.png" className="nav-cart-img" /></Link>

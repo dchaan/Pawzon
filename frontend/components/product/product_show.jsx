@@ -14,9 +14,9 @@ class ProductShow extends React.Component {
     this.handleAddToCart = this.handleAddToCart.bind(this);
   }
 
-  // componentDidMount() {
-  //   this.props.fetchProduct(this.props.match.params.productId);
-  // }
+  componentDidMount() {
+    this.props.fetchProduct(this.props.match.params.productId)
+  }
 
   handleQuantity(e) {
     e.preventDefault();
@@ -26,23 +26,23 @@ class ProductShow extends React.Component {
   handleAddToCart(e) {
     e.preventDefault;
     if (!this.props.user) {
-      () => this.props.history.push("/login");
+      this.props.history.push("/login");
     } else {
       const productId = this.props.product.id;
-      const cartItems = this.props.cartItems;
-      const cartItem = Object.assign({}, this.state, {
+      const cart_item = {
         product_id: productId,
         user_id: this.props.user,
-        // quantitY: this.state.quantity
-      });
-      this.props.createCartItem(cartItem).then(() => this.props.history.push("/cart"));
+        quantity: this.state.quantity
+      };
+      this.props.createCartItem(cart_item)
+      this.props.history.push("/cart");
     }
   }
   
   render() {
     console.log(this.props);
     const { product } = this.props;
-    
+    if (!product) return null;
     return (
       <div className="product-container">
         {/* <img src={product.image_url} /> */}
@@ -61,7 +61,7 @@ class ProductShow extends React.Component {
           <img className="prime-checkout" src="images/prime.png"/> <div className="product-checkout-free-returns">& FREE Returns</div>
           <div className="product-checkout-free-delivery">FREE Delivery</div>
           <div className="product-checkout-delivery"><img className="product-checkout-location-img" src="images/product-location.png"/> Deliver to {this.props.currentUser ? this.props.currentUser.first_name : null} - Pacifica 94044</div>
-          <form className="product-checkout-form" onSubmit={this.handleAddToCart}>
+          <form className="product-checkout-form">
             <label className="product-quantity" htmlFor="qty">
               <select id="qty" onChange={this.handleQuantity} value={this.state.quantity}>
                 <option value={1}>1</option>
@@ -72,7 +72,7 @@ class ProductShow extends React.Component {
               </select>
             </label>
             <br/>
-            <div className="atc"><button className="product-add-to-cart" type="submit">Add to Cart</button></div>
+            <div className="atc"><button className="product-add-to-cart" onClick={this.handleAddToCart}>Add to Cart</button></div>
           </form>
           <div className="buy-now"><button className="product-buy-now">Buy Now</button></div>
           <div className="product-ship-and-sold-by">Ships & sold from Pawzon.com</div>
