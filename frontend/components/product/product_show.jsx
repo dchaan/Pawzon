@@ -49,6 +49,7 @@ class ProductShow extends React.Component {
         <div className="product-about">
           <div className="product-name">{product.product_name}</div>
           <div className="product-rating">Rating: {product.rating}</div>
+          <div className="product-desc-title">About this item</div>
           <div className="product-description">{product.description}</div>
           <div className="product-price">Price: ${product.price} <img className="prime" src="images/prime.png" /></div>
           <div className="product-free-returns">& FREE Returns</div>
@@ -80,7 +81,7 @@ class ProductShow extends React.Component {
         <div className="write-review-container">
           <div className="review-this-product">Review this product</div>
           <div className="share-your-thoughts">Share your thoughts with other customers</div>
-          <button className="product-new-review-btn"><Link to={`/products/${product.id}/reviews/new`}>Write a customer review</Link></button>
+          <button className="product-new-review-btn"><Link to={`/products/${product.id}/reviews/new`}><div className="review-btn-txt">Write a customer review</div></Link></button>
         </div>
 
         <br />

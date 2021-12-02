@@ -51,6 +51,7 @@ body {
 
 .nav-search{
   display: flex;
+  padding: 10px;
 }
 
 .nav-searchbar {
@@ -63,11 +64,19 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  display: flex;
 }
 
 .nav-flag-img {
   width: 60px;
   height: 60px;
+  display: flex;
+}
+
+.login-link,
+.signup-link {
+  text-decoration: none;
+  color: white;
 }
 
 .nav-returns-orders {
@@ -106,6 +115,20 @@ body {
   align-items: center;
   width: 100%;
   height: 35px;
+  text-decoration: none;
+}
+
+.nav-beds,
+.nav-food,
+.nav-toys,
+.nav-treats,
+.nav-walking {
+  cursor: pointer;
+}
+
+.nav-all {
+  text-decoration: none;
+  color: white;
 }
 
 .list-items {
@@ -185,7 +208,7 @@ body {
 
   .product-name {
     display: flex;
-    font-size: 22px;
+    font-size: 24px;
     font-weight: 600;
     padding: 10px;
   }
@@ -194,8 +217,15 @@ body {
     padding: 10px;
   }
 
+  .product-desc-title {
+    font-weight: bold;
+    font-size: 18px;
+    padding: 10px;
+  }
+
   .product-description {
-    font-size: 16px;
+    font-size: 18px;
+    padding: 10px;
   }
 
   .product-price {
@@ -212,6 +242,7 @@ body {
   .product-free-returns {
     color: #007185;
     font-size: 18px;
+    padding-left: 10px;
   }
 
   .product-checkout {
@@ -223,6 +254,7 @@ body {
     padding: 20px;
     justify-content: center;
     align-items: center;
+    box-shadow: 0px 1px 2px grey;
   }
 
   .product-checkout-price {
@@ -300,16 +332,49 @@ body {
     justify-content: center;
   }
 
+  .write-review-container {
+    padding: 20px;
+    width: 25%;
+    border-bottom: 1px solid grey;
+
+  }
+
+  .review-this-product {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .share-your-thoughts {
+    padding: 10px;
+    padding-bottom: 20px;
+    font-size: 16px;
+  }
+
+  .product-new-review-btn {
+    width: 100%;
+    border-radius: 10px;
+    border: 0px;    
+    box-shadow: 0px 2px 4px grey;
+    text-decoration: none;
+    padding: 10px;
+  }
+
+  .review-btn-txt {
+    text-decoration: none;
+    color: black;
+  }
+
   .review-helpful-btn {
     background-color: transparent;
     border: 0;
     border-radius: 10px;
     box-shadow: 0px 2px 4px grey;
     z-index: 20;
-    
   }
 
-  
 .review-form {
   width: 50%;
   margin-left: auto;

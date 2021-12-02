@@ -16,9 +16,9 @@ class Navbar extends React.Component {
       </div>
     ) : (
       <div>
-        <button><Link to="/login">Log In!</Link></button>
+          <Link to="/login"><div className="login-link">Log In!</div></Link>
         <br/>
-        <button><Link to="/signup">Sign Up!</Link></button>
+          <Link to="/signup"><div className="signup-link">Sign Up!</div></Link>
         <br/>
       </div>
     )
@@ -45,7 +45,10 @@ class Navbar extends React.Component {
           <div className="nav-flag">
             <img src="images/flag.png" className="nav-flag-img" />
           </div>
-          {profile}
+          <div>
+            Hello
+            {profile}
+          </div>
           <div className="nav-cart">
             <Link className="nav-cart-link" to="/cart"><img src="images/cart.png" className="nav-cart-img" /></Link>
             <div className="nav-cart-word">Cart</div>
@@ -53,7 +56,7 @@ class Navbar extends React.Component {
         </div>
 
         <div className="nav-categories">
-          <div className="nav-all"><Link to="/products">All</Link></div>
+          <Link to="/products"><div className="nav-all">All</div></Link>
           <div className="nav-beds">Beds</div>
           <div className="nav-food">Food</div>
           <div className="nav-toys">Toys</div>
