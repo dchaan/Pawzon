@@ -25,19 +25,6 @@ class CartItemIndex extends React.Component {
 
   render() {
     const { fetchCartItems, updateCartItem, deleteCartItem } = this.props;
-    // if (!this.props.cartItems) return (
-    //   <div className="cart-empty">Your Pawzon cart is empty.</div>
-    // )
-
-    const subtotal = 0;
-    this.props.cartItems.forEach(cartItem => {
-      subtotal += cartItem.quantity * cartItem.price;
-    });
-
-    const totalItems = 0
-    this.props.cartItems.forEach(cartItem => {
-      totalItems += cartItem.quantity;
-    })
 
     return (
       <div className="cart-container">
@@ -46,6 +33,7 @@ class CartItemIndex extends React.Component {
         <div className="cart-items">
           <div className="cart-price">Price</div>
           { (this.props.cartItems.length === 0) ? 
+            <div className="cart-empty">Your Pawzon cart is empty.</div> :
             this.props.cartItems.map(cartItem => (
               <CartItemIndexItem
                 key={cartItem.id}
@@ -54,20 +42,19 @@ class CartItemIndex extends React.Component {
                 updateCartItem={updateCartItem}
                 deleteCartItem={deleteCartItem}
               />
-              )   
-            ) : 
-            <div className="cart-empty">Your Pawzon cart is empty.</div>
+            )
+            )
           }
         </div>
 
         <div className="cart-subtotal-container">
-          <div className="cart-subtotal-title">Subtotal ({totalItems} item(s)): </div>
-          <div className="cart-subtotal">${subtotal}</div>
+          {/* <div className="cart-subtotal-title">Subtotal ({totalItems} item(s)): </div> */}
+          {/* <div className="cart-subtotal">${subtotal}</div> */}
         </div>
 
         <div className="cart-checkout-container">
-          <div className="cart-checkout-subtotal-title">Subtotal ({totalItems} item(s)): </div>
-          <div className="cart-checkout-subtotal">${subtotal}</div>
+          {/* <div className="cart-checkout-subtotal-title">Subtotal ({totalItems} item(s)): </div> */}
+          {/* <div className="cart-checkout-subtotal">${subtotal}</div> */}
           <label htmlFor="cart-checkout-gift">This order contains a gift
             <input type="checkbox" className="accept"></input>
           </label>

@@ -40,7 +40,6 @@ class ProductShow extends React.Component {
   }
   
   render() {
-    console.log(this.props);
     const { product } = this.props;
     if (!product) return null;
     return (
