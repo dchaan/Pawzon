@@ -60,6 +60,7 @@ class ProductShow extends React.Component {
           <img className="prime-checkout" src="images/prime.png"/> <div className="product-checkout-free-returns">& FREE Returns</div>
           <div className="product-checkout-free-delivery">FREE Delivery</div>
           <div className="product-checkout-delivery"><img className="product-checkout-location-img" src="images/product-location.png"/> Deliver to {this.props.currentUser ? this.props.currentUser.first_name : null} - Pacifica 94044</div>
+          <div className="product-stock">In Stock.</div>
           <form className="product-checkout-form">
             <label className="product-quantity" htmlFor="qty">
               <select id="qty" onChange={this.handleQuantity} value={this.state.quantity}>

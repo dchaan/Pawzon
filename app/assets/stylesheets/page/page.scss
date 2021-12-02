@@ -1,6 +1,7 @@
 html {
   overflow-y: scroll;
   overflow-x: hidden;
+  height: 100%
 }
 
 body {
@@ -9,6 +10,7 @@ body {
   font-size: 14px;
   margin: 0px;
   overflow-y: scroll;
+  height: 100%;
 }
 
 .navbar {
@@ -320,6 +322,12 @@ body {
     color: #007185;
     font-size: 12px;
     padding-bottom: 10px;
+  }
+
+  .product-stock {
+    font-size: 18px;
+    color: #007600;
+    padding: 10px;
   }
 
   #qty {

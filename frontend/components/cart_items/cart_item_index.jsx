@@ -13,10 +13,10 @@ class CartItemIndex extends React.Component {
     this.props.fetchCartItems();
   }
 
-  handleCheckout() {
+  handleCheckout(e) {
     e.preventDefault();
     this.props.cartItems.forEach(cartItem => {
-      this.props.deleteCartItem(cartItem.id)
+      this.props.deleteCartItem(cartItem)
     });
     this.setState({ checkout: <div className="checkout-msg">Thank you for your order.</div>})
   }
@@ -25,6 +25,16 @@ class CartItemIndex extends React.Component {
 
   render() {
     const { fetchCartItems, updateCartItem, deleteCartItem } = this.props;
+
+    let subtotal = 0;
+    this.props.cartItems.forEach(cartItem => {
+      subtotal += cartItem.price * cartItem.quantity
+    });
+
+    let totalItems = 0;
+    this.props.cartItems.forEach(cartItem => {
+      totalItems += cartItem.quantity
+    });
 
     return (
       <div className="cart-container">
@@ -42,24 +52,18 @@ class CartItemIndex extends React.Component {
                 updateCartItem={updateCartItem}
                 deleteCartItem={deleteCartItem}
               />
-            )
+              )
             )
           }
         </div>
 
         <div className="cart-subtotal-container">
-          {/* <div className="cart-subtotal-title">Subtotal ({totalItems} item(s)): </div> */}
-          {/* <div className="cart-subtotal">${subtotal}</div> */}
+          <div className="cart-subtotal">Subtotal ({totalItems} item(s)): <b>${subtotal}</b></div>
         </div>
 
         <div className="cart-checkout-container">
-          {/* <div className="cart-checkout-subtotal-title">Subtotal ({totalItems} item(s)): </div> */}
-          {/* <div className="cart-checkout-subtotal">${subtotal}</div> */}
-          <label htmlFor="cart-checkout-gift">This order contains a gift
-            <input type="checkbox" className="accept"></input>
-          </label>
-          
-          <button className="cart-checkout-btn" onClick={this.handleCheckout}>Proceed to checkout</button>
+          <div className="cart-checkout-subtotal">Subtotal ({totalItems} item(s)): <b>${subtotal}</b></div>
+          <button className="cart-checkout-btn" onClick={e => this.handleCheckout(e)}>Proceed to checkout</button>
         </div>
       </div>
     )

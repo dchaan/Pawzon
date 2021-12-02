@@ -30,7 +30,6 @@ class CartItemIndexItem extends React.Component {
   }
 
   render() {
-    console.log(this.props);
     const { product_name, product_id, quantity, price } = this.props.cartItem;
     const total = this.state.quantity * price;
 
@@ -38,6 +37,16 @@ class CartItemIndexItem extends React.Component {
       <div className="cart-item-container">
         <Link className="cart-item-title" to={`/products/${product_id}`}>{product_name}</Link>
         <div className="cart-item-stock">In stock</div>
+
+        <div className="cart-item-ship-return">
+          <div className="cart-item-shipping">Eligible for FREE Shipping & </div>
+          <div className="cart-item-returns">FREE Returns</div>
+        </div>
+
+        <label className="cart-item-gift">This is a gift
+          <input type="checkbox"></input>
+        </label>
+
         <div className="cart-item-quantity">
           <select type="submit" value={quantity} name="Qty" onChange={e => this.handleQuantity(e)}>
             <option value={1}>1</option>
@@ -48,13 +57,10 @@ class CartItemIndexItem extends React.Component {
           </select>
         </div>
 
-        <label className="cart-item-gift">This is a gift
-          <input type="checkbox"></input>
-        </label>
         <button className="cart-item-delete" type="submit" onClick={this.handleDeleteItem}>Delete</button>
         <button className="cart-item-save-for-later">Save for Later</button>
         
-        <div className="cart-item-subtotal">${total}</div>
+        <div className="cart-item-subtotal"><b>${total}</b></div>
       </div>
     )
   }
