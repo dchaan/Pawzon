@@ -1,8 +1,14 @@
+html {
+  overflow-y: scroll;
+  overflow-x: hidden;
+}
+
 body {
   background-color: #f2f2f2;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   margin: 0px;
+  overflow-y: scroll;
 }
 
 .navbar {
@@ -112,7 +118,6 @@ body {
   display: flex;
   width: 100%;
   flex-direction: column;
-  position: fixed;
   bottom: 0px;
   padding-top: 0px;
   }
@@ -163,14 +168,148 @@ body {
     padding: 10px;
   }
 
+  .product-container {
+    display: flex;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    justify-content: center;
+    flex-direction: column;
+  }
+
+  .product-about {
+    display: inline;
+    padding: 20px;
+    width: 35%;
+    border: 1px solid white;
+  }
+
+  .product-name {
+    display: flex;
+    font-size: 22px;
+    font-weight: 600;
+    padding: 10px;
+  }
+
+  .product-rating {
+    padding: 10px;
+  }
+
+  .product-description {
+    font-size: 16px;
+  }
+
+  .product-price {
+    color: #B12704;
+    font-size: 19px;
+    padding: 10px;
+    justify-content: right;
+  }
+
+  .prime {
+    height: 18px;
+  }
+
+  .product-free-returns {
+    color: #007185;
+    font-size: 18px;
+  }
+
+  .product-checkout {
+    display: inline;
+    border-radius: 5px;
+    border: 1px solid grey;
+    background-color: transparent;
+    width: 20%;
+    padding: 20px;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .product-checkout-price {
+    color: #B12704;
+    font-size: 15px;
+    padding-bottom: 10px;
+  }
+
+  .prime-checkout {
+    height: 15px;
+    padding-top: 5px;
+    padding-bottom: 3px;
+  }
+
+  .product-checkout-free-returns {
+    color: #007185;
+    font-size: 15px;
+  }
+
+  .product-checkout-free-delivery {
+    padding: 10px;
+  }
+
+  .product-checkout-delivery {
+    color: #007185;
+    font-size: 14px;
+    padding-top: 10px;
+  }
+
+  .product-checkout-location-img {
+    height: 15px;
+  }
+
+  .product-checkout-delivery {
+    color: #007185;
+    font-size: 12px;
+    padding-bottom: 10px;
+  }
+
+  #qty {
+    border-radius: 5px;
+    background-color: #F0F2F2;
+    border: 1px solid #D5D9D9;
+    box-shadow: 0px 1px 2px grey;
+    padding: 2px;
+  }
+
+  .product-add-to-cart {
+    width: 80%;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #FFD814;
+    box-shadow: 0px 2px 4px grey;
+    padding: 5px;
+    border: 0px;
+  }
+
+  .product-buy-now {
+    width: 80%;
+    height: 35px;
+    border-radius: 10px;
+    background-color: #FF9900;
+    box-shadow: 0px 2px 4px grey;
+    padding: 5px;
+    border: 0px;
+  }
+
+  .atc, 
+  .buy-now {
+    padding-top: 5px
+  }
+
+  .product-ship-and-sold-by {
+    padding-top: 20px;
+    justify-content: center;
+  }
+
   .review-helpful-btn {
     background-color: transparent;
     border: 0;
     border-radius: 10px;
     box-shadow: 0px 2px 4px grey;
     z-index: 20;
+    
   }
 
+  
 .review-form {
   width: 50%;
   margin-left: auto;
@@ -179,6 +318,7 @@ body {
   padding-bottom: 50px;
   align-items: center;
   justify-content: center;
+  
 }
 
 .review-form-title {

@@ -47,13 +47,13 @@ class Navbar extends React.Component {
           </div>
           {profile}
           <div className="nav-cart">
-            <img src="images/cart.png" className="nav-cart-img" />
+            <Link className="nav-cart-link" to="/cart"><img src="images/cart.png" className="nav-cart-img" /></Link>
             <div className="nav-cart-word">Cart</div>
           </div>
         </div>
 
         <div className="nav-categories">
-          <div className="nav-all">All</div>
+          <div className="nav-all"><Link to="/products">All</Link></div>
           <div className="nav-beds">Beds</div>
           <div className="nav-food">Food</div>
           <div className="nav-toys">Toys</div>

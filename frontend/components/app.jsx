@@ -9,6 +9,7 @@ import Homepage from "./homepage";
 import ProductIndexContainer from "./product/product_index_container";
 import Footer from "./footer/footer";
 import ReviewFormContainer from "./reviews/review_form_container";
+import CartItemIndexContainer from "./cart_items/cart_item_index_container";
 
 const App = () => (
   <div>
@@ -18,7 +19,8 @@ const App = () => (
       <AuthRoute path="/signup" component={SignupContainer} />
       <Route exact path="/products" component={ProductIndexContainer} />
       <Route exact path="/products/:productId" component={ProductShowContainer} />
-      <Route path="/products/:productId/reviews/new" component={ReviewFormContainer} />
+      <Route exact path="/products/:productId/reviews/new" component={ReviewFormContainer} />
+      <Route exact path="/cart" component={CartItemIndexContainer}/>
       <Route path="/" component={Homepage} />
     </Switch>
     <Footer />

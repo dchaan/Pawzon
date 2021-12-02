@@ -7,10 +7,11 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 User.destroy_all
 Product.destroy_all
+Review.destroy_all
 
 ActiveRecord::Base.connection.reset_pk_sequence!('users')
 ActiveRecord::Base.connection.reset_pk_sequence!('products')
-
+ActiveRecord::Base.connection.reset_pk_sequence!('reviews')
 
 user1 = User.create!(
   email: "demo@demo.com",
