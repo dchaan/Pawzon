@@ -59,7 +59,9 @@ class ProductShow extends React.Component {
 
         <div className="product-checkout">
           <div className="product-checkout-price">${product.price}</div>
-          <img className="prime-checkout" src="images/prime.png"/> <div className="product-checkout-free-returns">& FREE Returns</div>
+          <div className="product-checkout-prime">
+            <img className="prime-checkout" src="images/prime.png"/> <div className="product-checkout-free-returns"> & FREE Returns</div>
+          </div>
           <div className="product-checkout-free-delivery">FREE Delivery</div>
           <div className="product-checkout-delivery"><img className="product-checkout-location-img" src="images/product-location.png"/> Deliver to {this.props.currentUser ? this.props.currentUser.first_name : null} - Pacifica 94044</div>
           <div className="product-stock">In Stock.</div>

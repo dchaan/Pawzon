@@ -442,8 +442,14 @@ body {
 
   .prime-checkout {
     height: 15px;
-    padding-top: 5px;
-    padding-bottom: 3px;
+    padding-right: 10px;
+  }
+
+  .product-checkout-prime {
+    width: 100%;
+    display: flex;
+    padding-bottom: 10px;
+    padding-top: 10px;
   }
 
   .product-checkout-free-returns {
@@ -452,7 +458,9 @@ body {
   }
 
   .product-checkout-free-delivery {
-    padding: 10px;
+    color: #007185;
+    font-size: 14px;
+    padding-top: 15px;
   }
 
   .product-checkout-delivery {
@@ -474,11 +482,11 @@ body {
   .product-stock {
     font-size: 18px;
     color: #007600;
-    padding: 10px;
+    padding-top: 10px;
+    padding-bottom: 15px
   }
 
   .product-quantity {
-    padding: 10px;
   }
 
   #qty {
@@ -497,6 +505,9 @@ body {
     box-shadow: 0px 2px 4px grey;
     padding: 5px;
     border: 0px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
   }
 
   .product-buy-now {
@@ -507,6 +518,10 @@ body {
     box-shadow: 0px 2px 4px grey;
     padding: 5px;
     border: 0px;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+
   }
 
   .product-add-to-cart:hover,
@@ -516,7 +531,7 @@ body {
 
   .atc, 
   .buy-now {
-    padding-top: 10px
+    padding-top: 15px;
   }
 
   .product-ship-and-sold-by {
