@@ -14,11 +14,17 @@ class ProductIndexItem extends React.Component {
     }
 
     render() {
+      console.log(this.props.product.image_url);
       return(
         <div className="list-items">
-          <ul>
-            <li><Link to={`/products/${this.props.product.id}`}>{this.props.product.product_name}</Link></li>
-          </ul>
+          <div className="home-grid">
+            <Link className="home-prod-link" to={`/products/${this.props.product.id}`}>
+              {this.props.product.product_name}
+            </Link>
+            <Link to={`/products/${this.props.product.id}`}>
+              <img className="prod-img-home" src={this.props.product.image_url} />
+            </Link>
+          </div>
         </div>
       )
     }

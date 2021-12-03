@@ -5,4 +5,5 @@ json.extract! product,
       :price, 
       :category, 
       :category_id, 
-      :rating
+      :rating,
+      :image_url

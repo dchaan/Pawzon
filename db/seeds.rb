@@ -56,7 +56,7 @@ product3 = Product.create!(
   category: "Dog Beds",
   category_id: 1,
   rating: 4.5,
-  image_url: "https://m.media-amazon.com/images/I/81t-YQSdMPL._AC_SL1500_.jpg"
+  image_url: "https://m.media-amazon.com/images/I/7186klacOtL._AC_SL1500_.jpg"
 )
 
 # 2. Dog Food

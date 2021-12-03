@@ -30,7 +30,7 @@ class ReviewIndex extends React.Component {
         <div className="review-rating">{this.state.rating}</div>
         <div className="review-title">{this.state.title}</div>
         <div className="review-body">{this.state.body}</div>
-        <div className="review-helpful"><button className="review-helpful-btn">Helpful</button></div>
+        {/* <div className="review-helpful"><button className="review-helpful-btn">Helpful</button></div> */}
       </div>
     )
   }
