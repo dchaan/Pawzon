@@ -47,22 +47,25 @@ class Login extends React.Component {
   render() {
     return (
       <div className="session-form">
-        <h3>Log In!</h3>
-        <form onSubmit={this.handleSubmit}>
-          <label>Email
-            <input type="text" placeholder="Email" value={this.state.email} onChange={this.update("email")}/>
-          </label>
-          <br/>
-          <label>Password
-            <input type="password" placeholder="Password" value={this.state.password} onChange={this.update("password")}/>
-          </label>
-          <br/>
-          {this.renderErrors()}
-          <button>Sign In</button>
-          <button className="login-demo" onClick={e => this.loginDemo(e)}>Demo User</button>
-        </form>
-        <br/>
-        <Link className="login-signup-btn" to="/signup">Create your Petzon account!</Link>
+        <div className="login-logo"><img className="login-img" src="/images/pawzon-login.png"/></div>
+        <div className="login-form">
+          <div className="login-title">Log In!</div>
+          <form onSubmit={this.handleSubmit}>
+            <label><b>Email</b>
+              <input className="email-input" type="text" placeholder="Email" value={this.state.email} onChange={this.update("email")}/>
+            </label>
+            <br/>
+            <label><b>Password</b>
+              <input className="password-input" type="password" placeholder="Password" value={this.state.password} onChange={this.update("password")}/>
+            </label>
+            {this.renderErrors()}
+            <button className="sign-in-btn">Sign In</button>
+            <br/>
+            <button className="login-demo" onClick={e => this.loginDemo(e)}>Demo User</button>
+          </form>
+        </div>
+        <div className="new-title">New to Pawzon?</div>
+        <Link className="login-signup-btn" to="/signup">Create your Pawzon account!</Link>
       </div>
     )
   };

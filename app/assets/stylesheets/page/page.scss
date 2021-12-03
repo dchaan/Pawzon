@@ -12,8 +12,73 @@ body {
   height: 100%;
 }
 
-.page {
-  height: 100%;
+.session-form {
+  width: 100%;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.login-img {
+  height: 100px;
+  width: 200px;
+  padding-bottom: 20px;
+}
+
+.login-form {
+  width: 300px;
+  height: 300px;
+  margin-bottom: 20px;
+  padding: 20px;
+  border-radius: 5px;
+  border: 1px solid grey;
+  box-shadow: 0px 1px 2px grey;
+}
+
+.login-title {
+  font-size: 30px;
+  padding-bottom: 20px;
+}
+
+.email-input,
+.password-input {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 97%;
+  height: 25px;
+}
+
+.sign-in-btn,
+.login-demo {
+  display: flex;
+  flex-direction: column;
+  border-radius: 5px;
+  width: 100%;
+  height: 28px;
+  background-color: #f0c14b;
+  box-shadow: 0px 1px 2px grey;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+}
+
+.new-title {
+  flex-direction: column;
+  width: 340px;
+  margin-bottom: 5px;
+  border-bottom: 1px solid grey;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.login-signup-btn {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  padding-top: 10px;
+  text-decoration: none;
 }
 
 .navbar {
@@ -195,7 +260,7 @@ body {
 
   .footer-links {
     background-color: #232F3E;
-    height: 80px;
+    height: 50px;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -225,6 +290,7 @@ body {
   }
 
   .product-container {
+    background-color: #f2f2f2;
     display: flex;
     padding-top: 30px;
     padding-bottom: 250px;
@@ -235,13 +301,16 @@ body {
   .product-about {
     display: inline;
     padding: 20px;
-    width: 35%;
+    width: 30%;
     border: 1px solid white;
+    border-radius: 5px;
+    box-shadow: 0px 1px 2px grey;
+
   }
 
   .product-name {
     display: flex;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 600;
     padding: 10px;
   }
@@ -252,18 +321,18 @@ body {
 
   .product-desc-title {
     font-weight: bold;
-    font-size: 18px;
+    font-size: 16px;
     padding: 10px;
   }
 
   .product-description {
-    font-size: 18px;
+    font-size: 16px;
     padding: 10px;
   }
 
   .product-price {
     color: #B12704;
-    font-size: 19px;
+    font-size: 17px;
     padding: 10px;
     justify-content: right;
   }
@@ -274,7 +343,7 @@ body {
 
   .product-free-returns {
     color: #007185;
-    font-size: 18px;
+    font-size: 16px;
     padding-left: 10px;
   }
 
@@ -333,6 +402,10 @@ body {
     padding: 10px;
   }
 
+  .product-quantity {
+    padding: 10px;
+  }
+
   #qty {
     border-radius: 5px;
     background-color: #F0F2F2;
@@ -368,7 +441,7 @@ body {
 
   .atc, 
   .buy-now {
-    padding-top: 5px
+    padding-top: 10px
   }
 
   .product-ship-and-sold-by {
@@ -427,6 +500,7 @@ body {
   padding-bottom: 50px;
   align-items: center;
   justify-content: center;
+  padding-bottom: 300px;
   
 }
 
