@@ -16,9 +16,9 @@ class Navbar extends React.Component {
       </div>
     ) : (
       <div className="nav-login">
-        <Link to="/login"><div className="login-link">Log In </div></Link> 
+          <Link className="login-link" to="/login">Log In</Link>
         <div className="nav-or"> or </div>
-        <Link to="/signup"><div className="signup-link"> Sign Up</div></Link>
+          <Link className="signup-link" to="/signup">Sign Up</Link>
       </div>
     )
     
@@ -33,15 +33,15 @@ class Navbar extends React.Component {
               <div className="nav-deliver-to-city">Pacifica 94044</div>
             </div>
 
-            {/* <div className="nav-search">
+            <div className="nav-search">
               <input className="nav-searchbar"/>
-            </div> */}
+            </div>
           </div>
           
           <div className="nav-flag">
             <img src="images/flag.png" className="nav-flag-img" />
           </div>
-          <div>
+          <div className="nav-hello-name">
             Hello,
             {profile}
           </div>
@@ -56,7 +56,7 @@ class Navbar extends React.Component {
         </div>
 
         <div className="nav-categories">
-          <Link to="/products"><div className="nav-all">All</div></Link>
+          <Link className="nav-all" to="/products">All</Link>
           <div className="nav-beds">Beds</div>
           <div className="nav-food">Food</div>
           <div className="nav-toys">Toys</div>

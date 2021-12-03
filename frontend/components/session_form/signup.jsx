@@ -38,28 +38,35 @@ class Signup extends React.Component {
   render() {
     return (
       <div className="signup">
-        <h3>Sign Up!</h3>
-        <form onSubmit={this.handleSubmit}>
-          <label>First Name
-            <input type="text" value={this.state.first_name} onChange={this.update("first_name")} />
-          </label>
-          <label>Last Name
-            <input type="text" value={this.state.last_name} onChange={this.update("last_name")} />
-          </label>
-          <label>Email
-            <input type="text" value={this.state.email} onChange={this.update("email")} />
-          </label>
-          <br/>
-          <label>Password
-            <input type="password" value={this.state.password} onChange={this.update("password")} />
-          </label>
-          <br/>
-          {this.renderErrors()}
-          <button className="signup-btn">Sign Up</button>
-        </form>
+        <div className="signup-logo"><img className="signup-img" src="/images/pawzon-login.png" /></div>
+        <div className="signup-form">
+          <div className="signup-title">Create Account!</div>
+          <form onSubmit={this.handleSubmit}>
+            <label><b>First Name</b>
+              <input className="first-name-input" type="text" value={this.state.first_name} onChange={this.update("first_name")} />
+            </label>
+            <br/>
+            <label><b>Last Name</b>
+              <input className="last-name-input" type="text" value={this.state.last_name} onChange={this.update("last_name")} />
+            </label>
+            <br/>
+            <label><b>Email</b>
+              <input className="signup-email-input" type="text" value={this.state.email} onChange={this.update("email")} />
+            </label>
+            <br/>
+            <label><b>Password</b>
+              <input className="password-email-input" type="password" placeholder="At least 6 characters" value={this.state.password} onChange={this.update("password")} />
+            </label>
+            <br/>
+            {this.renderErrors()}
+            <button className="signup-btn">Create your Pawzon Account</button>
+          </form>
+        </div>
         
-        <p>Already have an account?</p>
-        <Link className="signup-login-btn" to="/login">Log in!</Link>
+        <div className="signup-bottom">
+          <div className="already-have-account">Already have an account?</div>
+          <Link className="signup-login-btn" to="/login">Log in!</Link>
+        </div>
       </div>
     )
   };

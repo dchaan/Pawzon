@@ -48,10 +48,12 @@ class ProductShow extends React.Component {
         <div className="product-about">
           <div className="product-name">{product.product_name}</div>
           <div className="product-rating">Rating: {product.rating}</div>
+          <div className="product-price-container">
+            <div className="product-price">Price: ${product.price} <img className="prime" src="images/prime.png" /></div>
+            <div className="product-free-returns">& FREE Returns</div>
+          </div>
           <div className="product-desc-title">About this item</div>
           <div className="product-description">{product.description}</div>
-          <div className="product-price">Price: ${product.price} <img className="prime" src="images/prime.png" /></div>
-          <div className="product-free-returns">& FREE Returns</div>
           
         </div>
 

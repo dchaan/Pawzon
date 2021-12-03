@@ -59,6 +59,7 @@ class Login extends React.Component {
               <input className="password-input" type="password" placeholder="Password" value={this.state.password} onChange={this.update("password")}/>
             </label>
             {this.renderErrors()}
+            <br/>
             <button className="sign-in-btn">Sign In</button>
             <br/>
             <button className="login-demo" onClick={e => this.loginDemo(e)}>Demo User</button>
