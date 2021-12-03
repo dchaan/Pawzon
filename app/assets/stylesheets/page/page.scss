@@ -639,7 +639,8 @@ body {
   .cart-left {
     float: left;
     display: flex;
-    padding: 20px;
+    padding-right: 30px;
+    padding-left: 30px;
     flex-direction: column;
     width: 70%;
     height: 100%;
@@ -658,7 +659,6 @@ body {
     font-weight: bold;
     justify-content: left;
     display: flex;
-    padding-top: 10px;
   }
 
   .cart-price {
@@ -765,22 +765,24 @@ body {
 
   .cart-subtotal-container {
     display: flex;
-    justify-content: flex-end;
     font-size: 18px;
-    padding-bottom: 5px;
+    padding-bottom: 20px;
     padding-right: 5px;
+    padding-top: 20px;
+    justify-content: flex-end;
   }
 
   .cart-checkout-container {
     display: flex;
+
   }
 
   .cart-right {
-    float: right;
+    display: flex;
     height: 300px;
     width: 25%;
     border: 1px solid lightgray;
-    margin-top: 40px;
+    margin-top: 50px;
     margin-right: 30px;
     border-radius: 5px;
     box-shadow: 0px 2px 4px grey;
@@ -812,6 +814,7 @@ body {
     box-shadow: 0px 2px 4px grey;
     border: 0px;
     font-size: 16px;
+    width: 100%;
   }
 
   .cart-checkout-btn:hover {
