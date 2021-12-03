@@ -9,7 +9,10 @@ body {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
   margin: 0px;
-  overflow-y: scroll;
+  height: 100%;
+}
+
+.page {
   height: 100%;
 }
 
@@ -171,9 +174,9 @@ body {
   display: flex;
   width: 100%;
   flex-direction: column;
-  bottom: 0px;
-  padding-top: 0px;
-  }
+  bottom: 0%;
+  position: fixed;
+}
 
   .footer-back-to-top {
     background-color: #37475A;
@@ -224,7 +227,7 @@ body {
   .product-container {
     display: flex;
     padding-top: 30px;
-    padding-bottom: 30px;
+    padding-bottom: 250px;
     justify-content: center;
     flex-direction: column;
   }

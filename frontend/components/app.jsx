@@ -12,7 +12,7 @@ import ReviewFormContainer from "./reviews/review_form_container";
 import CartItemIndexContainer from "./cart_items/cart_item_index_container";
 
 const App = () => (
-  <div>
+  <div className="page">
     <NavbarContainer />
     <Switch>
       <AuthRoute path="/login" component={LoginContainer} />
