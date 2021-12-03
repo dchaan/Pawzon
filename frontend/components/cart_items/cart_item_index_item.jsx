@@ -36,31 +36,32 @@ class CartItemIndexItem extends React.Component {
     return (
       <div className="cart-item-container">
         <Link className="cart-item-title" to={`/products/${product_id}`}>{product_name}</Link>
+        <div className="cart-item-subtotal"><b>${total}</b></div>
         <div className="cart-item-stock">In stock</div>
 
-        <div className="cart-item-ship-return">
-          <div className="cart-item-shipping">Eligible for FREE Shipping & </div>
-          <div className="cart-item-returns">FREE Returns</div>
+        <div className="cart-item-prime">
+            <img className="cart-prime-img" src="images/prime.png" /> <div className="cart-free-returns"> & FREE Returns</div>
         </div>
 
-        <label className="cart-item-gift">This is a gift
-          <input type="checkbox"></input>
-        </label>
+        <div className="cart-gift">
+          <input className="check" type="checkbox"></input> 
+          <div className="cart-gift-text">This is a gift</div>
+        </div>
 
         <div className="cart-item-quantity">
-          <select type="submit" value={quantity} name="Qty" onChange={e => this.handleQuantity(e)}>
+          <select className="cart-qty" type="submit" value={quantity} name="Qty" onChange={e => this.handleQuantity(e)}>
             <option value={1}>1</option>
             <option value={2}>2</option>
             <option value={3}>3</option>
             <option value={4}>4</option>
             <option value={5}>5</option>
           </select>
+          <button className="cart-item-delete" type="submit" onClick={this.handleDeleteItem}>Delete</button>
+          <button className="cart-item-save-for-later">Save for Later</button>
         </div>
 
-        <button className="cart-item-delete" type="submit" onClick={this.handleDeleteItem}>Delete</button>
-        <button className="cart-item-save-for-later">Save for Later</button>
         
-        <div className="cart-item-subtotal"><b>${total}</b></div>
+        
       </div>
     )
   }

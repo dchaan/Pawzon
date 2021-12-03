@@ -38,32 +38,41 @@ class CartItemIndex extends React.Component {
 
     return (
       <div className="cart-container">
-        <div className="cart-heading">Shopping Cart</div>
+        <div className="cart-left">
+          <div className="cart-header">
+            <div className="cart-heading">Shopping Cart</div>
+            <div className="cart-price">Price</div>
+          </div>
 
-        <div className="cart-items">
-          <div className="cart-price">Price</div>
-          { (this.props.cartItems.length === 0) ? 
-            <div className="cart-empty">Your Pawzon cart is empty.</div> :
-            this.props.cartItems.map(cartItem => (
-              <CartItemIndexItem
-                key={cartItem.id}
-                cartItem={cartItem}
-                fetchCartItems={fetchCartItems}
-                updateCartItem={updateCartItem}
-                deleteCartItem={deleteCartItem}
-              />
-              )
-            )
-          }
+          <div className="checkout-product-item">
+            {(this.props.cartItems.length === 0) ?
+              <div className="cart-empty">Your Pawzon cart is empty.</div> :
+                this.props.cartItems.map(cartItem => (
+                  <CartItemIndexItem
+                    key={cartItem.id}
+                    cartItem={cartItem}
+                    fetchCartItems={fetchCartItems}
+                    updateCartItem={updateCartItem}
+                    deleteCartItem={deleteCartItem}
+                  />
+                  )
+                )
+            }
+            <div className="cart-subtotal-container">
+              <div className="cart-subtotal">Subtotal ({totalItems} item(s)): <b>${subtotal}</b></div>
+            </div>
+          </div>
         </div>
-
-        <div className="cart-subtotal-container">
-          <div className="cart-subtotal">Subtotal ({totalItems} item(s)): <b>${subtotal}</b></div>
-        </div>
-
-        <div className="cart-checkout-container">
-          <div className="cart-checkout-subtotal">Subtotal ({totalItems} item(s)): <b>${subtotal}</b></div>
-          <button className="cart-checkout-btn" onClick={e => this.handleCheckout(e)}>Proceed to checkout</button>
+      
+        <div className="cart-right">
+          <div className="cart-checkout-container">
+            <div className="cart-checkout-subtotal">Subtotal ({totalItems} item(s)): <b>${subtotal}</b></div>
+            <div className="cart-right-gift">
+              <input className="cart-right-check" type="checkbox"></input>
+              <div className="cart-right-gift-text">This is a gift</div>
+            </div>
+            <button className="cart-checkout-btn" onClick={e => this.handleCheckout(e)}>Proceed to checkout</button>
+          </div>
         </div>
       </div>
     )
