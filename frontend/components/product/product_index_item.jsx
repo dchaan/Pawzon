@@ -14,15 +14,16 @@ class ProductIndexItem extends React.Component {
     }
 
     render() {
-      console.log(this.props.product.image_url);
+      const { product } = this.props;
+
       return(
         <div className="list-items">
           <div className="home-grid">
-            <Link className="home-prod-link" to={`/products/${this.props.product.id}`}>
-              {this.props.product.product_name}
+            <Link className="home-prod-link" to={`/products/${product.id}`}>
+              {product.product_name}
             </Link>
-            <Link to={`/products/${this.props.product.id}`}>
-              <img className="prod-img-home" src={this.props.product.image_url} />
+            <Link to={`/products/${product.id}`}>
+              <img className="prod-img-home" src={product.image_url} />
             </Link>
           </div>
         </div>

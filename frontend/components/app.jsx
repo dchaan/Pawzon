@@ -13,7 +13,7 @@ import CartItemIndexContainer from "./cart_items/cart_item_index_container";
 
 const App = () => (
   <div className="page">
-    <NavbarContainer />
+  <NavbarContainer />
     <Switch>
       <AuthRoute path="/login" component={LoginContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />

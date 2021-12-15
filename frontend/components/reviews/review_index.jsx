@@ -16,7 +16,7 @@ class ReviewIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchReviews(this.props.product.id)
+    this.props.fetchReviews(this.props.product_id)
   }
 
   update(field) {

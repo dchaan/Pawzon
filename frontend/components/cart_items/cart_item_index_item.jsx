@@ -32,10 +32,14 @@ class CartItemIndexItem extends React.Component {
   render() {
     const { product_name, product_id, quantity, price } = this.props.cartItem;
     const total = this.state.quantity * price;
+    console.log(this.props)
 
     return (
       <div className="cart-item-container">
         <Link className="cart-item-title" to={`/products/${product_id}`}>{product_name}</Link>
+        <Link className="cart-item-img-link" to={`/products/${product_id}`}>
+          <img className="cart-item-prod-img" src="{product.image_url}" />
+        </Link>
         <div className="cart-item-subtotal"><b>${total}</b></div>
         <div className="cart-item-stock">In stock</div>
 
@@ -55,13 +59,16 @@ class CartItemIndexItem extends React.Component {
             <option value={3}>3</option>
             <option value={4}>4</option>
             <option value={5}>5</option>
+            <option value={6}>6</option>
+            <option value={7}>7</option>
+            <option value={8}>8</option>
+            <option value={9}>9</option>
+            <option value={10}>10</option>
           </select>
           <button className="cart-item-delete" type="submit" onClick={this.handleDeleteItem}>Delete</button>
           <button className="cart-item-save-for-later">Save for Later</button>
         </div>
 
-        
-        
       </div>
     )
   }
