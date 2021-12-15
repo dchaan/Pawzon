@@ -40,7 +40,7 @@ class CartItemIndexItem extends React.Component {
         <Link className="cart-item-img-link" to={`/products/${product_id}`}>
           <img className="cart-item-prod-img" src="{product.image_url}" />
         </Link>
-        <div className="cart-item-subtotal"><b>${total}</b></div>
+        <div className="cart-item-subtotal"><b>${total.toFixed(2)}</b></div>
         <div className="cart-item-stock">In stock</div>
 
         <div className="cart-item-prime">
