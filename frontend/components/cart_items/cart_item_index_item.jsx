@@ -32,7 +32,6 @@ class CartItemIndexItem extends React.Component {
   render() {
     const { product_name, product_id, quantity, price } = this.props.cartItem;
     const total = this.state.quantity * price;
-    console.log(this.props)
 
     return (
       <div className="cart-item-container">
