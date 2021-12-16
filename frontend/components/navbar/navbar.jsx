@@ -58,7 +58,9 @@ class Navbar extends React.Component {
             currentUser ? <Link className="nav-cart-link" to="/cart"><img src="images/cart.png" className="nav-cart-img" /></Link> :
               <Link className="nav-cart-link" to="/login"><img src="images/cart.png" className="nav-cart-img" /></Link>
             }
-            <div className="nav-cart-counter">{cartItems}</div>
+            {
+              cartItems ? <div className="nav-cart-counter">{cartItems}</div> : null
+            }
             <div className="nav-cart-word">Cart</div>
           </div>
         </div>
