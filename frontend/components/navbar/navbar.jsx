@@ -7,16 +7,18 @@ class Navbar extends React.Component {
     super(props);
   }
 
+
+
   render() {
     const { currentUser, login, logout, signup } = this.props;
     let profile = currentUser ? (
       <div>
-        <div className="nav-name">{currentUser.first_name}</div>
+        <div className="nav-name">Hello, {currentUser.first_name}</div>
         <button className="nav-logout-btn" onClick={logout}>Logout</button>
       </div>
     ) : (
-      <div className="nav-login">
-          <Link className="login-link" to="/login">Log In</Link>
+      <div className="nav-login">Hello 
+          <Link className="login-link" to="/login"> Log In</Link>
         <div className="nav-or"> or </div>
           <Link className="signup-link" to="/signup">Sign Up</Link>
       </div>
@@ -42,7 +44,6 @@ class Navbar extends React.Component {
             <img src="images/flag.png" className="nav-flag-img" />
           </div>
           <div className="nav-hello-name">
-            Hello,
             {profile}
           </div>
           <div className="nav-returns-orders">
@@ -50,7 +51,10 @@ class Navbar extends React.Component {
             <div className="nav-orders">& Orders</div>
           </div>
           <div className="nav-cart">
-            <Link className="nav-cart-link" to="/cart"><img src="images/cart.png" className="nav-cart-img" /></Link>
+            {
+            currentUser ? <Link className="nav-cart-link" to="/cart"><img src="images/cart.png" className="nav-cart-img" /></Link> :
+              <Link className="nav-cart-link" to="/login"><img src="images/cart.png" className="nav-cart-img" /></Link>
+            }
             <div className="nav-cart-word">Cart</div>
           </div>
         </div>
