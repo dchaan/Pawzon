@@ -217,3 +217,123 @@ product15 = Product.create!(
   rating: 4,
   image_url: "https://m.media-amazon.com/images/I/71Ks+Gy4XvL._AC_SL1500_.jpg"
 )
+
+review1 = Review.create!(
+  title: "Great bed!",
+  body: "My puppy loves this bed",
+  rating: 4.5,
+  user_id: 1,
+  product_id: 1
+)
+
+review2 = Review.create!(
+  title: "Super comfy!",
+  body: "My frenchie is obssessed",
+  rating: 5,
+  user_id: 1,
+  product_id: 2
+)
+
+review3 = Review.create!(
+  title: "Not the best",
+  body: "Bed is a little flat",
+  rating: 3.5,
+  user_id: 1,
+  product_id: 3
+)
+
+review4 = Review.create!(
+  title: "My dog loves the food!",
+  body: "My dog devours the food so quickly",
+  rating: 4.5,
+  user_id: 1,
+  product_id: 4
+)
+
+review5 = Review.create!(
+  title: "Great to mix",
+  body: "My dog only eats his dry food with this mixed in",
+  rating: 4.5,
+  user_id: 1,
+  product_id: 5
+)
+
+review6 = Review.create!(
+  title: "My dog is losing weight!",
+  body: "This food is really helping my dog shed some lbs",
+  rating: 4,
+  user_id: 1,
+  product_id: 6
+)
+
+review7 = Review.create!(
+  title: "Cheaply made",
+  body: "Cool design but poorly made. Ripped in a week",
+  rating: 2.5,
+  user_id: 1,
+  product_id: 7
+)
+
+review8 = Review.create!(
+  title: "Keeps my pup busy for hours!",
+  body: "Great way to keep my puppy busy and engaged.",
+  rating: 4.5,
+  user_id: 1,
+  product_id: 8
+)
+
+review9 = Review.create!(
+  title: "Great invention",
+  body: "Tires my dog out without having me to waste so many hours",
+  rating: 4,
+  user_id: 1,
+  product_id: 9
+)
+
+review10 = Review.create!(
+  title: "My dog loves them!",
+  body: "They smell great and my dog loves them",
+  rating: 4,
+  user_id: 1,
+  product_id: 10
+)
+
+review11 = Review.create!(
+  title: "They're not bad",
+  body: "These can be a hit or miss depending on the day",
+  rating: 3.5,
+  user_id: 1,
+  product_id: 11
+)
+
+review12 = Review.create!(
+  title: "Classic treat",
+  body: "Any dog will eat these",
+  rating: 4,
+  user_id: 1,
+  product_id: 12
+)
+
+review13 = Review.create!(
+  title: "Perfect for night walks",
+  body: "Keeps me and my dog safe during night walks",
+  rating: 4.5,
+  user_id: 1,
+  product_id: 13
+)
+
+review14 = Review.create!(
+  title: "Cheap",
+  body: "Poor quality, wouldn't buy again",
+  rating: 3,
+  user_id: 1,
+  product_id: 14
+)
+
+review15 = Review.create!(
+  title: "Bags smell great",
+  body: "The scented bags mask the smell of the poop",
+  rating: 4,
+  user_id: 1,
+  product_id: 15
+)

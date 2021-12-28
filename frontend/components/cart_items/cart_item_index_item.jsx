@@ -35,14 +35,12 @@ class CartItemIndexItem extends React.Component {
 
     return (
       <div className="cart-item-container">
-        <div className="cart-item-head">
-          <Link className="cart-item-title" to={`/products/${product_id}`}>{product_name}</Link>
-          <div className="cart-item-subtotal"><b>${total.toFixed(2)}</b></div>
-          <div className="cart-item-img">
-            <Link className="cart-item-img-link" to={`/products/${product_id}`}>
-              <img className="cart-item-prod-img" src={image_url} />
-            </Link>
-        </div>
+        <Link className="cart-item-title" to={`/products/${product_id}`}>{product_name}</Link>
+        <div className="cart-item-subtotal"><b>${total.toFixed(2)}</b></div>
+        <div className="cart-item-img">
+          <Link className="cart-item-img-link" to={`/products/${product_id}`}>
+            <img className="cart-item-prod-img" src={image_url} />
+          </Link>
         </div >
         <div className="cart-item-info">
           <div className="cart-item-prod-price">{price}</div>

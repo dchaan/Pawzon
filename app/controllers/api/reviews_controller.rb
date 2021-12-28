@@ -1,9 +1,12 @@
 class Api::ReviewsController < ApplicationController
-  before_action :require_logged_in
+  before_action :require_logged_in, except: [:index]
 
   def index
-    @product = Product.find(params[:product_id])
-    @reviews = @product.reviews
+    if params[:product_id]
+      @reviews = Review.where(product_id: params[:product_id])
+    else
+      @reviews = Review.all
+    end
     render :index
   end
 
@@ -13,7 +16,6 @@ class Api::ReviewsController < ApplicationController
   end
 
   def create
-    # @product = Product.find(params[:product_id])
     @review = Review.new(review_params)
     if logged_in? && @review.save
       render :show

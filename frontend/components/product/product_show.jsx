@@ -92,13 +92,16 @@ class ProductShow extends React.Component {
         <div className="write-review-container">
           <div className="review-this-product">Review this product</div>
           <div className="share-your-thoughts">Share your thoughts with other customers</div>
-          <button className="product-new-review-btn"><Link className="write-review-link" to={`/products/${product.id}/reviews/new`}><div className="review-btn-txt">Write a customer review</div></Link></button>
+          {
+            this.props.user ? <button className="product-new-review-btn"><Link className="write-review-link" to={`/products/${product.id}/reviews/new`}><div className="review-btn-txt">Write a customer review</div></Link></button> :
+              <button className="product-new-review-btn"><Link className="write-review-link" to={`/login`}><div className="review-btn-txt">Write a customer review</div></Link></button>
+          }
         </div>
 
         <br />
         <br />
 
-        <ReviewIndexContainer reviews={this.state.reviews} />
+        <ReviewIndexContainer reviews={this.props.reviews} />
       </div>  
     )
   };
