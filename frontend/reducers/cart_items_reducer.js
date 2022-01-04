@@ -1,6 +1,6 @@
 import { RECEIVE_CART_ITEMS, RECEIVE_CART_ITEM, REMOVE_CART_ITEM } from "../actions/cart_item_actions";
 
-const CartItemsReducer = (state ={}, action) => {
+const cartItemsReducer = (state ={}, action) => {
   Object.freeze(state);
   let nextState = Object.assign({}, state);
   switch(action.type) {
@@ -17,4 +17,4 @@ const CartItemsReducer = (state ={}, action) => {
   }
 }
 
-export default CartItemsReducer;
+export default cartItemsReducer;

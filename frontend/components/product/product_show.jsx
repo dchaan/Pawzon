@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReviewIndexContainer from "../reviews/review_index_container";
+import ReviewShow from "../reviews/review_show";
 
 class ProductShow extends React.Component {
   constructor(props) {
@@ -16,6 +17,11 @@ class ProductShow extends React.Component {
 
   componentDidMount() {
     this.props.fetchProduct(this.props.match.params.productId)
+    this.props.fetchReviews(this.props.match.params.productId)
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.setState({ reviews: nextProps.reviews })
   }
 
   handleQuantity(e) {
@@ -54,8 +60,7 @@ class ProductShow extends React.Component {
               <div className="product-free-returns">& FREE Returns</div>
             </div>
             <div className="product-desc-title">About this item</div>
-            <div className="product-description">{product.description}</div>
-            
+            <div className="product-description">{product.description}</div>    
           </div>
 
           <div className="product-checkout">
@@ -87,6 +92,7 @@ class ProductShow extends React.Component {
             <div className="buy-now"><button className="product-buy-now">Buy Now</button></div>
             <div className="product-ship-and-sold-by">Ships & sold from Pawzon.com</div>
           </div>
+
         </div>
 
         <div className="write-review-container">
@@ -100,8 +106,8 @@ class ProductShow extends React.Component {
 
         <br />
         <br />
-
-        <ReviewIndexContainer reviews={this.props.reviews} />
+        
+        <ReviewIndexContainer product={this.props.product}/>
       </div>  
     )
   };

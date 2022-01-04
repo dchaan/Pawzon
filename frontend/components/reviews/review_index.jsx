@@ -1,18 +1,10 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import ReviewShow from "./review_show"
 
 class ReviewIndex extends React.Component {
   constructor(props) {
     super(props);
-
-    this.state = {
-      id: this.props.id,
-      title: this.props.title,
-      body: this.props.body,
-      rating: this.props.rating,
-      user_id: this.props.userId,
-      product_id: this.props.productId
-    };
   }
 
   componentDidMount() {
@@ -24,13 +16,22 @@ class ReviewIndex extends React.Component {
   }
 
   render() {
+    if (!this.props.reviews) return null;
+
+    const reviews = this.props.reviews.reverse().map((review, i) =>
+      <ReviewShow
+        key={i}
+        users={this.props.users}
+        currentUser={this.props.currentUser}
+        review={review}
+        fetchReviews={this.props.fetchReviews}
+        productId={this.props.product.id}
+      />
+    )
+
     return(
-      <div className="review-container" key={this.state.id}>
-        <div className="review-user">{this.state.user_id}</div>
-        <div className="review-rating">{this.state.rating}</div>
-        <div className="review-title">{this.state.title}</div>
-        <div className="review-body">{this.state.body}</div>
-        {/* <div className="review-helpful"><button className="review-helpful-btn">Helpful</button></div> */}
+      <div>
+        {reviews}
       </div>
     )
   }

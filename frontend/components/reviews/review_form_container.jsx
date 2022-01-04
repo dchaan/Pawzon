@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { createReview } from "../../actions/review_action";
+import { createReview } from "../../actions/review_actions";
 import { withRouter } from "react-router-dom";
 import ReviewForm from "./review_form";
 

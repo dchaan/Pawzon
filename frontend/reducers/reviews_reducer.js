@@ -1,4 +1,4 @@
-import { RECEIVE_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW} from "../actions/review_action";
+import { RECEIVE_REVIEWS, RECEIVE_REVIEW, REMOVE_REVIEW } from "../actions/review_actions";
 
 const reviewsReducer = (state = {}, action) => {
   Object.freeze(state);

@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { fetchProduct } from "../../actions/product_actions";
 import { createCartItem } from "../../actions/cart_item_actions";
-import { fetchReviews } from "../../actions/review_action";
+import { fetchReviews } from "../../actions/review_actions";
 import ProductShow from "./product_show";
 
 const mSTP = ( state, ownProps ) => ({
