@@ -7,6 +7,7 @@ class ProductIndex extends React.Component {
   }
 
   componentDidMount() {
+    this.props.fetchCartItems();
     this.props.fetchProducts();
   }
 
