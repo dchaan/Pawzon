@@ -5,6 +5,7 @@ import { fetchCartItems } from "../../actions/cart_item_actions";
 
 const mSTP = state => ({
   currentUser: state.entities.users[state.session.id],
+  user: state.session.id,
   items: Object.values(state.entities.cartItems)
 })
 

@@ -1,5 +1,5 @@
 class Api::ReviewsController < ApplicationController
-  before_action :require_logged_in, except: [:index]
+  before_action :require_logged_in, only: [:create]
 
   def index
     @reviews = Review.all
@@ -31,7 +31,7 @@ class Api::ReviewsController < ApplicationController
 
   def destroy
     @review = Review.find(params[:id])
-    if @review.destroy
+    if @review && @review.destroy
       render :show
     else
       render json: ['Cannot delete review'], status: 422

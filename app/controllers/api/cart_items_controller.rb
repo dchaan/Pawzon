@@ -1,5 +1,4 @@
 class Api::CartItemsController < ApplicationController
-  before_action :require_logged_in
 
   def index
     @cart_items = current_user.cart_items

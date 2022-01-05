@@ -14,12 +14,13 @@ class ProductShow extends React.Component {
     this.handleQuantity = this.handleQuantity.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.checkCartItem = this.checkCartItem.bind(this);
+    // this.handleBuyNow = this.handleBuyNow.bind(this);
   }
 
   componentDidMount() {
-    this.props.fetchCartItems()
-    this.props.fetchProduct(this.props.productId)
-    this.props.fetchReviews(this.props.productId)
+    if (this.props.currentUser) this.props.fetchCartItems();
+    this.props.fetchProduct(this.props.productId);
+    this.props.fetchReviews(this.props.productId);
   }
 
   componentWillReceiveProps(nextProps) {
@@ -51,7 +52,7 @@ class ProductShow extends React.Component {
     this.props.cartItems.forEach(cartItem => {
       if (cartItem.product_id === this.props.product.id) {
         currentCartItemId = cartItem.id;
-        currentQuantity = cartItem.quantity
+        currentQuantity = cartItem.quantity;
       };
     });
 
@@ -68,7 +69,7 @@ class ProductShow extends React.Component {
       quantity: this.state.quantity + currentQuantity
     };
 
-    if (!this.props.user) { 
+    if (!this.props.currentUser) { 
       this.props.history.push("/login"); 
     } else if (this.checkCartItem()) {
       this.props.updateCartItem(updatedCartItem)
@@ -77,18 +78,24 @@ class ProductShow extends React.Component {
       this.props.createCartItem(cartItem)
         .then(this.props.history.push("/cart"));
     }
-
-    // if (cart_item.product_id === this.props.productId) {
-    //   this.props.updateCartItem(cart_item);
-    // } else {
-    //   this.props.createCartItem(cart_item);
-    // }
-    // this.props.history.push("/cart");
   }
+
+  // handleBuyNow(e) {
+  //   e.preventDefault();
+  //   if (!this.props.currentUser) { this.props.history.push("/login"); } 
+  //   const cartItem = {
+  //     product_id: this.props.productId,
+  //     user_id: this.props.user,
+  //     quantity: this.state.quantity
+  //   };
+  //   this.props.createCartItem(cartItem)
+  //   this.props.deleteCartItem(cartItem);
+  //   this.props.history.push("/cart");
+  // } 
   
   
   render() {
-    console.log(this.props.cartItems)
+    console.log(this.props)
     const { product } = this.props;
     if (!product) return null;
     return (
@@ -146,11 +153,10 @@ class ProductShow extends React.Component {
               <button className="product-new-review-btn"><Link className="write-review-link" to={`/login`}><div className="review-btn-txt">Write a customer review</div></Link></button>
           }
         </div>
-
-        <br />
-        <br />
-        
-        <ReviewIndexContainer product={this.props.product}/>
+        <div className="review-container">
+          <div className="reviews-headline">Top Reviews from the United Stated</div>
+          <ReviewIndexContainer product={product}/>
+        </div>
       </div>  
     )
   };

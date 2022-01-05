@@ -7,7 +7,9 @@ class Navbar extends React.Component {
     super(props);
   }
 
-
+  componentDidMount() {
+    if (this.props.currentUser) { this.props.fetchCartItems(); }
+  };
 
   render() {
     const { currentUser, logout, items } = this.props;
@@ -25,7 +27,7 @@ class Navbar extends React.Component {
     )
 
     let cartItems = 0;
-    items.forEach(item => cartItems += item.quantity )
+    items.forEach(item => cartItems += item.quantity );
 
     return (
       <div className="nav">

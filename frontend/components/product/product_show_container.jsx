@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { fetchProduct } from "../../actions/product_actions";
-import { createCartItem, updateCartItem, fetchCartItems } from "../../actions/cart_item_actions";
-import { fetchReviews } from "../../actions/review_actions";
+import { createCartItem, updateCartItem, fetchCartItems, deleteCartItem } from "../../actions/cart_item_actions";
+import { deleteReview, fetchReviews } from "../../actions/review_actions";
 import ProductShow from "./product_show";
 
 const mSTP = ( state, ownProps ) => ({
@@ -19,7 +19,9 @@ const mDTP = dispatch => ({
   fetchCartItems: () => dispatch(fetchCartItems()),
   createCartItem: cartItem => dispatch(createCartItem(cartItem)),
   updateCartItem: cartItem => dispatch(updateCartItem(cartItem)),
-  fetchReviews: productId => dispatch(fetchReviews(productId))
+  deleteCartItem: cartItem => dispatch(deleteCartItem(cartItem)),
+  fetchReviews: productId => dispatch(fetchReviews(productId)),
+  deleteReview: (reviewId, productId) => dispatch(deleteReview(reviewId, productId))
 });
 
 const ProductShowContainer = connect(mSTP, mDTP)(ProductShow);

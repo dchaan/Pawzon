@@ -7,7 +7,7 @@ class ProductIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchCartItems();
+    if (this.props.currentUser) this.props.fetchCartItems();
     this.props.fetchProducts();
   }
 
