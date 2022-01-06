@@ -15,14 +15,17 @@ class Navbar extends React.Component {
     const { currentUser, logout, items } = this.props;
     let profile = currentUser ? (
       <div>
-        <div className="nav-name">Hello, {currentUser.first_name}</div>
-        <button className="nav-logout-btn" onClick={logout}>Logout</button>
+        <div className="nav-hello">Hello, <b>{currentUser.first_name}</b></div>
+        <div className="nav-logout"><button className="nav-logout-btn" onClick={logout}>Logout</button></div>
       </div>
     ) : (
-      <div className="nav-login">Hello 
-          <Link className="login-link" to="/login"> Log In</Link>
-        <div className="nav-or"> or </div>
-          <Link className="signup-link" to="/signup">Sign Up</Link>
+      <div>
+        <div className="nav-hello">Hello</div>
+        <div className="nav-greeting-links">
+          <div className="nav-greeting"><Link className="greeting-link" to="/login"> Login </Link></div>
+          {" or "}
+          <div className="nav-greeting"><Link className="greeting-link" to="/signup">Sign Up</Link></div>
+        </div>
       </div>
     )
 
@@ -30,38 +33,41 @@ class Navbar extends React.Component {
     items.forEach(item => cartItems += item.quantity );
 
     return (
-      <div className="nav">
-        <div className="navbar">
-          <div className="nav-header-logo"><Link to="/"><img src="images/pawzon.png" className="nav-logo" /></Link></div>
-          <div className="nav-location">
+      <div className="nav-container">
+        <div className="navbar-top">
+          <Link className="nav-logo-container" to="/">
+            <img src="images/pawzon.png" className="nav-logo" />
+          </Link>
+          <div className="nav-location-container">
             <img src="images/location.png" className="nav-location-img"/>
             <div className="nav-deliver-to">
               <div className="nav-deliver-to-user">Deliver to {this.props.currentUser ? this.props.currentUser.first_name : ""}</div>
               <div className="nav-deliver-to-city">Pacifica 94044</div>
             </div>
-
-            <div className="nav-search">
-              <input className="nav-searchbar"/>
-            </div>
           </div>
-          
-          <div className="nav-flag">
+          <div className="nav-search-container">
+            <form className="searchbar-form">
+              <input type="text" class="searchbar-input" value=" "/>
+            </form>
+          </div>
+
+          <div className="nav-flag-container">
             <img src="images/flag.png" className="nav-flag-img" />
           </div>
-          <div className="nav-hello-name">
+          <div className="nav-greeting-container">
             {profile}
           </div>
-          <div className="nav-returns-orders">
+          <div className="nav-returns-orders-container">
             <div className="nav-returns">Returns</div>
             <div className="nav-orders">& Orders</div>
           </div>
-          <div className="nav-cart">
+          <div className="nav-cart-container">
             {
-            currentUser ? <Link className="nav-cart-link" to="/cart"><img src="images/cart.png" className="nav-cart-img" /></Link> :
-              <Link className="nav-cart-link" to="/login"><img src="images/cart.png" className="nav-cart-img" /></Link>
+              currentUser ? <Link className="nav-cart-link" to="/cart"><img src="images/cart.png" className="nav-cart-img" /></Link> :
+                <Link className="nav-cart-link" to="/login"><img src="images/cart.png" className="nav-cart-img" /></Link>
             }
-            {
-              cartItems ? <div className="nav-cart-counter">{cartItems}</div> : null
+            { 
+              cartItems ? <div className="nav-cart-counter">{cartItems}</div> : null 
             }
             <div className="nav-cart-word">Cart</div>
           </div>

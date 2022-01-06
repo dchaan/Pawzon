@@ -148,33 +148,32 @@ body {
   justify-content: center;
 }
 
-.navbar {
+.navbar-top {
   background-color: #131A22;
-  color: white;
   width: 100%;
-  height: 80px;
+  height: 70px;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
+}
+
+.nav-logo-container {
+  width: 160px;
+  padding-left: 20px;
 }
 
 .nav-logo {
-  height: 60px;
   width: 150px;
-  margin-left: -250px;  
-  align-items: flex-start;
+  padding: 5px;
 }
 
-.nav-location {
-  width: 140px;
+.nav-location-container {
   display: flex;
   align-items: center;
-  margin-right: 100px;
-  margin-left: -350px;
 }
 
 .nav-deliver-to-user {
-  font-size: 15px;
+  font-size: 16px;
   width: 140px;
 }
 
@@ -186,29 +185,43 @@ body {
 }
 
 .nav-deliver-to-city {
-  font-size: 16px;
+  font-size: 17px;
   font-weight: bolder;
 }
 
-.nav-searchbar {
-  width: 450px;
-  height: 40px;
-  border-radius: 10px;
-  margin-right: 50px;
+.nav-search-container {
+  display: flex;
 }
 
-.nav-searchbar:focus {
+.searchbar-form {
+  width: 100%;
+  min-width: 400px;
+  display: flex;
+  height: 40px;
+}
+
+.searchbar-input {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.searchbar-input:focus {
   outline: none !important;
   border: 2px solid #f0c14b;
   box-shadow: 0px 0px 10px #f0c14b;
 }
 
+.nav-flag-container {
+  width: 100px;
+  height: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .nav-flag-img {
   width: 60px;
   height: 60px;
-  display: flex;
-  margin-left: 110px;
-  margin-right: -150px;
 }
 
 .nav-login {
@@ -217,8 +230,7 @@ body {
   text-decoration: none !important;
 }
 
-.login-link,
-.signup-link {
+.greeting-link {
   text-decoration: none!important;
   color: white;
   font-weight: bold;
@@ -232,9 +244,22 @@ body {
   margin-right: -200px;
 }
 
-.nav-hello-name {
-  width: 5%;
-  margin-left: -100px;
+.nav-greeting-container {
+  width: 150px;
+  display: flex;
+  margin-right: -10px;
+}
+
+.nav-hello {
+  font-size: 16px;
+}
+
+.nav-greeting-links {
+  display: block;
+}
+
+.nav-greeting {
+  display: inline-block;
 }
 
 .nav-logout-btn {
@@ -243,38 +268,38 @@ body {
   font-size: 16px;
   font-weight: bold;
   color: white;
+  margin-left: -5px;
+}
+
+.nav-logout-btn:hover,
+.greeting-link:hover {
   cursor: pointer;
+  color: #d8ad43;
 }
 
-.nav-or {
-  padding-left: 5px;
-  padding-right: 5px;
+.nav-returns-orders-container {
+  width: 90px;
+  display: flex;
+  flex-direction: column;
 }
 
-.nav-returns-orders {
-  font-size: 15px;
-  width: 5%;
-  margin-right: -200px;
-  margin-left: -200px;
+.nav-returns {
+  font-size: 16px;
 }
 
 .nav-orders {
   font-weight: bolder;
-  font-size: 16px;
+  font-size: 17px;
 }
 
-.nav-cart {
-  width: 1px;
+.nav-cart-container {
+  width: 100px;
   display: flex;
-  padding-right: 20px;
-  margin-right: -250px;
-  margin-left: 10px;
-  margin-top: 20px;
+  align-items: flex-end;
 }
 
 .nav-cart-img {
   width: 35px;
-  margin-top: 20px;
 }
 
 .nav-cart-counter {
@@ -283,28 +308,26 @@ body {
   color: #F08804;
   z-index: 100;
   position: absolute;
-  margin-left: 45px;
-  margin-top: 15px;
+  margin-left: 40px;
+  margin-bottom: 18px;
   
 }
 
 .nav-cart-word {
-  line-height: 12px;
   font-size: 17px;
   font-weight: bolder;
   margin-left: 2px;
-  line-height: 100px;
 }
 
 .nav-categories {
   background-color: #232F3E;
   color: white;
-  font-size: 18px;
+  font-size: 16px;
   display: flex;
   justify-content: space-around;
   align-items: center;
   width: 100%;
-  height: 35px;
+  height: 30px;
   text-decoration: none !important;
 }
 
