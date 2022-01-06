@@ -468,7 +468,7 @@ body {
   .product-price {
     display: flex;
     color: #B12704;
-    font-size: 16px;
+    font-size: 20px;
   }
 
   .prime {
@@ -509,41 +509,64 @@ body {
 
   .product-checkout-price {
     color: #B12704;
-    font-size: 15px;
+    font-size: 20px;
     padding-bottom: 10px;
-  }
-
-  .prime-checkout {
-    height: 15px;
-    padding-right: 10px;
   }
 
   .product-checkout-prime {
     width: 100%;
-    display: flex;
-    padding-bottom: 10px;
-    padding-top: 10px;
+    display: block;
+    padding-bottom: 5px;
+    padding-top: 5px;
+  }
+
+  .prime-checkout {
+    height: 15px;
+    padding-right: 5px;
+    display: inline-block;
+    margin-bottom: -3px;
   }
 
   .product-checkout-free-returns {
     color: #007185;
     font-size: 15px;
+    display: inline-block;
   }
 
-  .product-checkout-free-delivery {
-    color: #007185;
-    font-size: 14px;
-    padding-top: 15px;
-  }
-
-  .product-checkout-delivery {
-    color: #007185;
-    font-size: 14px;
+  .product-date{
+    display: block;
     padding-top: 10px;
+  }
+
+  .product-free-delivery {
+    color: #007185;
+    font-size: 14px;
+    display: inline-block;
+  }
+
+  .product-ship-date {
+    font-weight: bold;
+    display: inline-block;
+    padding-left: 5px;
+  }
+
+  .product-delivery {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    display: block;
+  }
+
+  .prod-deliver-loc {
+    font-size: 14px;
+    color: #007185;
+    display: inline-block;
+    padding-left: 5px;
+
   }
 
   .product-checkout-location-img {
     height: 15px;
+    display: inline-block
   }
 
   .product-checkout-delivery {
@@ -593,6 +616,26 @@ body {
     width: 100%;
   }
 
+  .secure-container {
+    margin-top: 10px;
+    display: block;
+  }
+
+  .lock-img {
+    height: 20px;
+    width: 20px;
+    display: inline-block;
+    margin-bottom: -2px;
+  }
+
+  .secure-trans {
+    font-size: 14px;
+    display: inline-block;
+    padding-left: 5px;
+    color: #007185;
+
+  }
+
   .product-add-to-cart:hover,
   .product-buy-now:hover {
     cursor: pointer;
@@ -603,9 +646,27 @@ body {
     padding-top: 15px;
   }
 
-  .product-ship-and-sold-by {
-    padding-top: 20px;
+  .product-ship-sold-container {
+    padding-top: 40px;
+    padding-bottom: 20px;
     justify-content: center;
+    font-size: 12px;
+    color: #565959;
+  }
+
+  .product-return-container {
+    display: block;
+  }
+
+  .return-policy {
+    color: #565959;
+    display: inline-block;
+  }
+
+  .return-date {
+    color: #007185;
+    display: inline-block;
+    padding-left: 5px;
   }
 
   .review-container {
@@ -740,6 +801,11 @@ body {
     border-radius: 8px;
     box-shadow: 0px 1px 2px grey;
     padding: 5px 15px 5px 15px;
+  }
+
+  .helpful-btn:hover, 
+  .report:hover {
+    cursor: pointer;
   }
 
   .report {

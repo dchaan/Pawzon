@@ -95,9 +95,14 @@ class ProductShow extends React.Component {
   
   
   render() {
-    console.log(this.props)
     const { product } = this.props;
+    const shipDateArr = new Date(new Date().setDate(new Date().getDate() + 2)).toString().split(" ");
+    const shipDate = `${shipDateArr[0]}, ${shipDateArr[1]} ${shipDateArr[2]}`;
+    const returnDateArr = new Date(new Date().setDate(new Date().getDate() + 30)).toString().split(" ");
+    const returnDate = `${returnDateArr[1]} ${returnDateArr[2]}, ${returnDateArr[3]}`;
+    
     if (!product) return null;
+
     return (
       <div className="product-container">
         <div className="prod-container">
@@ -116,10 +121,17 @@ class ProductShow extends React.Component {
           <div className="product-checkout">
             <div className="product-checkout-price">${product.price}</div>
             <div className="product-checkout-prime">
-              <img className="prime-checkout" src="images/prime.png"/> <div className="product-checkout-free-returns"> & FREE Returns</div>
+              <img className="prime-checkout" src="images/prime.png"/> 
+              <div className="product-checkout-free-returns"> & FREE Returns</div>
             </div>
-            <div className="product-checkout-free-delivery">FREE Delivery</div>
-            <div className="product-checkout-delivery"><img className="product-checkout-location-img" src="images/product-location.png"/> Deliver to {this.props.currentUser ? this.props.currentUser.first_name : null} - Pacifica 94044</div>
+            <div className="product-date">
+              <div className="product-free-delivery">FREE Delivery:</div>
+              <div className="product-ship-date">{shipDate}</div>
+            </div>
+            <div className="product-delivery">
+              <img className="product-checkout-location-img" src="images/product-location.png"/> 
+              <div className="prod-deliver-loc">Deliver to {this.props.currentUser ? this.props.currentUser.first_name : null} - Pacifica 94044</div>
+            </div>
             <div className="product-stock">In Stock.</div>
             <form className="product-checkout-form">
               <label className="product-quantity" htmlFor="qty">
@@ -140,7 +152,18 @@ class ProductShow extends React.Component {
               <div className="atc"><button className="product-add-to-cart" onClick={this.handleAddToCart}>Add to Cart</button></div>
             </form>
             <div className="buy-now"><button className="product-buy-now">Buy Now</button></div>
-            <div className="product-ship-and-sold-by">Ships & sold from Pawzon.com</div>
+            <div className="secure-container">
+              <img className="lock-img" src="images/lock.png"/>
+              <div className="secure-trans">Secure Transaction</div>
+            </div>
+            <div className="product-ship-sold-container">
+              <div className="product-ship-and-sold-by">Ships from Pawzon.com</div>
+              <div className="product-ship-and-sold-by">Sold from Pawzon.com</div>
+            </div>
+            <div className="product-return-container">
+              <div className="return-policy">Return Policy: </div>
+              <div className="return-date">Returnable until {returnDate}</div>
+            </div>
           </div>
 
         </div>
