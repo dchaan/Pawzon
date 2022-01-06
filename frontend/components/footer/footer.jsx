@@ -18,10 +18,12 @@ const Footer = () => (
       </a>
     </div>
 
-    <div className="footer-description">
-      Pawzon is a clone of Amazon.
-      <br/>
-      This app was created using Javascript, React, Redux, Ruby, and Rails.
+    <div className="footer-bottom">
+      <div className="footer-description">
+        Pawzon is a clone of Amazon.
+        <br/>
+        This app was created using Javascript, React, Redux, Ruby, and Rails.
+      </div>
     </div>
   </div>
 );

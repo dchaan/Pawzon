@@ -145,17 +145,19 @@ class ProductShow extends React.Component {
 
         </div>
 
-        <div className="write-review-container">
-          <div className="review-this-product">Review this product</div>
-          <div className="share-your-thoughts">Share your thoughts with other customers</div>
-          {
-            this.props.user ? <button className="product-new-review-btn"><Link className="write-review-link" to={`/products/${product.id}/reviews/new`}><div className="review-btn-txt">Write a customer review</div></Link></button> :
-              <button className="product-new-review-btn"><Link className="write-review-link" to={`/login`}><div className="review-btn-txt">Write a customer review</div></Link></button>
-          }
-        </div>
         <div className="review-container">
-          <div className="reviews-headline">Top Reviews from the United Stated</div>
-          <ReviewIndexContainer product={product}/>
+          <div className="write-review-container">
+            <div className="review-this-product">Review this product</div>
+            <div className="share-your-thoughts">Share your thoughts with other customers</div>
+            {
+              this.props.user ? <button className="product-new-review-btn"><Link className="write-review-link" to={`/products/${product.id}/reviews/new`}><div className="review-btn-txt">Write a customer review</div></Link></button> :
+                <button className="product-new-review-btn"><Link className="write-review-link" to={`/login`}><div className="review-btn-txt">Write a customer review</div></Link></button>
+            }
+          </div>
+          <div className="review-index-container">
+            <div className="reviews-headline">Top Reviews from the United States</div>
+            <ReviewIndexContainer product={product}/>
+          </div>
         </div>
       </div>  
     )

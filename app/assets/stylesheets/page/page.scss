@@ -344,15 +344,15 @@ body {
   display: flex;
   width: 100%;
   flex-direction: column;
-  bottom: 0%;
-  position: fixed;
+  bottom: 0px;
+  position: relative;
 }
 
   .footer-back-to-top {
     background-color: #37475A;
     display: flex;
     font-size: 15px;
-    height: 30px;
+    height: 25%;
     top: 0px;
     justify-content: center;
     align-items: center;
@@ -365,7 +365,7 @@ body {
 
   .footer-links {
     background-color: #232F3E;
-    height: 50px;
+    height: 50%;
     align-items: center;
     justify-content: center;
     display: flex;
@@ -384,6 +384,12 @@ body {
     width: 40px;
     margin-left: 30px;
     margin-right: 30px;
+  }
+
+  .footer-bottom {
+    height: 25%;
+    background-color: #131A22;
+    bottom: 0px;
   }
 
   .footer-description {
@@ -602,15 +608,28 @@ body {
     justify-content: center;
   }
 
+  .review-container {
+    display: block;
+    padding: 50px 20px 20px 50px;
+    margin: 0px 50px 50px 50px;
+    border-top: 1px solid lightgray;
+  }
+
   .write-review-container {
-    padding: 20px;
-    display: flex;
+    float: left;
     flex-direction: column;
-    width: 500px;
+    width: 400px;
+    position: relative;
+  }
+
+  .review-index-container {
+    display: block;
+    float: left;
+    padding-left: 15%;
   }
 
   .review-this-product {
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     padding: 10px;
     display: flex;
@@ -639,6 +658,96 @@ body {
   .write-review-link {
     text-decoration: none;
     font-size: 18px;
+  }
+
+  .review-item {
+    margin-bottom: 40px;
+    padding-bottom: 40px;
+    border-bottom: 1px solid lightgray;
+  }
+
+  .reviews-headline {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+
+  .review-row-one {
+    display: block;
+  }
+
+  .review-rating {
+    display: inline-block;
+    margin-right: 5px;
+  }
+
+  .review-title {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+    display: inline-block;
+  }
+
+  .review-date {
+    color: #565959;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .review-row-two {
+    display: block;
+    margin-bottom: 10px;
+  }
+
+  .review-size {
+    font-size: 14px;
+    color: #565959;
+    display: inline-block;
+    padding-right: 10px;
+    margin-right: 10px;
+    border-right: 1px solid lightgray;
+  }
+
+  .verified-purchase {
+    font-size: 12px;
+    font-weight: bold;
+    color: #c45500;
+    display: inline-block;
+  }
+
+  .review-body {
+    font-size: 14px;
+    margin-bottom: 10px;
+  }
+
+  .review-randomnum {
+    color: #565959;
+    font-size: 14px;
+    margin-bottom: 5px;
+  }
+
+  .review-row-three {
+    display: block;
+  }
+
+  .helpful {
+    display: inline-block;
+  }
+
+  .helpful-btn {
+    background-color: transparent;
+    border: 1px solid #D5D9D9;
+    border-radius: 8px;
+    box-shadow: 0px 1px 2px grey;
+    padding: 5px 15px 5px 15px;
+  }
+
+  .report {
+    padding-left: 10px;
+    margin-left: 10px;
+    border-left: 1px solid lightgray;
+    display: inline-block;
+
   }
 
   .cart-container {
