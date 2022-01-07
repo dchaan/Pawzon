@@ -105,8 +105,10 @@ class ProductShow extends React.Component {
 
     return (
       <div className="product-container">
-        <div className="prod-container">
-          <img className="product-img" src={product.image_url} />
+        <div className="prod-details">
+          <div className="prod-img-container">
+            <img className="product-img" src={product.image_url} />
+          </div>
           <div className="product-about">
             <div className="product-name">{product.product_name}</div>
             <div className="product-rating">Rating: {product.rating}</div>

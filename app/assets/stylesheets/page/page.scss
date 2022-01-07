@@ -431,45 +431,46 @@ body {
     justify-content: center;
   }
 
-  .prod-container {
+  .prod-img-container {
+    width: 650px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-right: 20px;
+  }
+
+  .prod-details {
     display: flex;
     justify-content: center;
     width: 100%;
-    padding-bottom: 20px;
+    margin-bottom: 20px;
   }
 
   .product-img {
-    display: flex;
-    padding-left: 20px;
-    padding-right: 20px;
-    height: 400px;
-    width: 750px;
-    border-radius: 5px;
+    max-width: 80%;
+    max-height: 50vh;
+    margin-top: 20px;
   }
 
   .prod-img-home {
     display: flex;
     height: 200px;
     width: auto;
-    padding: 20px;
+    margin: 20px;
   }
 
   .product-about {
     flex-direction: column;
     display: flex;
-    padding: 20px;
-    border: 1px solid lightgray;
-    border-radius: 5px;
-    box-shadow: 0px 1px 2px grey;
-    margin-right: 20px;
-    width: 400px;
-    height: 600px;
+    margin: 20px 40px 0px 0px;
+    width: 30%;
+    border-bottom: 1px solid lightgray;
   }
 
   .product-name {
     display: flex;
-    font-size: 22px;
-    font-weight: 600;
+    font-size: 24px;
+    font-weight: bold;
     margin-bottom: 5px;
   }
 
@@ -498,13 +499,14 @@ body {
     display: flex;
     height: 18px;
     padding-left: 10px;
-    padding-right: 10px;
+    padding-right: 5px;
   }
 
   .product-free-returns {
     display: flex;
     color: #007185;
     font-size: 15px;
+    margin-top: 1px;
   }
 
   .product-desc-title {
@@ -527,7 +529,9 @@ body {
     background-color: transparent;
     padding: 20px;
     box-shadow: 0px 1px 2px grey;
-    height: 50%;
+    height: fit-content;
+    width: 240px;
+    margin-right: 50px;
   }
 
   .product-checkout-price {
