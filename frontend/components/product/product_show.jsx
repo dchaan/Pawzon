@@ -117,7 +117,13 @@ class ProductShow extends React.Component {
               <div className="product-free-returns">& FREE Returns</div>
             </div>
             <div className="product-desc-title">About this item</div>
-            <div className="product-description">{product.description}</div>    
+            <div className="product-description">
+              {product.description.split(",").map((bullet, i) => {
+                return (
+                  <li key={i}>{bullet}</li>
+                ) 
+              })}
+            </div>    
           </div>
 
           <div className="product-checkout">

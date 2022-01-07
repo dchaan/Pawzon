@@ -47,7 +47,7 @@ class Navbar extends React.Component {
           </div>
           <div className="nav-search-container">
             <form className="searchbar-form">
-              <input type="text" class="searchbar-input" value=" "/>
+              <input type="text" className="searchbar-input" value=" "/>
             </form>
           </div>
 

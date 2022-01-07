@@ -15,7 +15,6 @@ class ProductIndexItem extends React.Component {
 
     render() {
       const { product } = this.props;
-      console.log(product)
 
       return(
         <div className="list-items">
