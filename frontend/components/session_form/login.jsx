@@ -47,7 +47,7 @@ class Login extends React.Component {
   render() {
     return (
       <div className="session-form">
-        <div className="login-logo"><img className="login-img" src="/images/pawzon-login.png"/></div>
+        <div className="login-logo"><img className="login-img" src="/images/pawzon-white.png"/></div>
         <div className="login-form">
           <div className="login-title">Log In!</div>
           <form onSubmit={this.handleSubmit}>

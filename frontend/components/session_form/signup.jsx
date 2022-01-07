@@ -38,7 +38,7 @@ class Signup extends React.Component {
   render() {
     return (
       <div className="signup">
-        <div className="signup-logo"><img className="signup-img" src="/images/pawzon-login.png" /></div>
+        <div className="signup-logo"><img className="signup-img" src="/images/pawzon-white.png" /></div>
         <div className="signup-form">
           <div className="signup-title">Create Account!</div>
           <form onSubmit={this.handleSubmit}>

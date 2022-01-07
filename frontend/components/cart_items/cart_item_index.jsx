@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 class CartItemIndex extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { checkout: "" };
     this.handleCheckout = this.handleCheckout.bind(this);
   }
 
@@ -18,7 +17,7 @@ class CartItemIndex extends React.Component {
     this.props.cartItems.forEach(cartItem => {
       this.props.deleteCartItem(cartItem)
     });
-    this.setState({ checkout: <div className="checkout-msg">Thank you for your order.</div>})
+    this.props.history.push("/checkout");
   }
 
   
