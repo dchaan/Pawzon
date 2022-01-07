@@ -63,7 +63,6 @@ class CartItemIndex extends React.Component {
             </div>
           </div>
         </div>
-      
         <div className="cart-right">
           <div className="cart-checkout-container">
             <div className="cart-checkout-subtotal">Subtotal ({totalItems} item(s)): <b>${subtotal.toFixed(2)}</b></div>
