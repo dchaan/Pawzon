@@ -15,17 +15,26 @@ class ProductIndexItem extends React.Component {
 
     render() {
       const { product } = this.props;
+      const shipDateArr = new Date(new Date().setDate(new Date().getDate() + 2)).toString().split(" ");
+      const shipDate = `${shipDateArr[0]}, ${shipDateArr[1]} ${shipDateArr[2]}`;
 
       return(
-        <div className="list-items">
-          <div className="home-grid">
-            <Link className="home-prod-link" to={`/products/${product.id}`}>
-              {product.product_name}
-            </Link>
+        <div className="prod-box-container">
+          <div className="prod-box-img-container">
             <Link to={`/products/${product.id}`}>
-              <img className="prod-img-home" src={product.image_url} />
+              <img className="prod-box-img" src={product.image_url} />
             </Link>
           </div>
+          <Link className="prod-title-link" to={`/products/${product.id}`}>
+            {product.product_name}
+          </Link>
+            <div className="prod-rating">{product.rating}</div>
+          <div className="prod-price"><b>${product.price}</b></div>
+            <div className="prod-prime">
+              <img src="images/prime.png" className="prod-prime-img"/>
+              <div className="prod-free-ship">Free Delivery</div>
+              </div>
+            <div className="prod-get-soon">Get is as soon as <b>{shipDate}</b></div>
         </div>
       )
     }

@@ -13,8 +13,13 @@ class ProductIndex extends React.Component {
 
   render() {
     return (
-      <div>
-        {this.props.products.map(product => <ProductIndexItem key={product.id} product={product} /> )}
+      <div className="prod-index-container">
+        <div className="num-results-container">
+              <div className="num-results"><b>Showing 30 results</b></div>
+            </div>
+        <div className="prod-grid-container">
+          {this.props.products.map(product => <ProductIndexItem key={product.id} product={product} /> )}
+        </div>
       </div>
     )
   }

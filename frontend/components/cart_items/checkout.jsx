@@ -8,7 +8,9 @@ class Checkout extends React.Component {
           <div className="checkout-header">
             Thank you, your order has been placed.
           </div>
-          <div className="checkout-sub">Thank you for using Pawzon.com</div>
+          <div className="checkout-sub">
+            Thank you for using Pawzon.com
+          </div>
         </div>
       </div>
     )

@@ -13,8 +13,8 @@ import CartItemIndexContainer from "./cart_items/cart_item_index_container";
 import Checkout from "./cart_items/checkout"
 
 const App = () => (
-  <div className="page">
-  <NavbarContainer />
+  <div>
+    <NavbarContainer />
     <Switch>
       <AuthRoute path="/login" component={LoginContainer} />
       <AuthRoute path="/signup" component={SignupContainer} />
