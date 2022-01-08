@@ -6,6 +6,9 @@ class Homepage extends React.Component {
   render() {
     return (
       <div className="home-container">
+        <div className="home-img-container">
+          <img src="/images/puppy_background.png" className="home-img"/>
+        </div>
         <div className="home-box-container">
           <div className="home-box">
             <div className="home-box-head">Deal of the Day</div>
@@ -59,7 +62,7 @@ class Homepage extends React.Component {
             </div>
           </div>
           <div className="home-box">
-            <div className="home-box-head">Stay Healthy</div>
+            <div className="home-box-head">New Year New Me</div>
             <div className="home-box-img-container">
               <Link to="/products/6">
                 <img src="https://m.media-amazon.com/images/I/818miVEklmL._AC_SL1500_.jpg" className="home-box-img"/>
