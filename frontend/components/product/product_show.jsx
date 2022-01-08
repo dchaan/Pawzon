@@ -14,7 +14,7 @@ class ProductShow extends React.Component {
     this.handleQuantity = this.handleQuantity.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.checkCartItem = this.checkCartItem.bind(this);
-    // this.handleBuyNow = this.handleBuyNow.bind(this);
+    this.handleBuyNow = this.handleBuyNow.bind(this);
   }
 
   componentDidMount() {
@@ -80,9 +80,18 @@ class ProductShow extends React.Component {
     }
   }
 
+  handleBuyNow(e) {
+    if (!this.props.currentUser) { this.props.history.push("/login"); } 
+    if (this.props.cartItems) {
+      this.props.cartItems.forEach(cartItem =>
+        this.props.deleteCartItem(cartItem));
+    }
+    this.props.history.push("/checkout")
+  }
+
   // handleBuyNow(e) {
   //   e.preventDefault();
-  //   if (!this.props.currentUser) { this.props.history.push("/login"); } 
+  //  
   //   const cartItem = {
   //     product_id: this.props.productId,
   //     user_id: this.props.user,
@@ -159,7 +168,7 @@ class ProductShow extends React.Component {
               <br/>
               <div className="atc"><button className="product-add-to-cart" onClick={this.handleAddToCart}>Add to Cart</button></div>
             </form>
-            <div className="buy-now"><button className="product-buy-now">Buy Now</button></div>
+            <div className="buy-now"><button className="product-buy-now" onClick={this.handleBuyNow}>Buy Now</button></div>
             <div className="secure-container">
               <img className="lock-img" src="images/lock.png"/>
               <div className="secure-trans">Secure Transaction</div>
