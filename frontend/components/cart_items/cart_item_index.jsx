@@ -58,13 +58,13 @@ class CartItemIndex extends React.Component {
                 )
             }
             <div className="cart-subtotal-container">
-              <div className="cart-subtotal">Subtotal ({totalItems} item(s)): <b>${subtotal.toFixed(2)}</b></div>
+              <div className="cart-subtotal">Subtotal ({totalItems} items): <b>${subtotal.toFixed(2)}</b></div>
             </div>
           </div>
         </div>
         <div className="cart-right">
           <div className="cart-checkout-container">
-            <div className="cart-checkout-subtotal">Subtotal ({totalItems} item(s)): <b>${subtotal.toFixed(2)}</b></div>
+            <div className="cart-checkout-subtotal">Subtotal ({totalItems} items): <b>${subtotal.toFixed(2)}</b></div>
             <div className="cart-right-gift">
               <input className="cart-right-check" type="checkbox"></input>
               <div className="cart-right-gift-text">This is a gift</div>

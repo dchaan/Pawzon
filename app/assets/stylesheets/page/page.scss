@@ -1,9 +1,5 @@
-#root {
-  height: 100%;
-
-}
-
 body {
+  width: 100%;
   background-color: #EAEDED;
   font-family: Arial, Helvetica, sans-serif;
   font-size: 14px;
@@ -13,7 +9,7 @@ body {
 .session-form {
   height: 100%;
   width: 100%;
-  padding: 20px;
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -138,6 +134,10 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.nav-container {
+  width: 100%;
 }
 
 .navbar-top {
