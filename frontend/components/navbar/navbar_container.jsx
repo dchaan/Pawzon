@@ -6,12 +6,12 @@ import { fetchCartItems } from "../../actions/cart_item_actions";
 const mSTP = state => ({
   currentUser: state.entities.users[state.session.id],
   user: state.session.id,
-  items: Object.values(state.entities.cartItems)
+  cartItems: Object.values(state.entities.cartItems)
 })
 
 const mDTP = dispatch => ({
   logout: () => dispatch(logout()),
-  fetchCartItems: () => dispatch(fetchCartItems)
+  fetchCartItems: () => dispatch(fetchCartItems())
 })
 
 const NavbarContainer = connect(mSTP, mDTP)(Navbar);

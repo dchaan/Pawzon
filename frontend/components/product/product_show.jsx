@@ -66,7 +66,7 @@ class ProductShow extends React.Component {
       id: currentCartItemId,
       product_id: this.props.productId,
       user_id: this.props.user,
-      quantity: this.state.quantity + currentQuantity
+      quantity: parseFloat(this.state.quantity) + parseFloat(currentQuantity)
     };
 
     if (!this.props.currentUser) { 
@@ -88,20 +88,6 @@ class ProductShow extends React.Component {
     }
     this.props.history.push("/checkout")
   }
-
-  // handleBuyNow(e) {
-  //   e.preventDefault();
-  //  
-  //   const cartItem = {
-  //     product_id: this.props.productId,
-  //     user_id: this.props.user,
-  //     quantity: this.state.quantity
-  //   };
-  //   this.props.createCartItem(cartItem)
-  //   this.props.deleteCartItem(cartItem);
-  //   this.props.history.push("/cart");
-  // } 
-  
   
   render() {
     const { product } = this.props;

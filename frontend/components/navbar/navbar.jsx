@@ -12,7 +12,7 @@ class Navbar extends React.Component {
   };
 
   render() {
-    const { currentUser, logout, items } = this.props;
+    const { currentUser, logout, cartItems } = this.props;
     let profile = currentUser ? (
       <div>
         <div className="nav-hello">Hello, <b>{currentUser.first_name}</b></div>
@@ -29,8 +29,8 @@ class Navbar extends React.Component {
       </div>
     )
 
-    let cartItems = 0;
-    items.forEach(item => cartItems += item.quantity );
+    let cartQuantity = 0;
+    cartItems.forEach(cartItem => cartQuantity += cartItem.quantity );
 
     return (
       <div className="nav-container">
@@ -67,7 +67,7 @@ class Navbar extends React.Component {
                 <Link className="nav-cart-link" to="/login"><img src="images/cart.png" className="nav-cart-img" /></Link>
             }
             { 
-              cartItems ? <div className="nav-cart-counter">{cartItems}</div> : null 
+              cartQuantity ? <div className="nav-cart-counter">{cartQuantity}</div> : null 
             }
             <div className="nav-cart-word">Cart</div>
           </div>
