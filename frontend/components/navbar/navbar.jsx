@@ -73,13 +73,14 @@ class Navbar extends React.Component {
           </div>
         </div>
 
-        <div className="nav-categories">
-          <Link className="nav-all" to="/products">All</Link>
-          <div className="nav-beds">Beds</div>
-          <div className="nav-food">Food</div>
-          <div className="nav-toys">Toys</div>
-          <div className="nav-treats">Treats</div>
-          <div className="nav-walking">Walking</div>
+        <div className="nav-categories-container">
+          <Link className="nav-category" to="/products">All</Link>
+          <div className="nav-category">Beds</div>
+          <div className="nav-category">Food</div>
+          <div className="nav-category">Toys</div>
+          <div className="nav-category">Treats</div>
+          <div className="nav-category">Clothes</div>
+          <div className="nav-category">Walking</div>
         </div>
       </div>
     )

@@ -27,7 +27,7 @@ product1 = Product.create!(
                 The lavish cloud surface gives dogs plenty of space,
                 Sofa-like bolsters on three sides",
   price: 49.99,
-  category: "Dog Beds",
+  category: "Beds",
   category_id: 1,
   rating: 4.5,
   image_url: "https://m.media-amazon.com/images/I/71eNn7rDAPL._AC_SL1500_.jpg"
@@ -40,7 +40,7 @@ product2 = Product.create!(
                 Non-slip bottom,
                 Machine Washable",
   price: 29.99,
-  category: "Dog Beds",
+  category: "Beds",
   category_id: 1,
   rating: 3.5,
   image_url: "https://m.media-amazon.com/images/I/81t-YQSdMPL._AC_SL1500_.jpg"
@@ -53,7 +53,7 @@ product3 = Product.create!(
                 Waterproof design,
                 Extra large bed",
   price: 145.99,
-  category: "Dog Beds",
+  category: "Beds",
   category_id: 1,
   rating: 4.5,
   image_url: "https://m.media-amazon.com/images/I/7186klacOtL._AC_SL1500_.jpg"
@@ -66,7 +66,7 @@ product4 = Product.create!(
                 High protein with probiotics,
                 Real chicken as first ingredient",
   price: 49.98,
-  category: "Dog Food",
+  category: "Food",
   category_id: 2,
   rating: 4,
   image_url: "https://m.media-amazon.com/images/I/81ngwMbqC3L._AC_SL1500_.jpg"
@@ -82,7 +82,7 @@ product5 = Product.create!(
                 6 steak & egg flavor,
                 6 NY strip steak flavor",
   price: 31.98,
-  category: "Dog Food",
+  category: "Food",
   category_id: 2,
   rating: 4.5,
   image_url: "https://m.media-amazon.com/images/I/815j59r4TzS._AC_SL1500_.jpg"
@@ -95,7 +95,7 @@ product6 = Product.create!(
                 Contains special fiber and protein blend,
                 Includes wholesome grains",
   price: 57.88,
-  category: "Dog Food",
+  category: "Food",
   category_id: 2,
   rating: 3.5,
   image_url: "https://m.media-amazon.com/images/I/818miVEklmL._AC_SL1500_.jpg"
@@ -108,7 +108,7 @@ product7 = Product.create!(
                 Squeaker inside, keeps them entertained,
                 7 inch stuffed dog toy",
   price: 13.99,
-  category: "Dog Toys",
+  category: "Toys",
   category_id: 3,
   rating: 4,
   image_url: "https://m.media-amazon.com/images/I/7191kVHN7sS._AC_SL1440_.jpg"
@@ -122,7 +122,7 @@ product8 = Product.create!(
                 Machine washable,
                 Free frisbee included",
   price: 15.99,
-  category: "Dog Toys",
+  category: "Toys",
   category_id: 3,
   rating: 3.5,
   image_url: "https://m.media-amazon.com/images/I/81nCeEP+oeL._AC_SL1500_.jpg"
@@ -135,7 +135,7 @@ product9 = Product.create!(
                 Exercise and entertain,
                 Includes 3 tennis balls",
   price: 114.99,
-  category: "Dog Toys",
+  category: "Toys",
   category_id: 3,
   rating: 4,
   image_url: "https://m.media-amazon.com/images/I/61YeX9yhUhL._AC_SL1500_.jpg"
@@ -149,7 +149,7 @@ product10 = Product.create!(
                 Antler shaped natural dog chews with added calcium,
                 Extra long lasting",
   price: 8.97,
-  category: "Dog Treats",
+  category: "Treats",
   category_id: 4,
   rating: 4.5,
   image_url: "https://m.media-amazon.com/images/I/51v7TxWC3RL._AC_.jpg"
@@ -161,7 +161,7 @@ product11 = Product.create!(
                 Savory, long-lasting chews with a tender, meaty center,
                 No meat by-products or artificial flavors",
   price: 9.99,
-  category: "Dog Treats",
+  category: "Treats",
   category_id: 4,
   rating: 3.5,
   image_url: "https://m.media-amazon.com/images/I/81TUiyrkoWL._AC_SL1500_.jpg"
@@ -173,47 +173,87 @@ product12 = Product.create!(
                 Made with real chuck roast,
                 Fortified with 12 vitamins and minerals",
   price: 11.98,
-  category: "Dog Treats",
+  category: "Treats",
   category_id: 4,
   rating: 4,
   image_url: "https://m.media-amazon.com/images/I/81YSdPdKGHL._AC_SL1500_.jpg"
 )
 
-# 5. Dog Walking
+# 5. Dog Clothes
 product13 = Product.create!(
+  product_name: "Cozy Waterproof Windproof Reversible Plaid Dog Vest",
+  description: "To better fit your dog please measure the size of your dog,
+                Polyester-fiber water-resistant,
+                Exquisite stitching,
+                Easy hook and loop closure makes it easy to put on",
+  price: 18.99,
+  category: "Clothes",
+  category_id: 5,
+  rating: 4.5,
+  image_url: "https://m.media-amazon.com/images/I/7182W-HNhDL._AC_SL1500_.jpg"
+)
+
+product14 = Product.create!(
+  product_name: "4 Piece Dog Pajamas for Small Dogs",
+  description: "Does not fit medium and large dogs,
+                4-pk cartoon dog pajamas for small dogs,
+                Soft material onesies for dogs will keep them warm and comfortable,
+                Perfect for any occasion",
+  price: 21.99,
+  category: "Clothes",
+  category_id: 5,
+  rating: 3.5,
+  image_url: "https://m.media-amazon.com/images/I/81Ufc7qMN5L._AC_SL1500_.jpg"
+)
+
+product15 = Product.create!(
+  product_name: "Dog Boots Paw Protector, Anti-Slip Dog Shoes with Reflective Straps",
+  description: "PAW PROTECTION: Paw wear can protect from sharp thorns and hot pavement,
+                KEEP PUPPY SAFE: 3M reflective strip raises visibility,
+                CUTE DOG BOOTS: Machine washable, but not waterproof,
+                BREATHABLE: Mesh fabric provides high ventilation while keeping dirt and debris out",
+  price: 25.99,
+  category: "Clothes",
+  category_id: 5,
+  rating: 4,
+  image_url: "https://m.media-amazon.com/images/I/71O3RuIg38S._AC_SL1500_.jpg"
+)
+
+# 6. Dog Walking
+product16 = Product.create!(
   product_name: "LED Dog Collar USB Rechareable",
   description: "Ultimate safety, keeping your dog visible,
                 Rechargeable battery that lasts multiple walks,
                 Dog proof and weather-proof 100% guaranteed",
   price: 17.99,
-  category: "Dog Walking",
-  category_id: 5,
+  category: "Walking",
+  category_id: 6,
   rating: 4.5,
   image_url: "https://m.media-amazon.com/images/I/81lnHom3JPL._AC_SL1500_.jpg"
 )
 
-product14 = Product.create!(
+product17 = Product.create!(
   product_name: "Retractable Dog Leash 26ft",
   description: "Extra length 26ft - gives your dog more space to sniff,
                 Heavy-duty, durable, & sturdy,
                 Reflective tape increases dog visibility,
                 Ergonomic anti-slip soft handle",
   price: 23.99,
-  category: "Dog Walking",
-  category_id: 5,
+  category: "Walking",
+  category_id: 6,
   rating: 3,
   image_url: "https://m.media-amazon.com/images/I/61mE2OzRY6L._AC_SL1500_.jpg"
 )
 
-product15 = Product.create!(
+product18 = Product.create!(
   product_name: "Earth Rated Dog Poop Bags, Lavender-Scented, 900 count",
   description: "900 extra thick and strong poop bags,
                 Guaranteed leak-proof,
                 Lavender-scented,
                 Includes 2 leash dispensers",
   price: 34.99,
-  category: "Dog Walking",
-  category_id: 5,
+  category: "Walking",
+  category_id: 6,
   rating: 4,
   image_url: "https://m.media-amazon.com/images/I/71Ks+Gy4XvL._AC_SL1500_.jpg"
 )
@@ -315,25 +355,49 @@ review12 = Review.create!(
 )
 
 review13 = Review.create!(
-  title: "Perfect for night walks",
-  body: "Keeps me and my dog safe during night walks",
+  title: "Cute and good quality!",
+  body: "My doggo loves it and people compliment it all the time!",
   rating: 4.5,
   user_id: 1,
   product_id: 13
 )
 
 review14 = Review.create!(
-  title: "Cheap",
-  body: "Poor quality, wouldn't buy again",
-  rating: 3,
+  title: "Cute but cheap quality",
+  body: "Adorable designs but they feel cheaply made",
+  rating: 3.5,
   user_id: 1,
   product_id: 14
 )
 
 review15 = Review.create!(
+  title: "They do the job!",
+  body: "The boots do what they're supposed to. No complaints here",
+  rating: 4,
+  user_id: 1,
+  product_id: 15
+)
+
+review16 = Review.create!(
+  title: "Perfect for night walks",
+  body: "Keeps me and my dog safe during night walks",
+  rating: 4.5,
+  user_id: 1,
+  product_id: 16
+)
+
+review17 = Review.create!(
+  title: "Cheap",
+  body: "Poor quality, wouldn't buy again",
+  rating: 3,
+  user_id: 1,
+  product_id: 17
+)
+
+review18 = Review.create!(
   title: "Bags smell great",
   body: "The scented bags mask the smell of the poop",
   rating: 4,
   user_id: 1,
-  product_id: 15
+  product_id: 18
 )
