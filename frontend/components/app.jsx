@@ -5,7 +5,7 @@ import ProductShowContainer from "./product/product_show_container";
 import NavbarContainer from "./navbar/navbar_container";
 import LoginContainer from "./session_form/login_container";
 import SignupContainer from "./session_form/signup_container";
-import Homepage from "./homepage";
+import Homepage from "./homepage/homepage";
 import ProductIndexContainer from "./product/product_index_container";
 import Footer from "./footer/footer";
 import ReviewFormContainer from "./reviews/review_form_container";
