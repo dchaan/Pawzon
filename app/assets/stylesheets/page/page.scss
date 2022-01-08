@@ -1237,14 +1237,29 @@ body {
 .checkout-box {
   width: 750px;
   height: fit-content;
-  border: 2px solid #008040;
+  border: 2px solid #02763c;
   box-shadow: 0px 1px 2px grey;
   border-radius: 5px;
   padding: 20px;
+  display: block;
+  flex-direction: column;
 }
+
+.check-img {
+  display: inline-block;
+  height: 40px;
+  width: 50px;
+  margin-right: 5px;
+}
+
 .checkout-header {
-  color:#008040;
-  font-size: 26px;
+  display: inline-block;
+  color:#02763c;
+  font-size: 28px;
   font-weight: bold;
-  padding-bottom: 10px;
+  padding-bottom: 15px;
+}
+
+.checkout-sub {
+  display: flex;
 }

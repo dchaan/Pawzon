@@ -5,6 +5,7 @@ class Checkout extends React.Component {
     return(
       <div className="checkout-container">
         <div className="checkout-box">
+          <img src="images/check.png" className="check-img"/>
           <div className="checkout-header">
             Thank you, your order has been placed.
           </div>
