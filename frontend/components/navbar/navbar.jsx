@@ -1,17 +1,53 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import SearchContainer from "../search/search_container"
-// import { login, logout, signup } from "../../actions/session_actions"
+import { withRouter } from "react-router-dom"
 
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
+    this.handleBeds = this.handleBeds.bind(this);
+    this.handleFood = this.handleFood.bind(this);
+    this.handleToys = this.handleToys.bind(this);
+    this.handleTreats = this.handleTreats.bind(this);
+    this.handleClothes = this.handleClothes.bind(this);
+    this.handleWalking = this.handleWalking.bind(this);
   }
 
   componentDidMount() {
     if (this.props.currentUser) { this.props.fetchCartItems(); }
     this.props.fetchProducts("");
   };
+
+  handleBeds() {
+    this.props.fetchProducts("beds")
+      .then(this.props.history.push("/products"))
+  }
+
+  handleFood() {
+    this.props.fetchProducts("food")
+      .then(this.props.history.push("/products"))
+  }
+
+  handleToys() {
+    this.props.fetchProducts("toys")
+      .then(this.props.history.push("/products"))
+  }
+
+  handleTreats() {
+    this.props.fetchProducts("treats")
+      .then(this.props.history.push("/products"))
+  }
+
+  handleClothes() {
+    this.props.fetchProducts("clothes")
+      .then(this.props.history.push("/products"))
+  }
+
+  handleWalking() {
+    this.props.fetchProducts("walking")
+      .then(this.props.history.push("/products"))
+  }
 
   render() {
     const { currentUser, logout, cartItems } = this.props;
@@ -50,7 +86,6 @@ class Navbar extends React.Component {
           <div className="nav-search-container">
             <SearchContainer />
           </div>
-
           <div className="nav-flag-container">
             <img src="images/flag.png" className="nav-flag-img" />
           </div>
@@ -62,12 +97,20 @@ class Navbar extends React.Component {
             <div className="nav-orders">& Orders</div>
           </div>
           <div className="nav-cart-container">
-            {
-              currentUser ? <Link className="nav-cart-link" to="/cart"><img src="images/cart.png" className="nav-cart-img" /></Link> :
-                <Link className="nav-cart-link" to="/login"><img src="images/cart.png" className="nav-cart-img" /></Link>
+            { currentUser ? 
+              <Link className="nav-cart-link" to="/cart">
+                <img src="images/cart.png" className="nav-cart-img"/>
+              </Link> 
+              :
+              <Link className="nav-cart-link" to="/login">
+                <img src="images/cart.png" className="nav-cart-img"/>
+              </Link>
             }
             { 
-              cartQuantity ? <div className="nav-cart-counter">{cartQuantity}</div> : null 
+              cartQuantity ? 
+              <div className="nav-cart-counter">{cartQuantity}</div> 
+              : 
+              null 
             }
             <div className="nav-cart-word">Cart</div>
           </div>
@@ -75,16 +118,16 @@ class Navbar extends React.Component {
 
         <div className="nav-categories-container">
           <Link className="nav-category" to="/products">All</Link>
-          <div className="nav-category">Beds</div>
-          <div className="nav-category">Food</div>
-          <div className="nav-category">Toys</div>
-          <div className="nav-category">Treats</div>
-          <div className="nav-category">Clothes</div>
-          <div className="nav-category">Walking</div>
+          <button onClick={this.handleBeds} className="nav-category">Beds</button>
+          <button onClick={this.handleFood} className="nav-category">Food</button>
+          <button onClick={this.handleToys} className="nav-category">Toys</button>
+          <button onClick={this.handleTreats} className="nav-category">Treats</button>
+          <button onClick={this.handleClothes} className="nav-category">Clothes</button>
+          <button onClick={this.handleWalking} className="nav-category">Walking</button>
         </div>
       </div>
     )
   }
 }
 
-export default Navbar;
+export default withRouter(Navbar);
