@@ -117,7 +117,7 @@ class Navbar extends React.Component {
         </div>
 
         <div className="nav-categories-container">
-          <Link className="nav-category" to="/products">All</Link>
+          <Link className="nav-category" to="/products"><img src="/images/menu.png" className="menu-img"/>All</Link>
           <button onClick={this.handleBeds} className="nav-category">Beds</button>
           <button onClick={this.handleFood} className="nav-category">Food</button>
           <button onClick={this.handleToys} className="nav-category">Toys</button>

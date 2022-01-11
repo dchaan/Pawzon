@@ -461,7 +461,6 @@ body {
 .nav-categories-container {
   background-color: #232F3E;
   color: white;
-  font-size: 16px;
   display: flex;
   justify-content: space-around;
   align-items: center;
@@ -469,7 +468,14 @@ body {
   height: 30px;
 }
 
+.menu-img {
+  height: 14px;
+  margin-right: 4px;
+  margin-bottom: -1px;
+}
+
 .nav-category {
+  font-size: 16px;
   text-decoration: none !important;
   border: transparent;
   background-color: transparent;
@@ -477,7 +483,7 @@ body {
 
 .nav-category:hover {
   cursor: pointer;
-  color: #B12704
+  color: #d8ad43;
 }
 
 .nav-category {
