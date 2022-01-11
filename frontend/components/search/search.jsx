@@ -18,7 +18,8 @@ class Search extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     this.props.fetchProducts(this.state.word)
-    .then(this.props.history.push("/products"))
+      .then(this.props.history.push("/products"));
+    this.setState({ word: "" });
   }
 
   render() {

@@ -12,7 +12,7 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
   logout: () => dispatch(logout()),
-  fetchProducts:data => dispatch(fetchProducts(data)),
+  fetchProducts: data => dispatch(fetchProducts(data)),
   fetchCartItems: () => dispatch(fetchCartItems())
 })
 
