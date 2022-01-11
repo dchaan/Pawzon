@@ -258,6 +258,97 @@ product18 = Product.create!(
   image_url: "https://m.media-amazon.com/images/I/71Ks+Gy4XvL._AC_SL1500_.jpg"
 )
 
+product19 = Product.create!(
+  product_name: "Portable Dog Paw Washer/ Pet Cleaner",
+  description: "It measures 6 inches tall and 4 inches wide,
+                To use, add a little water, insert the muddy paw, do the twist, dab the paw dry, repeat for 3 more paws,
+                The gentle silicone bristles will help remove dirt and mud from your dog's paws,
+                Simple and easy to use, just rinse and keep on hand for next muddy encounter",
+  price: 17.14,
+  category: "Walking",
+  category_id: 6,
+  rating: 4.5,
+  image_url: "https://m.media-amazon.com/images/I/71dZRrY-SEL._AC_SL1500_.jpg"
+)
+
+product20 = Product.create!(
+  product_name: "Did You Feed The Dog?",
+  description: "Device helps keep track of when the dog was fed with simple color coding,
+                Great way to teach children about the responsibility of pet ownership,
+                Reminder helps to prevent overfeeding, which can in turn help to prevent obesity,
+                Made of high-impact ABS plastic and mounts almost anywhere",
+  price: 8.04,
+  category: "Food",
+  category_id: 2,
+  rating: 4,
+  image_url: "https://m.media-amazon.com/images/I/817sVXrfVNL._AC_SL1500_.jpg"
+)
+
+product21 = Product.create!(
+  product_name: "Cooling Elevated Dog Bed, Portable Raised Pet Cot",
+  description: "Can hold a maximum weight of 150 pounds (68kg),
+                Stay Cool Ever! Crafted of mesh fabric in the center our bed allows air to flow keeping them cool while they relax in the heat,
+                Stay cool in peak summer or cozy in the wintertime!,
+                Easy to Assemble! No screws and wrenches needed",
+  price: 38.99,
+  category: "Beds",
+  category_id: 1,
+  rating: 3.5,
+  image_url: "https://m.media-amazon.com/images/I/61Vcwoki2dL._AC_SL1500_.jpg"
+)
+
+product22 = Product.create!(
+  product_name: "Dog Cleaning Stick Chew Toy",
+  description: "helps satisfy your dog’s instinctual needs,
+                IDEAL FOR WATER PLAY,
+                DURABLE & SOFT: Complying with the exact same safety standard as children's toys, the dog ball is made of premium PU,
+                EASY TO USE AND CLEAN: 100% Natural Rubber",
+  price: 12.86,
+  category: "Toys",
+  category_id: 3,
+  rating: 4,
+  image_url: "https://m.media-amazon.com/images/I/81PEx4nN07L._SL1381_.jpg"
+)
+
+product23 = Product.create!(
+  product_name: "Cute Green Dog Hoodie",
+  description: "Classic excellent and comfortable hooded sweater design,
+                Made of soft Fabric Fabic,
+                Bright colors with unique frog design,
+                It can help reduce the fall of pet hair",
+  price: 11.99,
+  category: "Clothes",
+  category_id: 5,
+  rating: 3.5,
+  image_url: "https://m.media-amazon.com/images/I/51goIo9vHoS._AC_SL1500_.jpg"
+)
+
+product24 = Product.create!(
+  product_name: "Adult Healthy Weight Dry Dog Food, All Breed Sizes, Lamb & Chicken",
+  description: "Contains one (1) 30 lb. bag of NUTRO NATURAL CHOICE Healthy Weight Adult Dry Dog Food,
+                Made with non-GMO ingredients; no chicken by-product meal,
+                High quality protein source is the ingredient in the delicious dry kibble,
+                Helps support healthy weight loss with a tailored blend of protein and fiber,
+                Formulated to support healthy immunity with essential antioxidants and healthy digestion with natural fiber",
+  price: 51.98,
+  category: "Food",
+  category_id: 2,
+  rating: 4.5,
+  image_url: "https://m.media-amazon.com/images/I/71pnfqIMpXL._AC_SL1500_.jpg"
+)
+
+product25 = Product.create!(
+  product_name: " Floppy Fish Dog Toy",
+  description: "Floppy fish cat toy with automatic induction movement,
+                Fabric printed with 3D printing technology has a sensitive touch makeing the flopping fish swing like a real fish,
+                Floppy fish uses high-quality plush cloth",
+  price: 13.13,
+  category: "Toys",
+  category_id: 3,
+  rating: 4.5,
+  image_url: "https://m.media-amazon.com/images/I/617KeEkZ7QL._AC_SL1100_.jpg"
+)
+
 review1 = Review.create!(
   title: "Great bed!",
   body: "My puppy loves this bed",
