@@ -11,7 +11,6 @@ import Footer from "./footer/footer";
 import ReviewFormContainer from "./reviews/review_form_container";
 import CartItemIndexContainer from "./cart_items/cart_item_index_container";
 import Checkout from "./cart_items/checkout"
-import search_container from "./search/search_container";
 
 const App = () => (
   <div>

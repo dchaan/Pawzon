@@ -12,6 +12,7 @@ class Navbar extends React.Component {
     this.handleTreats = this.handleTreats.bind(this);
     this.handleClothes = this.handleClothes.bind(this);
     this.handleWalking = this.handleWalking.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   componentDidMount() {
@@ -21,32 +22,37 @@ class Navbar extends React.Component {
 
   handleBeds() {
     this.props.fetchProducts("beds")
-      .then(this.props.history.push("/products"))
+      .then(this.props.history.push("/products"));
   }
 
   handleFood() {
     this.props.fetchProducts("food")
-      .then(this.props.history.push("/products"))
+      .then(this.props.history.push("/products"));
   }
 
   handleToys() {
     this.props.fetchProducts("toys")
-      .then(this.props.history.push("/products"))
+      .then(this.props.history.push("/products"));
   }
 
   handleTreats() {
     this.props.fetchProducts("treats")
-      .then(this.props.history.push("/products"))
+      .then(this.props.history.push("/products"));
   }
 
   handleClothes() {
     this.props.fetchProducts("clothes")
-      .then(this.props.history.push("/products"))
+      .then(this.props.history.push("/products"));
   }
 
   handleWalking() {
     this.props.fetchProducts("walking")
-      .then(this.props.history.push("/products"))
+      .then(this.props.history.push("/products"));
+  }
+
+  handleLogout() {
+    this.props.logout()
+      .then(this.props.history.push("/"));
   }
 
   render() {
@@ -54,7 +60,7 @@ class Navbar extends React.Component {
     let profile = currentUser ? (
       <div>
         <div className="nav-hello">Hello, <b>{currentUser.first_name}</b></div>
-        <div className="nav-logout"><button className="nav-logout-btn" onClick={logout}>Logout</button></div>
+        <div className="nav-logout"><button className="nav-logout-btn" onClick={this.handleLogout}>Logout</button></div>
       </div>
     ) : (
       <div>
@@ -107,7 +113,7 @@ class Navbar extends React.Component {
               </Link>
             }
             { 
-              cartQuantity ? 
+              (this.props.currentUser && cartQuantity) ? 
               <div className="nav-cart-counter">{cartQuantity}</div> 
               : 
               null 

@@ -9,7 +9,7 @@ class CartItemIndex extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchCartItems();
+    if (this.props.currentUser) { this.props.fetchCartItems(); }
   }
 
   handleCheckout(e) {
@@ -42,18 +42,19 @@ class CartItemIndex extends React.Component {
           </div>
 
           <div className="checkout-product-item">
-            {(this.props.cartItems.length === 0) ?
-              <div className="cart-empty">Your Pawzon cart is empty.</div> :
-                this.props.cartItems.map(cartItem => (
-                  <CartItemIndexItem
-                    key={cartItem.id}
-                    cartItem={cartItem}
-                    fetchCartItems={fetchCartItems}
-                    updateCartItem={updateCartItem}
-                    deleteCartItem={deleteCartItem}
-                  />
+            {
+              (this.props.cartItems.length === 0) ?
+                <div className="cart-empty">Your Pawzon cart is empty.</div> :
+                  this.props.cartItems.map(cartItem => (
+                    <CartItemIndexItem
+                      key={cartItem.id}
+                      cartItem={cartItem}
+                      fetchCartItems={fetchCartItems}
+                      updateCartItem={updateCartItem}
+                      deleteCartItem={deleteCartItem}
+                    />
                   )
-                )
+              )
             }
             <div className="cart-subtotal-container">
               <div className="cart-subtotal">Subtotal ({totalItems} items): <b>${subtotal.toFixed(2)}</b></div>
