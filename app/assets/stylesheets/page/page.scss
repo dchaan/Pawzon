@@ -985,28 +985,57 @@ body {
 }
 
 .review-item {
-  margin-bottom: 40px;
-  padding-bottom: 40px;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
   border-bottom: 1px solid lightgray;
 }
 
 .reviews-headline {
   font-size: 24px;
   font-weight: bold;
-  margin-bottom: 20px;
+  margin-bottom: 25px;
 }
 
 .review-row-one {
   display: block;
+  margin-bottom: 10px;
 }
 
-.review-rating {
+.review-user-img-container {
+  height: 24px;
+  width: 24px;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.user-img {
+  height: 24px;
+  width: 24px;
+  margin-bottom: -6px;
+}
+
+.review-name {
+  font-size: 16px;
+  display: inline-block;
+}
+
+.review-row-two {
+  display: block;
+}
+
+.review-rating-container {
   display: inline-block;
   margin-right: 5px;
 }
 
+.paw-img {
+  height: 22px;
+  width: 22px;
+  padding-right: 5px;
+}
+
 .review-title {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: bold;
   margin-bottom: 5px;
   display: inline-block;
@@ -1018,7 +1047,7 @@ body {
   margin-bottom: 5px;
 }
 
-.review-row-two {
+.review-row-three {
   display: block;
   margin-bottom: 10px;
 }
@@ -1050,7 +1079,7 @@ body {
   margin-bottom: 5px;
 }
 
-.review-row-three {
+.review-row-four {
   display: block;
 }
 
@@ -1330,17 +1359,28 @@ body {
   align-items: center;
   justify-content: center;
   padding-bottom: 300px;
-
 }
 
 .review-form-title {
   font-size: 25px;
-  padding-bottom: 50px;
+  font-weight: bold;
+  margin-bottom: 50px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid lightgray;
+}
+
+.review-form-overall-rating-container {
+  padding-bottom: 20px
 }
 
 .review-form-overall-rating {
   font-size: 20px;
   padding-bottom: 15px;
+}
+
+.review-form-paw-img {
+  height: 25px;
+  width: 25px;
 }
 
 .review-form-headline {

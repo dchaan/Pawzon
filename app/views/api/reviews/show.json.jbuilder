@@ -1,1 +1,2 @@
-json.partial! 'api/reviews/review', review: @review
+json.extract! @review, :id, :title, :body, :rating, :user_id, :product_id, :created_at
+json.extract! @review.user, :first_name
