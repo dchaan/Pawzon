@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProductIndex from "./product_index";
-
+import Rating from "react-rating";
 class ProductIndexItem extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +16,8 @@ class ProductIndexItem extends React.Component {
       const { product } = this.props;
       const shipDateArr = new Date(new Date().setDate(new Date().getDate() + 2)).toString().split(" ");
       const shipDate = `${shipDateArr[0]}, ${shipDateArr[1]} ${shipDateArr[2]}`;
+      
+
 
       return(
         <div className="prod-box-container">
@@ -28,7 +29,7 @@ class ProductIndexItem extends React.Component {
           <Link className="prod-title-link" to={`/products/${product.id}`}>
             {product.product_name}
           </Link>
-          <div className="prod-rating">{product.rating}</div>
+          <div className="prod-rating">{}</div>
           <div className="prod-price"><b>${product.price}</b></div>
             <div className="prod-prime">
               <img src="images/prime.png" className="prod-prime-img"/>
@@ -40,5 +41,4 @@ class ProductIndexItem extends React.Component {
     }
   }
 
-  export default ProductIndexItem;
-  
+export default ProductIndexItem;

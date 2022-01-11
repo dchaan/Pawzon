@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import ReviewIndexContainer from "../reviews/review_index_container";
-import ReviewShow from "../reviews/review_show";
+import Rating from "react-rating";
 
 class ProductShow extends React.Component {
   constructor(props) {
@@ -18,13 +18,8 @@ class ProductShow extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.currentUser) this.props.fetchCartItems();
     this.props.fetchProduct(this.props.productId);
     this.props.fetchReviews(this.props.productId);
-  }
-
-  componentWillReceiveProps(nextProps) {
-    this.setState({ reviews: nextProps.reviews })
   }
 
   handleQuantity(e) {
@@ -90,12 +85,24 @@ class ProductShow extends React.Component {
   }
   
   render() {
-    const { product } = this.props;
+    const { product, productId, reviews } = this.props;
     const shipDateArr = new Date(new Date().setDate(new Date().getDate() + 2)).toString().split(" ");
     const shipDate = `${shipDateArr[0]}, ${shipDateArr[1]} ${shipDateArr[2]}`;
     const returnDateArr = new Date(new Date().setDate(new Date().getDate() + 30)).toString().split(" ");
     const returnDate = `${returnDateArr[1]} ${returnDateArr[2]}, ${returnDateArr[3]}`;
-    
+    const fullPaw = <img src="/images/paw_full.png" className="product-review-paw-img"/>
+    const emptyPaw = <img src="/images/paw_empty.png" className="product-review-paw-img"/> 
+    let ratingCount = 0;
+    let ratings = 0;
+
+    reviews.map(review => {
+      if (review.product_id === parseInt(productId)) {
+        ratings += review.rating;
+        ratingCount++;
+      }
+    });
+    const avgRatings = (ratings / ratingCount);
+
     if (!product) return null;
 
     return (
@@ -106,7 +113,15 @@ class ProductShow extends React.Component {
           </div>
           <div className="product-about">
             <div className="product-name">{product.product_name}</div>
-            <div className="product-rating">Rating: {product.rating}</div>
+            <div className="product-rating-container">
+              <Rating
+                initialRating={avgRatings}
+                fullSymbol={fullPaw}
+                emptySymbol={emptyPaw}
+                readonly={true}
+              />
+              <div className="product-rating-count">{ratingCount} Ratings</div>
+            </div>
             <div className="product-price-container">
               <div className="product-price">Price: ${product.price} <img className="prime" src="images/prime.png" /></div>
               <div className="product-free-returns">& FREE Returns</div>

@@ -707,11 +707,24 @@ body {
   margin-bottom: 5px;
 }
 
-.product-rating {
-  margin-bottom: 20px;
-  padding-bottom: 20px;
+.product-rating-container {
+  display: block;
+  margin-top: 5px;
+  margin-bottom: 10px;
+  }
+
+.product-review-paw-img {
+  display: inline-block;
+  height: 22px;
+  width: 22px;
+  padding-right: 5px;
+}
+
+.product-rating-count {
+  font-size: 14px;
   color: #007185;
-  border-bottom: 1px solid lightgray;
+  display: inline-block;
+  padding-left: 5px;
 }
 
 .product-price-container {

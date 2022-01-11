@@ -6,6 +6,7 @@ import { withRouter } from "react-router-dom"
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
+    this.handleAll = this.handleAll.bind(this)
     this.handleBeds = this.handleBeds.bind(this);
     this.handleFood = this.handleFood.bind(this);
     this.handleToys = this.handleToys.bind(this);
@@ -17,8 +18,12 @@ class Navbar extends React.Component {
 
   componentDidMount() {
     if (this.props.currentUser) { this.props.fetchCartItems(); }
-    this.props.fetchProducts("");
   };
+
+  handleAll() {
+    this.props.fetchProducts("")
+      .then(this.props.history.push("/products"))
+  }
 
   handleBeds() {
     this.props.fetchProducts("beds")
@@ -123,7 +128,7 @@ class Navbar extends React.Component {
         </div>
 
         <div className="nav-categories-container">
-          <Link className="nav-category" to="/products"><img src="/images/menu.png" className="menu-img"/>All</Link>
+          <button onClick={this.handleAll} className="nav-category">All</button>
           <button onClick={this.handleBeds} className="nav-category">Beds</button>
           <button onClick={this.handleFood} className="nav-category">Food</button>
           <button onClick={this.handleToys} className="nav-category">Toys</button>
