@@ -1,5 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
+import SearchContainer from "../search/search_container"
 // import { login, logout, signup } from "../../actions/session_actions"
 
 class Navbar extends React.Component {
@@ -46,9 +47,7 @@ class Navbar extends React.Component {
             </div>
           </div>
           <div className="nav-search-container">
-            <form className="searchbar-form">
-              <input type="text" className="searchbar-input" value=" "/>
-            </form>
+            <SearchContainer />
           </div>
 
           <div className="nav-flag-container">

@@ -30,4 +30,10 @@ class Product < ApplicationRecord
   has_many :cart_items,
     foreign_key: :product_id,
     class_name: :CartItem
+
+  def self.search(query) 
+    self.where("product_name ILIKE ?", "%#{query}%")
+    .or(self.where("description ILIKE ?", "%#{query}"))
+    .or(self.where("category ILIKE ?", "%#{query}"))
+  end
 end

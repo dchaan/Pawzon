@@ -20,8 +20,6 @@ class CartItemIndex extends React.Component {
     this.props.history.push("/checkout");
   }
 
-  
-
   render() {
     const { fetchCartItems, updateCartItem, deleteCartItem } = this.props;
 

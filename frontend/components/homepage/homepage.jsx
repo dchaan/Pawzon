@@ -1,6 +1,5 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import ProductIndexContainer from "../product/product_index_container";
 
 class Homepage extends React.Component {
   render() {
