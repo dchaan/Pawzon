@@ -10,6 +10,7 @@ class Navbar extends React.Component {
 
   componentDidMount() {
     if (this.props.currentUser) { this.props.fetchCartItems(); }
+    this.props.fetchProducts("");
   };
 
   render() {
