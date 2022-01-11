@@ -21,7 +21,6 @@ const App = () => (
       <AuthRoute exact path="/signup" component={SignupContainer} />
       <Route exact path="/products" component={ProductIndexContainer} />
       <Route exact path="/products/:productId" component={ProductShowContainer} />
-      <Route exact path="/search" component={search_container}/>
       <Route exact path="/products/:productId/reviews/new" component={ReviewFormContainer} />
       <Route exact path="/cart" component={CartItemIndexContainer}/>
       <ProtectedRoute exact path="/checkout" component={Checkout}/>

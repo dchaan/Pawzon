@@ -6,12 +6,8 @@ class ProductIndex extends React.Component {
     super(props);
   }
 
-  componentDidMount() {
-    if (this.props.currentUser) this.props.fetchCartItems();
-    this.props.fetchProducts();
-  }
-
   render() {
+    console.log(this.props)
     return (
       <div className="prod-index-container">
         <div className="num-results-container">
