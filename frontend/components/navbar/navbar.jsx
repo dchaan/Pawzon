@@ -17,7 +17,7 @@ class Navbar extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.currentUser.id === this.props.user) { this.props.fetchCartItems(); }
+    if (this.props.currentUser) { this.props.fetchCartItems(); }
     this.props.fetchProducts("");
   };
 
@@ -120,7 +120,7 @@ class Navbar extends React.Component {
               </Link>
             }
             { 
-              (this.props.currentUser && cartQuantity) ? 
+              (currentUser && cartQuantity) ? 
               <div className="nav-cart-counter">{cartQuantity}</div> 
               : 
               null 
