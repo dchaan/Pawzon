@@ -2,6 +2,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class Homepage extends React.Component {
+  componentDidMount() {
+    if (this.props.currentUser) this.props.fetchCartItems();
+  }
+
   render() {
     return (
       <div className="home-container">
@@ -95,13 +99,6 @@ class Homepage extends React.Component {
         </div>
       </div>
     )
-
-
-    // return (
-    //   <div>
-    //     <ProductIndexContainer />
-    //   </div>
-    // )
   }
 }
 

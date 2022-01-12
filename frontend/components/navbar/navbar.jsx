@@ -17,7 +17,7 @@ class Navbar extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.currentUser) { this.props.fetchCartItems(); }
+    if (this.props.currentUser) this.props.fetchCartItems(); 
     this.props.fetchProducts("");
   };
 
@@ -62,8 +62,8 @@ class Navbar extends React.Component {
   }
 
   render() {
-    
     const { currentUser, cartItems } = this.props;
+    // if (currentUser && cartItems.length === 0) this.props.fetchCartItems();
     let profile = currentUser ? (
       <div>
         <div className="nav-hello">Hello, <b>{currentUser.first_name}</b></div>
