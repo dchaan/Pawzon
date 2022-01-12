@@ -33,9 +33,6 @@ class CartItemIndex extends React.Component {
       totalItems += cartItem.quantity
     });
 
-    console.log(this.props.currentUser.id)
-    console.log(this.props.sessionId)
-
     return (
       <div className="cart-container">
         <div className="cart-left">
