@@ -5,6 +5,7 @@ import CartItemIndex from "./cart_item_index";
 const mSTP = state => ({
   cartItems: Object.values(state.entities.cartItems),
   currentUser: state.entities.users[state.session.id],
+  user: state.session.id
 });
 
 const mDTP = dispatch => ({

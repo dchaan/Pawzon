@@ -9,7 +9,7 @@ class CartItemIndex extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.currentUser) { this.props.fetchCartItems(); }
+    if (this.props.currentUser.id === this.props.user) { this.props.fetchCartItems(); }
   }
 
   handleCheckout(e) {
@@ -32,6 +32,9 @@ class CartItemIndex extends React.Component {
     this.props.cartItems.forEach(cartItem => {
       totalItems += cartItem.quantity
     });
+
+    console.log(this.props.currentUser.id)
+    console.log(this.props.sessionId)
 
     return (
       <div className="cart-container">
