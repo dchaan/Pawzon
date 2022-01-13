@@ -14,6 +14,9 @@ const Footer = () => (
       <a href="https://www.linkedin.com/in/david-chan-4b1929185/">
         <img src="/images/linkedin.png" className="footer-img"/>
       </a>
+      <a href="https://dchaan.github.io/Portfolio/">
+        <img src="/images/portfolio.png" className="footer-img"/>
+      </a>
     </div>
     <div className="footer-bottom">
       <div className="footer-description">
