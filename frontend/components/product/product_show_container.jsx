@@ -20,7 +20,6 @@ const mDTP = dispatch => ({
   updateCartItem: cartItem => dispatch(updateCartItem(cartItem)),
   deleteCartItem: cartItem => dispatch(deleteCartItem(cartItem)),
   fetchReviews: productId => dispatch(fetchReviews(productId)),
-  deleteReview: (reviewId, productId) => dispatch(deleteReview(reviewId, productId))
 });
 
 export default connect(mSTP, mDTP)(ProductShow);
