@@ -9,7 +9,7 @@ class CartItemIndex extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.currentUser.id === this.props.user) { this.props.fetchCartItems(); }
+    if (this.props.currentUser) this.props.fetchCartItems();
   }
 
   handleCheckout(e) {
@@ -53,8 +53,7 @@ class CartItemIndex extends React.Component {
                       updateCartItem={updateCartItem}
                       deleteCartItem={deleteCartItem}
                     />
-                  )
-              )
+                  ))
             }
             <div className="cart-subtotal-container">
               <div className="cart-subtotal">Subtotal ({totalItems} items): <b>${subtotal.toFixed(2)}</b></div>
@@ -68,7 +67,7 @@ class CartItemIndex extends React.Component {
               <input className="cart-right-check" type="checkbox"></input>
               <div className="cart-right-gift-text">This is a gift</div>
             </div>
-            <button className="cart-checkout-btn" onClick={e => this.handleCheckout(e)}>Proceed to checkout</button>
+            <button className="cart-checkout-btn" onClick={this.handleCheckout}>Proceed to checkout</button>
           </div>
         </div>
       </div>

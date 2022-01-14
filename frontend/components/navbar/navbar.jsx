@@ -63,11 +63,16 @@ class Navbar extends React.Component {
 
   render() {
     const { currentUser, cartItems } = this.props;
-    // if (currentUser && cartItems.length === 0) this.props.fetchCartItems();
-    let profile = currentUser ? (
+    let cartQuantity = 0;
+    cartItems.forEach(cartItem => cartQuantity += cartItem.quantity);
+
+    let profile = currentUser ? 
+    (
       <div>
         <div className="nav-hello">Hello, <b>{currentUser.first_name}</b></div>
-        <div className="nav-logout"><button className="nav-logout-btn" onClick={this.handleLogout}>Logout</button></div>
+        <div className="nav-logout">
+          <button className="nav-logout-btn" onClick={this.handleLogout}>Logout</button>
+        </div>
       </div>
     ) : (
       <div>
@@ -79,9 +84,6 @@ class Navbar extends React.Component {
         </div>
       </div>
     )
-
-    let cartQuantity = 0;
-    cartItems.forEach(cartItem => cartQuantity += cartItem.quantity );
 
     return (
       <div className="nav-container">
@@ -110,19 +112,20 @@ class Navbar extends React.Component {
             <div className="nav-orders">& Orders</div>
           </div>
           <div className="nav-cart-container">
-            { currentUser ? 
-              <Link className="nav-cart-link" to="/cart">
-                <img src="images/cart.png" className="nav-cart-img"/>
-              </Link> 
+            { 
+              currentUser ? 
+                <Link className="nav-cart-link" to="/cart">
+                  <img src="images/cart.png" className="nav-cart-img"/>
+                </Link> 
               :
-              <Link className="nav-cart-link" to="/login">
-                <img src="images/cart.png" className="nav-cart-img"/>
-              </Link>
+                <Link className="nav-cart-link" to="/login">
+                  <img src="images/cart.png" className="nav-cart-img"/>
+                </Link>
             }
             { 
               (currentUser && cartQuantity) ? 
               <div className="nav-cart-counter">{cartQuantity}</div> 
-              : 
+            : 
               null 
             }
             <div className="nav-cart-word">Cart</div>

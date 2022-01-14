@@ -8,7 +8,7 @@ class ProductShow extends React.Component {
     super(props);
     this.state = {
       quantity: 1,
-      rating: 5,
+      rating: 3,
       reviews: this.props.reviews
     };
     this.handleQuantity = this.handleQuantity.bind(this);
@@ -183,16 +183,24 @@ class ProductShow extends React.Component {
               <div className="return-date">Returnable until {returnDate}</div>
             </div>
           </div>
-
         </div>
-
         <div className="review-container">
           <div className="write-review-container">
             <div className="review-this-product">Review this product</div>
             <div className="share-your-thoughts">Share your thoughts with other customers</div>
             {
-              this.props.user ? <button className="product-new-review-btn"><Link className="write-review-link" to={`/products/${product.id}/reviews/new`}><div className="review-btn-txt">Write a customer review</div></Link></button> :
-                <button className="product-new-review-btn"><Link className="write-review-link" to={`/login`}><div className="review-btn-txt">Write a customer review</div></Link></button>
+              this.props.user ? 
+                <button className="product-new-review-btn">
+                  <Link className="write-review-link" to={`/products/${product.id}/reviews/new`}>
+                    <div className="review-btn-txt">Write a customer review</div>
+                  </Link>
+                </button> 
+            :
+                <button className="product-new-review-btn">
+                  <Link className="write-review-link" to={`/login`}>
+                    <div className="review-btn-txt">Write a customer review</div>
+                  </Link>
+                </button>
             }
           </div>
           <div className="review-index-container">

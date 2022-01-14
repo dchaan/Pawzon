@@ -32,9 +32,7 @@ class ReviewForm extends React.Component {
         <form onSubmit={this.handleSubmit}>
           <div className="review-form-title">
             <div className="review-form-create-review">Create Review</div>
-            {/* <div className="review-form-productname">{this.state.product_id.product_name}</div> */}
           </div>
-
           <div className="review-form-overall-rating-container">
             <div className="review-form-overall-rating">Overall Rating</div>
             <Rating className="review-form-rating-paws"

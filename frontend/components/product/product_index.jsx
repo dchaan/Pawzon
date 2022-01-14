@@ -6,8 +6,6 @@ class ProductIndex extends React.Component {
     super(props);
   }
 
-  
-
 render() {
   const numResults = this.props.products.length;
     return (

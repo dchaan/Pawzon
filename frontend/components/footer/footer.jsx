@@ -7,7 +7,9 @@ const Footer = () => (
       Back to top
     </div>
     <div className="footer-links-container">
-      <Link to="/"><img src="images/pawzon-footer.png" className="footer-logo"/></Link>
+      <Link to="/">
+        <img src="images/pawzon-footer.png" className="footer-logo"/>
+      </Link>
       <a href="https://github.com/dchaan">
         <img src="/images/github.png" className="footer-img"/>
       </a>
@@ -20,8 +22,7 @@ const Footer = () => (
     </div>
     <div className="footer-bottom">
       <div className="footer-description">
-        Pawzon is a clone of Amazon.
-        <br/>
+        Pawzon is a clone of Amazon.<br/>
         This app was created using Javascript, React, Redux, Ruby, and Rails.
       </div>
     </div>

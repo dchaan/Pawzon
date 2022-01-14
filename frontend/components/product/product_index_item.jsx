@@ -17,8 +17,6 @@ class ProductIndexItem extends React.Component {
       const shipDateArr = new Date(new Date().setDate(new Date().getDate() + 2)).toString().split(" ");
       const shipDate = `${shipDateArr[0]}, ${shipDateArr[1]} ${shipDateArr[2]}`;
       
-
-
       return(
         <div className="prod-box-container">
           <div className="prod-box-img-container">

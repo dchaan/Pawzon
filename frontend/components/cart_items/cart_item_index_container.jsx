@@ -10,7 +10,6 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
   fetchCartItems: () => dispatch(fetchCartItems()),
-  fetchCartItem: cartItemId => dispatch(fetchCartItem(cartItemId)),
   createCartItem: cartItem => dispatch(createCartItem(cartItem)),
   updateCartItem: cartItem => dispatch(updateCartItem(cartItem)),
   deleteCartItem: cartItem => dispatch(deleteCartItem(cartItem))

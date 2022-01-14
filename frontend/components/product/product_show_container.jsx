@@ -16,7 +16,6 @@ const mSTP = ( state, ownProps ) => ({
 
 const mDTP = dispatch => ({
   fetchProduct: productId => dispatch(fetchProduct(productId)),
-  fetchCartItems: () => dispatch(fetchCartItems()),
   createCartItem: cartItem => dispatch(createCartItem(cartItem)),
   updateCartItem: cartItem => dispatch(updateCartItem(cartItem)),
   deleteCartItem: cartItem => dispatch(deleteCartItem(cartItem)),
@@ -24,5 +23,4 @@ const mDTP = dispatch => ({
   deleteReview: (reviewId, productId) => dispatch(deleteReview(reviewId, productId))
 });
 
-const ProductShowContainer = connect(mSTP, mDTP)(ProductShow);
-export default ProductShowContainer;
+export default connect(mSTP, mDTP)(ProductShow);

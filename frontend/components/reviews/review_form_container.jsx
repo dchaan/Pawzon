@@ -17,5 +17,4 @@ const mDTP = dispatch => ({
   createReview: (review) => dispatch(createReview(review))
 })
 
-const ReviewFormContainer = withRouter(connect(mSTP, mDTP)(ReviewForm));
-export default ReviewFormContainer;
+export default withRouter(connect(mSTP, mDTP)(ReviewForm));

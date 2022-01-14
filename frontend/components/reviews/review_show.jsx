@@ -7,11 +7,10 @@ class ReviewShow extends React.Component {
   }
 
   render() {
-    const { review, productId, currentUser, users } = this.props;
+    const { review } = this.props;
     const date = new Date(this.props.review.created_at).toString().split(" ").slice(1,4).join(" ");
     const randomNum = Math.floor(Math.random() * 100) + 1;
     const randomSize = Math.floor(Math.random() * 3) + 1;
-
     const fullPaw = <img src="/images/paw_full.png" className="paw-img"/>
     const emptyPaw = <img src="/images/paw_empty.png" className="paw-img"/>
     
