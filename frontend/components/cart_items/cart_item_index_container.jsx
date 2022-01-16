@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { fetchCartItems, fetchCartItem, createCartItem, updateCartItem, deleteCartItem  } from "../../actions/cart_item_actions";
+import { fetchCartItems, createCartItem, updateCartItem, deleteCartItem  } from "../../actions/cart_item_actions";
 import CartItemIndex from "./cart_item_index";
 
 const mSTP = state => ({
