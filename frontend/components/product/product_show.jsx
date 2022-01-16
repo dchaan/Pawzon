@@ -85,7 +85,6 @@ class ProductShow extends React.Component {
   }
   
   render() {
-    console.log(this.props)
     const { product, productId, reviews } = this.props;
     const shipDateArr = new Date(new Date().setDate(new Date().getDate() + 2)).toString().split(" ");
     const shipDate = `${shipDateArr[0]}, ${shipDateArr[1]} ${shipDateArr[2]}`;
