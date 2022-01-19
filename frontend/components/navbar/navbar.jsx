@@ -6,13 +6,7 @@ import { withRouter } from "react-router-dom"
 class Navbar extends React.Component {
   constructor(props) {
     super(props);
-    this.handleAll = this.handleAll.bind(this)
-    this.handleBeds = this.handleBeds.bind(this);
-    this.handleFood = this.handleFood.bind(this);
-    this.handleToys = this.handleToys.bind(this);
-    this.handleTreats = this.handleTreats.bind(this);
-    this.handleClothes = this.handleClothes.bind(this);
-    this.handleWalking = this.handleWalking.bind(this);
+    this.handleAny = this.handleAny.bind(this);
     this.handleLogout = this.handleLogout.bind(this);
   }
 
@@ -21,38 +15,8 @@ class Navbar extends React.Component {
     this.props.fetchProducts("");
   };
 
-  handleAll() {
-    this.props.fetchProducts("")
-      .then(this.props.history.push("/products"))
-  }
-
-  handleBeds() {
-    this.props.fetchProducts("beds")
-      .then(this.props.history.push("/products"));
-  }
-
-  handleFood() {
-    this.props.fetchProducts("food")
-      .then(this.props.history.push("/products"));
-  }
-
-  handleToys() {
-    this.props.fetchProducts("toys")
-      .then(this.props.history.push("/products"));
-  }
-
-  handleTreats() {
-    this.props.fetchProducts("treats")
-      .then(this.props.history.push("/products"));
-  }
-
-  handleClothes() {
-    this.props.fetchProducts("clothes")
-      .then(this.props.history.push("/products"));
-  }
-
-  handleWalking() {
-    this.props.fetchProducts("walking")
+  handleAny(productCategory) {
+    this.props.fetchProducts(productCategory)
       .then(this.props.history.push("/products"));
   }
 
@@ -133,13 +97,13 @@ class Navbar extends React.Component {
         </div>
 
         <div className="nav-categories-container">
-          <button onClick={this.handleAll} className="nav-category">All</button>
-          <button onClick={this.handleBeds} className="nav-category">Beds</button>
-          <button onClick={this.handleFood} className="nav-category">Food</button>
-          <button onClick={this.handleToys} className="nav-category">Toys</button>
-          <button onClick={this.handleTreats} className="nav-category">Treats</button>
-          <button onClick={this.handleClothes} className="nav-category">Clothes</button>
-          <button onClick={this.handleWalking} className="nav-category">Walking</button>
+          <button onClick={() => this.handleAny("")} className="nav-category">All</button>
+          <button onClick={() => this.handleAny("Beds")} className="nav-category">Beds</button>
+          <button onClick={() => this.handleAny("Food")} className="nav-category">Food</button>
+          <button onClick={() => this.handleAny("Toys")} className="nav-category">Toys</button>
+          <button onClick={() => this.handleAny("Treats")} className="nav-category">Treats</button>
+          <button onClick={() => this.handleAny("Clothes")} className="nav-category">Clothes</button>
+          <button onClick={() => this.handleAny("Walking")} className="nav-category">Walking</button>
         </div>
       </div>
     )
