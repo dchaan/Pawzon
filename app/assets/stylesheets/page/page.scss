@@ -1122,16 +1122,18 @@ body {
   display: inline-block;
 }
 
-.delete-container {
+.edit-delete-container {
   display: inline-block;
 }
 
-.delete-btn {
+.edit-delete-btn {
   border: transparent;
+  padding-right: 10px;
+  border-right: 1px solid lightgray;
   background-color: transparent;
 }
 
-.delete-btn:hover {
+.edit-delete-btn:hover {
   cursor: pointer;
   color: #d8ad43;
 }
