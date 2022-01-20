@@ -53,6 +53,9 @@ class ReviewShow extends React.Component {
           <div className="delete-container">
             { review.user_id === this.props.currentUser.id ? <button className="delete-btn" onClick={e => this.handleDelete(e)}>Delete</button> : null }
           </div>
+          <div className="edit-container">
+            
+          </div>
         </div>
       </div>
     )
