@@ -6,8 +6,15 @@ class ReviewShow extends React.Component {
     super(props);
   }
 
+  handleDelete(e) {
+    e.preventDefault();
+    this.props.deleteReview(this.props.review.id, this.props.productId)
+  }
+
   render() {
     const { review } = this.props;
+    console.log(review);
+    console.log(this.props.currentUser);
     const date = new Date(this.props.review.created_at).toString().split(" ").slice(1,4).join(" ");
     const randomNum = Math.floor(Math.random() * 100) + 1;
     const randomSize = Math.floor(Math.random() * 3) + 1;
@@ -43,6 +50,9 @@ class ReviewShow extends React.Component {
         <div className="review-row-four">
           <div className="helpful"><button className="helpful-btn">Helpful</button></div>
           <div className="report">Report abuse</div>
+          <div className="delete-container">
+            { review.user_id === this.props.currentUser.id ? <button className="delete-btn" onClick={e => this.handleDelete(e)}>Delete</button> : null }
+          </div>
         </div>
       </div>
     )
