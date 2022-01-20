@@ -10,13 +10,13 @@ const Footer = () => (
       <Link to="/">
         <img src="images/pawzon-footer.png" className="footer-logo"/>
       </Link>
-      <a href="https://github.com/dchaan">
+      <a href="https://github.com/dchaan" target="_blank">
         <img src="/images/github.png" className="footer-img"/>
       </a>
-      <a href="https://www.linkedin.com/in/david-chan-4b1929185/">
+      <a href="https://www.linkedin.com/in/david-chan-4b1929185/" target="_blank">
         <img src="/images/linkedin.png" className="footer-img"/>
       </a>
-      <a href="https://dchaan.github.io/Portfolio/">
+      <a href="https://dchaan.github.io/Portfolio/" target="_blank">
         <img src="/images/portfolio.png" className="footer-img"/>
       </a>
     </div>
