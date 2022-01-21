@@ -4,7 +4,6 @@ import { Link } from "react-router-dom"
 class Signup extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       email: "",
       password: "",
@@ -12,6 +11,10 @@ class Signup extends React.Component {
       last_name: ""
     };
     this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  componentWillUnmount() {
+    this.props.clearErrors();
   }
 
   handleSubmit(e) {

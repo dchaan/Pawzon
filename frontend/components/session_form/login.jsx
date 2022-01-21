@@ -4,23 +4,26 @@ import { Link } from "react-router-dom";
 class Login extends React.Component {
   constructor(props) {
     super(props);
-
     this.state = {
       email: "",
       password: ""
     };
-
     this.handleSubmit = this.handleSubmit.bind(this);
     this.loginDemo = this.loginDemo.bind(this);
   }
 
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
+
   handleSubmit(e) {
     e.preventDefault();
-    this.props.login(this.state).then(() => this.props.history.push("/"))
+    this.props.login(this.state)
+      .then(() => this.props.history.push("/"))
   };
 
   update(field) {
-    return e => this.setState ({ [field]: e.target.value })
+    return e => this.setState ({ [field]: e.currentTarget.value })
   };
 
   renderErrors() {

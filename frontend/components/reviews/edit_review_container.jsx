@@ -4,8 +4,8 @@ import { fetchReview, updateReview } from "../../actions/review_actions";
 import EditReview from "./edit_review"
 
 const mSTP = (state, ownProps) => dispatch => ({
-  productId: parseInt(ownProps.match.params.productId),
-  reviewId: parseInt(ownProps.match.params.reviewId)
+  productId: ownProps.match.params.productId,
+  reviewId: ownProps.match.params.reviewId
 });
 
 const mDTP = dispatch => ({
