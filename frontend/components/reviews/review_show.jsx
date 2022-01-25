@@ -19,6 +19,16 @@ class ReviewShow extends React.Component {
     const randomSize = Math.floor(Math.random() * 3) + 1;
     const fullPaw = <img src="/images/paw_full.png" className="paw-img"/>
     const emptyPaw = <img src="/images/paw_empty.png" className="paw-img"/>
+    const deleteEditReview = currentUser ? currentUser.id === review.user_id ?
+      <div>
+        <div className="edit-delete">
+          <button className="edit-delete-btn" onClick={e => this.handleDelete(e)}>Delete</button>
+        </div>
+        <div className="edit-delete">
+          <Link to={`/products/${productId}/reviews/${review.id}`}><button className="edit-delete-btn">Edit</button></Link>
+        </div>
+      </div> : null : null
+
     
     return (
       <div className="review-item">
@@ -49,12 +59,7 @@ class ReviewShow extends React.Component {
         <div className="review-row-four">
           <div className="helpful"><button className="helpful-btn">Helpful</button></div>
           <div className="report">Report abuse</div>
-          <div className="edit-delete-container">
-            { review.user_id === currentUser.id ? <button className="edit-delete-btn" onClick={e => this.handleDelete(e)}>Delete</button> : null }
-          </div>
-          <div className="edit-delete-container">
-            {review.user_id === currentUser.id ? <Link to={`/products/${productId}/reviews/${review.id}`}><button className="edit-delete-btn">Edit</button></Link> : null }
-          </div>
+          <div className="edit-delete-container">{deleteEditReview}</div>
         </div>
       </div>
     )

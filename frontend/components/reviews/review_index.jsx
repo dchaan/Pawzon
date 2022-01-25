@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import ReviewShow from "./review_show"
 
 class ReviewIndex extends React.Component {
