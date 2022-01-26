@@ -310,13 +310,18 @@ body {
 
 .nav-search-container {
   display: flex;
+  width: 40%;
+}
+
+.search-container {
+  width: 100%;
+  height: 40px;
 }
 
 .searchbar-form {
   width: 100%;
-  min-width: 600px;
+  height: 100%;
   display: flex;
-  height: 40px;
 }
 
 .searchbar-input {
@@ -387,7 +392,6 @@ body {
 .nav-greeting-container {
   width: 150px;
   display: flex;
-  margin-right: -10px;
 }
 
 .nav-hello {
