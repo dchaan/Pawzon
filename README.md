@@ -2,6 +2,8 @@
 
 Pawzon is a full-stack, single-page web application inspired by Amazon. The theme of Pawzon is dogs, so all products are dog related. Similar to Amazon, users are able to sign up, login, browse and search products, create, edit, or delete reviews, add products to cart, and checkout. 
 
+![](https://github.com/dchaan/Pawzon/blob/master/app/assets/images/projectpic.png)
+
 ## Technologies Used
 * Ruby on Rails
 * JavaScript
