@@ -514,10 +514,12 @@ body {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  min-height: 570px;
 }
 
 .prod-box-container {
   width: 20%;
+  max-height: 400px;
   display: flex;
   padding: 20px;
   margin: 20px;
@@ -984,7 +986,6 @@ body {
   font-size: 16px;
   display: flex;
   padding-top: 10px;
-
 }
 
 .product-new-review-btn {
