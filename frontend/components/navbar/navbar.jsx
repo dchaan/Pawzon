@@ -11,26 +11,34 @@ class Navbar extends React.Component {
   }
 
   componentDidMount() {
-    if (this.props.currentUser) this.props.fetchCartItems(); 
-    this.props.fetchProducts("");
+    const { currentUser, fetchCartItems, fetchProducts } = this.props;
+    if (currentUser) fetchCartItems(); 
+    fetchProducts("");
   };
 
   handleAny(productCategory) {
-    this.props.fetchProducts(productCategory)
-      .then(this.props.history.push("/products"));
+    const { fetchProducts, history } = this.props;
+    fetchProducts(productCategory)
+      .then(history.push("/products"));
   }
 
   handleLogout() {
-    this.props.logout()
-      .then(this.props.history.push("/"));
+    const { logout, history } = this.props;
+    logout().then(history.push("/"));
   }
 
   render() {
     const { currentUser, cartItems } = this.props;
+    const deliverTo = currentUser ? currentUser.first_name : "";
+    const cartRedirect = currentUser ? 
+      <Link className="nav-cart-link" to="/cart"><img src="images/cart.png" className="nav-cart-img"/><div className="nav-cart-word">Cart</div></Link> :
+      <Link className="nav-cart-link" to="/login"><img src="images/cart.png" className="nav-cart-img"/><div className="nav-cart-word">Cart</div></Link>
+
     let cartQuantity = 0;
     cartItems.forEach(cartItem => cartQuantity += cartItem.quantity);
+    const cartCounter = currentUser && cartQuantity ? <div className="nav-cart-counter">{cartQuantity}</div> : null
 
-    let profile = currentUser ? 
+    const profile = currentUser ? 
     (
       <div>
         <div className="nav-hello">Hello, <b>{currentUser.first_name}</b></div>
@@ -42,7 +50,7 @@ class Navbar extends React.Component {
       <div>
         <div className="nav-hello">Hello</div>
         <div className="nav-greeting-links">
-          <div className="nav-greeting"><Link className="greeting-link" to="/login"> Login </Link></div>
+          <div className="nav-greeting"><Link className="greeting-link" to="/login">Login</Link></div>
           {" or "}
           <div className="nav-greeting"><Link className="greeting-link" to="/signup">Sign Up</Link></div>
         </div>
@@ -58,7 +66,7 @@ class Navbar extends React.Component {
           <div className="nav-location-container">
             <img src="images/location.png" className="nav-location-img"/>
             <div className="nav-deliver-to">
-              <div className="nav-deliver-to-user">Deliver to {this.props.currentUser ? this.props.currentUser.first_name : ""}</div>
+              <div className="nav-deliver-to-user">Deliver to { deliverTo }</div>
               <div className="nav-deliver-to-city">Pacifica 94044</div>
             </div>
           </div>
@@ -69,19 +77,15 @@ class Navbar extends React.Component {
             <img src="images/flag.png" className="nav-flag-img" />
           </div>
           <div className="nav-greeting-container">
-            {profile}
+            { profile }
           </div>
           <div className="nav-returns-orders-container">
             <div className="nav-returns">Returns</div>
             <div className="nav-orders">& Orders</div>
           </div>
           <div className="nav-cart-container">
-            { 
-              currentUser ? 
-              <Link className="nav-cart-link" to="/cart"><img src="images/cart.png" className="nav-cart-img"/><div className="nav-cart-word">Cart</div></Link> :
-              <Link className="nav-cart-link" to="/login"><img src="images/cart.png" className="nav-cart-img"/><div className="nav-cart-word">Cart</div></Link>
-            }
-            { (currentUser && cartQuantity) ? <div className="nav-cart-counter">{cartQuantity}</div> : null }
+            { cartRedirect }
+            { cartCounter }
           </div>
         </div>
 
