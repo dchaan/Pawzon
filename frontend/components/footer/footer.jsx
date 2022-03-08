@@ -23,7 +23,8 @@ const Footer = () => (
     <div className="footer-bottom">
       <div className="footer-description">
         Pawzon is a clone of Amazon. Real transacations cannot be made.<br/>
-        This app was created using Javascript, React, Redux, Ruby on Rails, PostgreSQL, JBuilder, Git, AWS S3.
+        This app was created using Javascript, React, Redux, Ruby on Rails, PostgreSQL, JBuilder, Git, AWS S3.<br/>
+        Created by David Chan.
       </div>
     </div>
   </div>
