@@ -14,24 +14,35 @@ class CartItemIndex extends React.Component {
 
   handleCheckout(e) {
     e.preventDefault();
-    this.props.cartItems.forEach(cartItem => {
-      this.props.deleteCartItem(cartItem)
+    const { cartItems, deleteCartItem, history } = this.props;
+
+    cartItems.forEach(cartItem => {
+      deleteCartItem(cartItem)
     });
-    this.props.history.push("/checkout");
+    history.push("/checkout");
   }
 
   render() {
-    const { fetchCartItems, updateCartItem, deleteCartItem } = this.props;
-
+    const { fetchCartItems, updateCartItem, deleteCartItem, cartItems } = this.props;
     let subtotal = 0;
-    this.props.cartItems.forEach(cartItem => {
-      subtotal += cartItem.price * cartItem.quantity
-    });
-
     let totalItems = 0;
-    this.props.cartItems.forEach(cartItem => {
+
+    cartItems.forEach(cartItem => {
+      subtotal += cartItem.price * cartItem.quantity
       totalItems += cartItem.quantity
     });
+
+    const anyCartItems = cartItems.length === 0 ? 
+      <div className="cart-empty">Your Pawzon cart is empty.</div> : 
+      cartItems.map(cartItem => (
+        <CartItemIndexItem
+          key={cartItem.id}
+          cartItem={cartItem}
+          fetchCartItems={fetchCartItems}
+          updateCartItem={updateCartItem}
+          deleteCartItem={deleteCartItem}
+        />
+      ))
 
     return (
       <div className="cart-container">
@@ -40,21 +51,8 @@ class CartItemIndex extends React.Component {
             <div className="cart-heading">Shopping Cart</div>
             <div className="cart-price">Price</div>
           </div>
-
           <div className="checkout-product-item">
-            {
-              (this.props.cartItems.length === 0) ?
-                <div className="cart-empty">Your Pawzon cart is empty.</div> :
-                  this.props.cartItems.map(cartItem => (
-                    <CartItemIndexItem
-                      key={cartItem.id}
-                      cartItem={cartItem}
-                      fetchCartItems={fetchCartItems}
-                      updateCartItem={updateCartItem}
-                      deleteCartItem={deleteCartItem}
-                    />
-                  ))
-            }
+            { anyCartItems }
             <div className="cart-subtotal-container">
               <div className="cart-subtotal">Subtotal ({totalItems} items): <b>${subtotal.toFixed(2)}</b></div>
             </div>

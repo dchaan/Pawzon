@@ -1,5 +1,5 @@
 import { connect } from "react-redux";
-import { fetchCartItems, createCartItem, updateCartItem, deleteCartItem  } from "../../actions/cart_item_actions";
+import { fetchCartItems, updateCartItem, deleteCartItem  } from "../../actions/cart_item_actions";
 import CartItemIndex from "./cart_item_index";
 
 const mSTP = state => ({
@@ -10,10 +10,8 @@ const mSTP = state => ({
 
 const mDTP = dispatch => ({
   fetchCartItems: () => dispatch(fetchCartItems()),
-  createCartItem: cartItem => dispatch(createCartItem(cartItem)),
   updateCartItem: cartItem => dispatch(updateCartItem(cartItem)),
   deleteCartItem: cartItem => dispatch(deleteCartItem(cartItem))
 });
 
-const CartItemIndexContainer = connect(mSTP, mDTP)(CartItemIndex);
-export default CartItemIndexContainer;
+export default connect(mSTP, mDTP)(CartItemIndex);
