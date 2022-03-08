@@ -17,8 +17,8 @@ class Search extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.fetchProducts(this.state.word)
-      .then(this.props.history.push("/products"));
+    const { fetchProducts, history } = this.props;
+    fetchProducts(this.state.word).then(history.push("/products"));
     this.setState({ word: "" });
   }
 
