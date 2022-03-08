@@ -66,7 +66,7 @@ class Navbar extends React.Component {
           <div className="nav-location-container">
             <img src="images/location.png" className="nav-location-img"/>
             <div className="nav-deliver-to">
-              <div className="nav-deliver-to-user">Deliver to { deliverTo }</div>
+              <div className="nav-deliver-to-user">Deliver to {deliverTo}</div>
               <div className="nav-deliver-to-city">Pacifica 94044</div>
             </div>
           </div>
@@ -76,19 +76,16 @@ class Navbar extends React.Component {
           <div className="nav-flag-container">
             <img src="images/flag.png" className="nav-flag-img" />
           </div>
-          <div className="nav-greeting-container">
-            { profile }
-          </div>
+          <div className="nav-greeting-container">{profile}</div>
           <div className="nav-returns-orders-container">
             <div className="nav-returns">Returns</div>
             <div className="nav-orders">& Orders</div>
           </div>
           <div className="nav-cart-container">
-            { cartRedirect }
-            { cartCounter }
+            {cartRedirect}
+            {cartCounter}
           </div>
         </div>
-
         <div className="nav-categories-container">
           <button onClick={() => this.handleAny("")} className="nav-category">All</button>
           <button onClick={() => this.handleAny("Beds")} className="nav-category">Beds</button>

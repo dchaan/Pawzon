@@ -18,8 +18,9 @@ class ProductShow extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchProduct(this.props.productId);
-    this.props.fetchReviews(this.props.productId);
+    const { fetchProduct, productId, fetchReviews } = this.props;
+    fetchProduct(productId);
+    fetchReviews(productId);
   }
 
   handleQuantity(e) {
@@ -28,9 +29,10 @@ class ProductShow extends React.Component {
   }
 
   checkCartItem() {
+    const { cartItems, product } = this.props;
     let variable = false;
-    this.props.cartItems.forEach(cartItem => {
-      if (cartItem.product_id === this.props.product.id) { 
+    cartItems.forEach(cartItem => {
+      if (cartItem.product_id === product.id) { 
         variable = true;
       } else {
         false;
@@ -41,57 +43,71 @@ class ProductShow extends React.Component {
 
   handleAddToCart(e) {
     e.preventDefault;
+    const { cartItems, product, productId, user, history, updateCartItem, createCartItem } = this.props;
     let currentCartItemId;
     let currentQuantity;
     
-    this.props.cartItems.forEach(cartItem => {
-      if (cartItem.product_id === this.props.product.id) {
+    cartItems.forEach(cartItem => {
+      if (cartItem.product_id === product.id) {
         currentCartItemId = cartItem.id;
         currentQuantity = cartItem.quantity;
       };
     });
 
     const cartItem = {
-      product_id: this.props.productId,
-      user_id: this.props.user,
+      product_id: productId,
+      user_id: user,
       quantity: this.state.quantity
     };
     
     const updatedCartItem = {
       id: currentCartItemId,
-      product_id: this.props.productId,
-      user_id: this.props.user,
+      product_id: productId,
+      user_id: user,
       quantity: parseFloat(this.state.quantity) + parseFloat(currentQuantity)
     };
 
-    if (!this.props.currentUser) { 
-      this.props.history.push("/login"); 
+    if (!user) { 
+      history.push("/login"); 
     } else if (this.checkCartItem()) {
-      this.props.updateCartItem(updatedCartItem)
-        .then(this.props.history.push("/cart"));
+      updateCartItem(updatedCartItem).then(history.push("/cart"));
     } else {
-      this.props.createCartItem(cartItem)
-        .then(this.props.history.push("/cart"));
+      createCartItem(cartItem).then(history.push("/cart"));
     }
   }
 
   handleBuyNow(e) {
-    if (!this.props.currentUser) { this.props.history.push("/login"); } 
-    if (this.props.cartItems) {
-      this.props.cartItems.forEach(cartItem =>
-        this.props.deleteCartItem(cartItem));
+    const { user, history, cartItems, deleteCartItem } = this.props;
+    if (!user) history.push("/login"); 
+    if (cartItems) {
+      cartItems.forEach(cartItem =>
+        deleteCartItem(cartItem));
     }
-    this.props.history.push("/checkout")
+    history.push("/checkout")
   }
   
   render() {
-    const { product, productId, reviews } = this.props;
+    const { product, productId, reviews, currentUser } = this.props;
     const shipDateArr = new Date(new Date().setDate(new Date().getDate() + 2)).toString().split(" ");
     const shipDate = `${shipDateArr[0]}, ${shipDateArr[1]} ${shipDateArr[2]}`;
+    const deliverTo = currentUser ? currentUser.first_name : null
     const returnDateArr = new Date(new Date().setDate(new Date().getDate() + 30)).toString().split(" ");
     const returnDate = `${returnDateArr[1]} ${returnDateArr[2]}, ${returnDateArr[3]}`;
     const fullPaw = <img src="/images/paw_full.png" className="product-review-paw-img"/>
     const emptyPaw = <img src="/images/paw_empty.png" className="product-review-paw-img"/> 
+    const reviewBtn = currentUser ? 
+      <button className="product-new-review-btn">
+        <Link className="write-review-link" to={`/products/${productId}/reviews/new`}>
+          <div className="review-btn-txt">Write a customer review</div>
+        </Link>
+      </button> 
+    :
+      <button className="product-new-review-btn">
+        <Link className="write-review-link" to={`/login`}>
+          <div className="review-btn-txt">Write a customer review</div>
+        </Link>
+      </button>
+
     let ratingCount = 0;
     let ratings = 0;
 
@@ -101,6 +117,7 @@ class ProductShow extends React.Component {
         ratingCount++;
       }
     });
+
     const avgRatings = (ratings / ratingCount);
 
     if (!product) return null;
@@ -148,7 +165,7 @@ class ProductShow extends React.Component {
             </div>
             <div className="product-delivery">
               <img className="product-checkout-location-img" src="images/product-location.png"/> 
-              <div className="prod-deliver-loc">Deliver to {this.props.currentUser ? this.props.currentUser.first_name : null} - Pacifica 94044</div>
+              <div className="prod-deliver-loc">Deliver to {deliverTo} - Pacifica 94044</div>
             </div>
             <div className="product-stock">In Stock.</div>
             <form className="product-checkout-form">
@@ -188,20 +205,7 @@ class ProductShow extends React.Component {
           <div className="write-review-container">
             <div className="review-this-product">Review this product</div>
             <div className="share-your-thoughts">Share your thoughts with other customers</div>
-            {
-              this.props.user ? 
-                <button className="product-new-review-btn">
-                  <Link className="write-review-link" to={`/products/${product.id}/reviews/new`}>
-                    <div className="review-btn-txt">Write a customer review</div>
-                  </Link>
-                </button> 
-            :
-                <button className="product-new-review-btn">
-                  <Link className="write-review-link" to={`/login`}>
-                    <div className="review-btn-txt">Write a customer review</div>
-                  </Link>
-                </button>
-            }
+            {reviewBtn}
           </div>
           <div className="review-index-container">
             <div className="reviews-headline">Top Reviews from the United States</div>
