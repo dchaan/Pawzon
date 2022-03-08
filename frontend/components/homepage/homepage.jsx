@@ -2,8 +2,9 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 class Homepage extends React.Component {
-  componentDidMount() {
-    if (this.props.currentUser) this.props.fetchCartItems();
+  componentDidMount() { 
+    const { currentUser, fetchCartItems } = this.props;
+    if (currentUser) fetchCartItems();
   }
 
   render() {
