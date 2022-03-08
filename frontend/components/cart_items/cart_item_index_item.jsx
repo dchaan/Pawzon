@@ -25,8 +25,9 @@ class CartItemIndexItem extends React.Component {
   }
 
   handleDeleteItem(e) {
+    const { deleteCartItem, cartItem } = this.props;
     e.preventDefault();
-    this.props.deleteCartItem(this.props.cartItem);
+    deleteCartItem(cartItem);
   }
 
   render() {
