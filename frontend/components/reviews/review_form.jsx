@@ -13,14 +13,15 @@ class ReviewForm extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value })
   };
 
-  updateReview(property) {
-    return e => this.setState ({ [property]: e })
+  updateReview(field) {
+    return e => this.setState ({ [field]: e })
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.createReview(this.state)
-      .then(() => this.props.history.push(`/products/${this.props.review.product_id}`))
+    const { createReview, history, review } = this.props;
+    createReview(this.state)
+      .then(() => history.push(`/products/${review.product_id}`))
   };
 
   render() {

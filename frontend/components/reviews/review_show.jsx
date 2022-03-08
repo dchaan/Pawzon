@@ -9,7 +9,8 @@ class ReviewShow extends React.Component {
 
   handleDelete(e) {
     e.preventDefault();
-    this.props.deleteReview(this.props.review.id, this.props.productId)
+    const { deleteReview, review, productId } = this.props;
+    deleteReview(review.id, productId)
   }
 
   render() {

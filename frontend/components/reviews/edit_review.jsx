@@ -14,7 +14,8 @@ class EditReview extends React.Component {
   }
 
   componentDidMount() {
-    this.props.fetchReview(this.props.reviewId, this.props.productId)
+    const { fetchReview, reviewId, productId } = this.props;
+    fetchReview(reviewId, productId)
       .then(res => this.setState(() => {
         return {
           id: res.review.id,
@@ -29,14 +30,15 @@ class EditReview extends React.Component {
     return e => this.setState({ [field]: e.currentTarget.value });
   };
 
-  updateReview(property) {
-    return e => this.setState ({ [property]: e });
+  updateReview(field) {
+    return e => this.setState ({ [field]: e });
   };
 
   handleSubmit(e) {
     e.preventDefault();
-    this.props.updateReview(this.state, this.props.productId)
-      .then(this.props.history.push(`/products/${this.props.productId}`));
+    const { updateReview, productId, history} = this.props;
+    updateReview(this.state, productId)
+      .then(history.push(`/products/${productId}`));
   };
 
   render() {

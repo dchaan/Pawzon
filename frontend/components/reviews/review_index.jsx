@@ -11,25 +11,26 @@ class ReviewIndex extends React.Component {
   }
 
   render() {
-    if (!this.props.reviews) return null;
+    const { reviews, product, users, currentUser, fetchReviews, deleteReview } = this.props;
+    if (!reviews) return null;
 
-    const reviews = this.props.reviews.reverse().map((review, i) => {
-      if (review.product_id === this.props.product.id) {
+    const reviewsList = reviews.reverse().map((review, i) => {
+      if (review.product_id === product.id) {
         return <ReviewShow
           key={i}
-          users={this.props.users}
-          currentUser={this.props.currentUser}
+          users={users}
+          currentUser={currentUser}
           review={review}
-          productId={this.props.product.id}
-          fetchReviews={this.props.fetchReviews}
-          deleteReview={this.props.deleteReview}
+          productId={product.id}
+          fetchReviews={fetchReviews}
+          deleteReview={deleteReview}
         />
       }
     })
 
     return(
       <div>
-        {reviews}
+        {reviewsList}
       </div>
     )
   }
