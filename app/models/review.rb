@@ -17,7 +17,6 @@
 #  index_reviews_on_user_id     (user_id)
 #
 class Review < ApplicationRecord
-  
   validates :title, :body, :rating, :user_id, :product_id, presence: true
 
   belongs_to :user,
