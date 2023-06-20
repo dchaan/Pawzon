@@ -1,6 +1,6 @@
 class Api::ProductsController < ApplicationController
   def index
-    @products = query ? Product.search(query.downcase) : Product.all
+    @products = query.empty? ? Product.search(query.downcase) : Product.all
     render :index
   end
 
