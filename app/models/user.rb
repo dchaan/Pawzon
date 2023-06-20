@@ -19,9 +19,7 @@
 #  index_users_on_session_token  (session_token) UNIQUE
 #
 class User < ApplicationRecord
-  # ASPIRE
-  # validations
-  # associations
+
   validates :email, uniqueness: true, presence: true
   validates :first_name, :last_name, :session_token, presence: true
   validates :password, length: { minimum: 6, allow_nil: true }

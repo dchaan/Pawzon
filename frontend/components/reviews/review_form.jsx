@@ -7,26 +7,25 @@ class ReviewForm extends React.Component {
 
     this.state = this.props.review;
     this.handleSubmit = this.handleSubmit.bind(this);
-  };
+  }
   
   update(field) {
-    return e => this.setState({ [field]: e.currentTarget.value })
-  };
+    return e => this.setState({ [field]: e.currentTarget.value });
+  }
 
   updateReview(field) {
-    return e => this.setState ({ [field]: e })
+    return e => this.setState ({ [field]: e });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const { createReview, history, review } = this.props;
-    createReview(this.state)
-      .then(() => history.push(`/products/${review.product_id}`))
-  };
+    createReview(this.state).then(() => history.push(`/products/${review.product_id}`));
+  }
 
   render() {
-    const fullPaw = <img src="/images/paw_full.png" className="review-form-paw-img" />
-    const emptyPaw = <img src="/images/paw_empty.png" className="review-form-paw-img" /> 
+    const fullPaw = <img src="/images/paw_full.png" className="review-form-paw-img"/>
+    const emptyPaw = <img src="/images/paw_empty.png" className="review-form-paw-img"/> 
 
     return (
       <div className="review-form">
@@ -45,11 +44,11 @@ class ReviewForm extends React.Component {
           </div>
           <div className="review-form-headline">
             <div className="review-form-add-headline">Add a headline</div>
-            <input className="review-form-headline-input" type="text" value={this.state.title} onChange={this.update("title")} placeholder="What's most important to know?" />
+            <input className="review-form-headline-input" type="text" value={this.state.title} onChange={this.update("title")} placeholder="What's most important to know?"/>
           </div>
           <div className="review-form-body">
             <div className="review-form-add-body">Add a written review</div>
-            <textarea className="review-form-body-input" value={this.state.body} onChange={this.update("body")} placeholder="What did you like or dislike? What did you use this product for?" />
+            <textarea className="review-form-body-input" value={this.state.body} onChange={this.update("body")} placeholder="What did you like or dislike? What did you use this product for?"/>
           </div>
           <br/>
           <button className="review-form-submit-btn">Submit</button>

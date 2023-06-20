@@ -14,7 +14,7 @@ const cartItemsReducer = (state ={}, action) => {
       return nextState;
     default:
       return state;
-  }
-}
+  };
+};
 
 export default cartItemsReducer;

@@ -6,11 +6,13 @@ import Rating from "react-rating";
 class ProductShow extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       quantity: 1,
       rating: 3,
       reviews: this.props.reviews
     };
+
     this.handleQuantity = this.handleQuantity.bind(this);
     this.handleAddToCart = this.handleAddToCart.bind(this);
     this.checkCartItem = this.checkCartItem.bind(this);
@@ -31,6 +33,7 @@ class ProductShow extends React.Component {
   checkCartItem() {
     const { cartItems, product } = this.props;
     let variable = false;
+
     cartItems.forEach(cartItem => {
       if (cartItem.product_id === product.id) { 
         variable = true;
@@ -79,11 +82,11 @@ class ProductShow extends React.Component {
   handleBuyNow(e) {
     const { user, history, cartItems, deleteCartItem } = this.props;
     if (!user) history.push("/login"); 
+
     if (cartItems) {
-      cartItems.forEach(cartItem =>
-        deleteCartItem(cartItem));
+      cartItems.forEach(cartItem => deleteCartItem(cartItem));
     }
-    history.push("/checkout")
+    history.push("/checkout");
   }
   
   render() {
@@ -115,7 +118,7 @@ class ProductShow extends React.Component {
       if (review.product_id === parseInt(productId)) {
         ratings += review.rating;
         ratingCount++;
-      }
+      };
     });
 
     const avgRatings = (ratings / ratingCount);
@@ -126,7 +129,7 @@ class ProductShow extends React.Component {
       <div className="product-container">
         <div className="prod-details">
           <div className="prod-img-container">
-            <img className="product-img" src={product.photoUrl} />
+            <img className="product-img" src={product.photoUrl}/>
           </div>
           <div className="product-about">
             <div className="product-name">{product.product_name}</div>
@@ -146,9 +149,7 @@ class ProductShow extends React.Component {
             <div className="product-desc-title">About this item</div>
             <div className="product-description">
               {product.description.split(",").map((bullet, i) => {
-                return (
-                  <li key={i}>{bullet}</li>
-                ) 
+                return (<li key={i}>{bullet}</li>) 
               })}
             </div>    
           </div>
@@ -165,7 +166,7 @@ class ProductShow extends React.Component {
             </div>
             <div className="product-delivery">
               <img className="product-checkout-location-img" src="images/product-location.png"/> 
-              <div className="prod-deliver-loc">Deliver to {deliverTo} - Pacifica 94044</div>
+              <div className="prod-deliver-loc">Deliver to {deliverTo} - Chicago 60610</div>
             </div>
             <div className="product-stock">In Stock.</div>
             <form className="product-checkout-form">
@@ -214,7 +215,7 @@ class ProductShow extends React.Component {
         </div>
       </div>  
     )
-  };
+  }
 }
 
 export default ProductShow;

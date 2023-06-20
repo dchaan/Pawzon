@@ -15,6 +15,6 @@ const mSTP = (state, ownProps) => ({
 
 const mDTP = dispatch => ({
   createReview: (review) => dispatch(createReview(review))
-})
+});
 
 export default withRouter(connect(mSTP, mDTP)(ReviewForm));

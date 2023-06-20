@@ -2,28 +2,28 @@
 <html>
   <head>
     <title>Pawzon</title>
-    <%= csrf_meta_tags %>
-    <%= csp_meta_tag %>
+    <%=csrf_meta_tags%>
+    <%=csp_meta_tag%>
 
-    <%= stylesheet_link_tag 'application', media: 'all' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <meta property="og:title" content="Pawzon" />
-    <meta property='og:image' content="<%= image_url('projectpic.png') %>"/>
-    <meta property="og:url" content="http://pawzon.herokuapp.com" />
+    <%=stylesheet_link_tag "application", media: "all"%>
+    <%=javascript_include_tag "application", "data-turbolinks-track": "reload"%>
+    <meta property="og:title" content="Pawzon"/>
+    <meta property="og:image" content="<%= image_url("projectpic.png") %>"/>
+    <meta property="og:url" content="https://git.heroku.com/pawzon.git"/>
 
-    <% if current_user %>
+    <%if current_user%>
       <script>
         window.currentUser = {
-          'id': '<%=current_user.id%>',
-          'email': '<%=current_user.email%>',
-          'first_name': '<%=current_user.first_name%>',
-          'last_name': '<%=current_user.last_name%>'
+          "id": "<%=current_user.id%>",
+          "email": "<%=current_user.email%>",
+          "first_name": "<%=current_user.first_name%>",
+          "last_name": "<%=current_user.last_name%>"
         }
       </script>
     <%end%>
   </head>
 
   <body>
-    <%= yield %>
+    <%=yield%>
   </body>
 </html>

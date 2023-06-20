@@ -8,12 +8,13 @@ class Search extends React.Component {
     this.state = {
       word: ""
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
-    return e => this.setState({ [field]: e.currentTarget.value })
-  };
+    return e => this.setState({ [field]: e.currentTarget.value });
+  }
 
   handleSubmit(e) {
     e.preventDefault();

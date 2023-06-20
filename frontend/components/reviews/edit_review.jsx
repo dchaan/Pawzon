@@ -4,12 +4,14 @@ import Rating from "react-rating";;
 class EditReview extends React.Component {
   constructor(props) {
     super(props);
+
     this.state = {
       id: null,
       title: "",
       body: "",
       rating: 3,
     };
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -23,27 +25,26 @@ class EditReview extends React.Component {
           body: res.review.body,
           rating: res.review.rating
         };
-      }))
-  };
+      }));
+  }
 
   update(field) {
     return e => this.setState({ [field]: e.currentTarget.value });
-  };
+  }
 
   updateReview(field) {
     return e => this.setState ({ [field]: e });
-  };
+  }
 
   handleSubmit(e) {
     e.preventDefault();
     const { updateReview, productId, history} = this.props;
-    updateReview(this.state, productId)
-      .then(history.push(`/products/${productId}`));
-  };
+    updateReview(this.state, productId).then(history.push(`/products/${productId}`));
+  }
 
   render() {
-    const fullPaw = <img src="/images/paw_full.png" className="review-form-paw-img" />
-    const emptyPaw = <img src="/images/paw_empty.png" className="review-form-paw-img" /> 
+    const fullPaw = <img src="/images/paw_full.png" className="review-form-paw-img"/>
+    const emptyPaw = <img src="/images/paw_empty.png" className="review-form-paw-img"/> 
 
     return (
       <div className="review-form">
@@ -62,11 +63,11 @@ class EditReview extends React.Component {
           </div>
           <div className="review-form-headline">
             <div className="review-form-add-headline">Edit headline</div>
-            <input className="review-form-headline-input" type="text" value={this.state.title} onChange={this.update("title")} />
+            <input className="review-form-headline-input" type="text" value={this.state.title} onChange={this.update("title")}/>
           </div>
           <div className="review-form-body">
             <div className="review-form-add-body">Edit written review</div>
-            <textarea className="review-form-body-input" value={this.state.body} onChange={this.update("body")} />
+            <textarea className="review-form-body-input" value={this.state.body} onChange={this.update("body")}/>
           </div>
           <br/>
           <button className="review-form-submit-btn">Submit</button>

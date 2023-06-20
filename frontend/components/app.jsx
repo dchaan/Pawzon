@@ -1,5 +1,5 @@
 import React from "react";
-import { Route, Switch, Link } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
 import { AuthRoute, ProtectedRoute } from "../util/route_util";
 import ProductShowContainer from "./product/product_show_container";
 import NavbarContainer from "./navbar/navbar_container";
@@ -11,18 +11,18 @@ import Footer from "./footer/footer";
 import ReviewFormContainer from "./reviews/review_form_container";
 import EditReviewContainer from "./reviews/edit_review_container"
 import CartItemIndexContainer from "./cart_items/cart_item_index_container";
-import Checkout from "./cart_items/checkout"
+import Checkout from "./cart_items/checkout";
 
 const App = () => (
   <div>
     <NavbarContainer />
     <Switch>
-      <AuthRoute exact path="/login" component={LoginContainer} />
-      <AuthRoute exact path="/signup" component={SignupContainer} />
-      <Route exact path="/products" component={ProductIndexContainer} />
-      <Route exact path="/products/:productId" component={ProductShowContainer} />
-      <ProtectedRoute exact path="/products/:productId/reviews/new" component={ReviewFormContainer} />
-      <ProtectedRoute exact path="/products/:productId/reviews/:reviewId" component={EditReviewContainer} />
+      <AuthRoute exact path="/login" component={LoginContainer}/>
+      <AuthRoute exact path="/signup" component={SignupContainer}/>
+      <Route exact path="/products" component={ProductIndexContainer}/>
+      <Route exact path="/products/:productId" component={ProductShowContainer}/>
+      <ProtectedRoute exact path="/products/:productId/reviews/new" component={ReviewFormContainer}/>
+      <ProtectedRoute exact path="/products/:productId/reviews/:reviewId" component={EditReviewContainer}/>
       <Route exact path="/cart" component={CartItemIndexContainer}/>
       <ProtectedRoute exact path="/checkout" component={Checkout}/>
       <Route path="/" component={HomepageContainer}/>

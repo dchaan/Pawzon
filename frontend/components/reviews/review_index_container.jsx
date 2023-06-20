@@ -3,7 +3,7 @@ import { fetchReviews, createReview, deleteReview } from "../../actions/review_a
 import { withRouter } from "react-router-dom";
 import ReviewIndex from "./review_index";
 
-const mSTP = (state, ownProps) => ({
+const mSTP = state => ({
   reviews: Object.values(state.entities.reviews),
   users: Object.values(state.entities.users),
   currentUser: state.entities.users[state.session.id]
@@ -16,4 +16,5 @@ const mDTP = dispatch => ({
 });
 
 const ReviewIndexContainer = withRouter(connect(mSTP, mDTP)(ReviewIndex));
+
 export default ReviewIndexContainer;

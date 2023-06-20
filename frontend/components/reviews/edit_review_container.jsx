@@ -1,5 +1,4 @@
 import { connect } from "react-redux";
-import { withRouter } from "react-router-dom";
 import { fetchReview, updateReview } from "../../actions/review_actions";
 import EditReview from "./edit_review"
 

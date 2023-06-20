@@ -4,11 +4,11 @@ import Signup from "./signup";
 
 const mSTP = ({ errors }) => ({
   errors: errors.session
-})
+});
 
 const mDTP = dispatch => ({
   signup: user => dispatch(signup(user)),
   clearErrors: () => dispatch(clearErrors())
-})
+});
 
 export default connect(mSTP, mDTP)(Signup);

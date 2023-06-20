@@ -39,7 +39,7 @@ class CartItemIndexItem extends React.Component {
         <div className="cart-item-left">
           <div className="cart-item-img-container">
             <Link className="cart-item-img-link" to={`/products/${product_id}`}>
-              <img className="cart-item-img" src={image_url} />
+              <img className="cart-item-img" src={image_url}/>
             </Link>
           </div>
           <div className="cart-item-details">

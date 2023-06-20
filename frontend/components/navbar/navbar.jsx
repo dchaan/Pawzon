@@ -14,12 +14,11 @@ class Navbar extends React.Component {
     const { currentUser, fetchCartItems, fetchProducts } = this.props;
     if (currentUser) fetchCartItems(); 
     fetchProducts("");
-  };
+  }
 
   handleAny(productCategory) {
     const { fetchProducts, history } = this.props;
-    fetchProducts(productCategory)
-      .then(history.push("/products"));
+    fetchProducts(productCategory).then(history.push("/products"));
   }
 
   handleLogout() {
@@ -61,13 +60,13 @@ class Navbar extends React.Component {
       <div className="nav-container">
         <div className="navbar-top">
           <Link className="nav-logo-container" to="/">
-            <img src="images/pawzon.png" className="nav-logo" />
+            <img src="images/pawzon.png" className="nav-logo"/>
           </Link>
           <div className="nav-location-container">
             <img src="images/location.png" className="nav-location-img"/>
             <div className="nav-deliver-to">
               <div className="nav-deliver-to-user">Deliver to {deliverTo}</div>
-              <div className="nav-deliver-to-city">Pacifica 94044</div>
+              <div className="nav-deliver-to-city">Chicago 60610</div>
             </div>
           </div>
           <div className="nav-search-container">

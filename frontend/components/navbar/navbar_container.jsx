@@ -8,13 +8,13 @@ const mSTP = state => ({
   currentUser: state.entities.users[state.session.id],
   user: state.session.id,
   cartItems: Object.values(state.entities.cartItems)
-})
+});
 
 const mDTP = dispatch => ({
   logout: () => dispatch(logout()),
   fetchProducts: data => dispatch(fetchProducts(data)),
   fetchCartItems: () => dispatch(fetchCartItems())
-})
+});
 
 export default connect(mSTP, mDTP)(Navbar);
 

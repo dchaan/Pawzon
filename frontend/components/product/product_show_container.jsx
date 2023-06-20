@@ -1,7 +1,7 @@
 import { connect } from "react-redux";
 import { fetchProduct } from "../../actions/product_actions";
-import { createCartItem, updateCartItem, fetchCartItems, deleteCartItem } from "../../actions/cart_item_actions";
-import { deleteReview, fetchReviews } from "../../actions/review_actions";
+import { createCartItem, updateCartItem, deleteCartItem } from "../../actions/cart_item_actions";
+import { fetchReviews } from "../../actions/review_actions";
 import ProductShow from "./product_show";
 
 const mSTP = ( state, ownProps ) => ({
@@ -12,7 +12,6 @@ const mSTP = ( state, ownProps ) => ({
   user: state.session.id,
   cartItems: Object.values(state.entities.cartItems)
 });
-// const mSTP = null;
 
 const mDTP = dispatch => ({
   fetchProduct: productId => dispatch(fetchProduct(productId)),

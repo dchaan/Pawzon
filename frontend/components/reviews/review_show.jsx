@@ -10,7 +10,7 @@ class ReviewShow extends React.Component {
   handleDelete(e) {
     e.preventDefault();
     const { deleteReview, review, productId } = this.props;
-    deleteReview(review.id, productId)
+    deleteReview(review.id, productId);
   }
 
   render() {
@@ -35,7 +35,7 @@ class ReviewShow extends React.Component {
       <div className="review-item">
         <div className="review-row-one">
           <div className="review-user-img-container">
-            <img src="/images/user.png" className="user-img" />
+            <img src="/images/user.png" className="user-img"/>
           </div>
           <div className="review-name">{review.first_name}</div>
         </div>

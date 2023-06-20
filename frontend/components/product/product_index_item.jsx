@@ -20,7 +20,7 @@ class ProductIndexItem extends React.Component {
         <div className="prod-box-container">
           <div className="prod-box-img-container">
             <Link to={`/products/${product.id}`}>
-              <img className="prod-box-img" src={product.image_url} />
+              <img className="prod-box-img" src={product.image_url}/>
             </Link>
           </div>
           <Link className="prod-title-link" to={`/products/${product.id}`}>

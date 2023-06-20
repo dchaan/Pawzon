@@ -16,7 +16,7 @@ class Api::ReviewsController < ApplicationController
     if @review.save
       render :show
     else
-      render json: ['Cannot create review'], status: 422
+      render json: ["Cannot create review"], status: 422
     end
   end
 
@@ -25,7 +25,7 @@ class Api::ReviewsController < ApplicationController
     if @review.update(review_params)
       render :show
     else
-      render json: ['Cannot update review'], status: 422
+      render json: ["Cannot update review"], status: 422
     end
   end
 
@@ -34,7 +34,7 @@ class Api::ReviewsController < ApplicationController
     if @review && @review.destroy
       render :show
     else
-      render json: ['Cannot delete review'], status: 422
+      render json: ["Cannot delete review"], status: 422
     end
   end
 

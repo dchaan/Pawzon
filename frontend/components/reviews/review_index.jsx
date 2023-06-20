@@ -7,7 +7,7 @@ class ReviewIndex extends React.Component {
   }
 
   update(field) {
-    return e => { this.setState({ [field]: e.target.value }) }
+    return e => { this.setState({ [field]: e.target.value }) };
   }
 
   render() {
@@ -29,9 +29,7 @@ class ReviewIndex extends React.Component {
     })
 
     return(
-      <div>
-        {reviewsList}
-      </div>
+      <div>{reviewsList}</div>
     )
   }
 }
